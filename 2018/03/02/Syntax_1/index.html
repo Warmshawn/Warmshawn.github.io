@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Syntax">
+<meta property="og:url" content="http://yoursite.com/2018/03/02/Syntax_1/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/html_600x600.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/java_500x500.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/Markdown_400x400.png?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-01-20T14:21:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Syntax">
+<meta name="twitter:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/html_600x600.png?x-oss-process=style/style1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/02/Syntax_1/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Syntax | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/Syntax_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Syntax
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-02T00:00:00+08:00">2018-03-02</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-Q/" itemprop="url" rel="index"><span itemprop="name">Tech - Q</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/html_600x600.png?x-oss-process=style/style1" width="296" height="296"></div>
+
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/java_500x500.png?x-oss-process=style/style1" width="296" height="296"></div>
+
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Logo/Markdown_400x400.png?x-oss-process=style/style1" width="296" height="296"></div><br><div style="float:none;clear:both;"></div>
+
+<a id="more"></a>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="Hexo-自动添加-Read-More-标记"><a href="#Hexo-自动添加-Read-More-标记" class="headerlink" title="Hexo 自动添加 Read More 标记"></a>Hexo 自动添加 Read More 标记</h2><p>在文中添加<code>&lt;!--more--&gt;</code>，则该标记之前的部分就会成为该文章的简述，显示在首页里</p>
+<p>文章如果description有内容的话，在首页，文章都会折叠，并显示相应的description</p>
+<h2 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h2><p>声明: 除非特殊说明, Gitbash都是在blog目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"dir_name"</span></span><br></pre></td></tr></table></figure></p>
+<p>其中<code>new</code>可简写为<code>n</code>, 下同<br><br></p>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new  &quot;article_name&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="代码块显示"><a href="#代码块显示" class="headerlink" title="代码块显示"></a>代码块显示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">``` bashxxx</span><br><span class="line">your code</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 修改layout文件</span><br><span class="line">/themes/[主题名]/layout/_partial/article.ejs其中有一段为：</span><br><span class="line">``` bash</span><br><span class="line">&lt;div class=&quot;article-entry&quot; itemprop=&quot;articleBody&quot;&gt;</span><br><span class="line">  &lt;% if (post.excerpt &amp;&amp; index) &#123; %&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">    &lt;% if (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">      &lt;p class=&quot;article-more-link&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more&quot;&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; else &#123; %&gt;</span><br><span class="line">  	  &lt;%- post.content %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>从代码上看，post.excerpt 就是加了<code>more</code>标记之后的文章摘要，如果<code>post.excerpt</code>存在且在首页的话，则显示文章的摘要和<code>Read More</code>按钮。当不符合上述条件（post.excerpt 存在且在首页），就显示整个文章的内容<code>post.content</code>。</p>
+<p>因为我需要的是在文章里没有 more 标记时自动添加标记，所以需要改动的代码是要放在<code>else</code>后面的。我打算在文章没有<code>more</code>标记的时候，截取文章的前两段作为摘要，如果文章少于两段，则直接显示整篇文章内容。</p>
+<p>所以代码大概是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var count = 0</span><br><span class="line">var content = post.content</span><br><span class="line"><span class="keyword">while</span>(count &lt; 4) &#123;</span><br><span class="line">  content = content.replace(<span class="string">'\n'</span>,<span class="string">'x'</span>)</span><br><span class="line">&#125;</span><br><span class="line">var br = content.indexOf(<span class="string">'\n'</span>) // 第一个换行符所在的位置</span><br><span class="line"><span class="keyword">if</span> (br == -1 || !index) &#123; // 如果不存在第一个换行符或者不在首页</span><br><span class="line">  post.content // 显示整篇文章</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  post.content.substring(0,br) // 截取到第二个换行符的位置</span><br><span class="line">  // 显示「Read More」按钮</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>根据上述思路，修改后的代码为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"article-entry"</span> itemprop=<span class="string">"articleBody"</span>&gt;</span><br><span class="line">  &lt;% <span class="keyword">if</span> (post.excerpt &amp;&amp; index) &#123; %&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">      &lt;p class=<span class="string">"article-more-link"</span>&gt;</span><br><span class="line">        &lt;a href=<span class="string">"&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more"</span>&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">  	&lt;% var br = post.content.indexOf(<span class="string">'\n'</span>) %&gt;</span><br><span class="line">  	&lt;% <span class="keyword">if</span>(br &lt; 0 || !index) &#123; %&gt;</span><br><span class="line">  	  &lt;%- post.content %&gt;</span><br><span class="line">  	&lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">  	  &lt;%- post.content.substring(0, br) %&gt;</span><br><span class="line">  	  &lt;% <span class="keyword">if</span> (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">        &lt;p class=<span class="string">"article-more-link"</span>&gt;</span><br><span class="line">          &lt;a href=<span class="string">"&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more"</span>&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">  	&lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果需要截取 N 个段落，则可以使用 replace 替换 content 里 N-1 次<code>\n</code>然后使用 indexOf 即可。但是发现如果所要截取的部分有一半处于代码片段的话，就会很惨不忍睹。所以建议使用这种方法自动截取摘要的话，尽量为自己博客有代码的文章手动截取摘要。</p>
+<blockquote>
+<p><a href="https://twiceyuan.com/2014/05/25/hexo%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0readmore%E6%A0%87%E8%AE%B0/" target="_blank" rel="noopener">https://twiceyuan.com/2014/05/25/hexo%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0readmore%E6%A0%87%E8%AE%B0/</a></p>
+</blockquote>
+<h2 id="插入音乐播放器"><a href="#插入音乐播放器" class="headerlink" title="插入音乐播放器"></a>插入音乐播放器</h2><p>所需资源：Aplayer(HTML5音乐播放器), hexo-tag-aplayer插件</p>
+<p>在hexo根目录运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-aplayer@2.0.1 <span class="comment">#把Aplayer加入hexo；必须指定版本2.0.1；否则默认安装2.0.0，会报错</span></span><br></pre></td></tr></table></figure></p>
+<p>在Markdown文本中，需要添加音乐的地方加上：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 播放一首 --&gt;</span><br><span class="line">&#123;% aplayer <span class="string">"过客"</span> <span class="string">"阿涵"</span> <span class="string">"http://sc1.111ttt.cn/2017/1/11/11/304112002072.mp3"</span> <span class="string">"http://i1.bvimg.com/634622/cdbbb965575037d7.jpg"</span> <span class="string">"false"</span> %&#125;</span><br><span class="line">&lt;!-- autoplay,自动播放；<span class="literal">false</span>, 不自动播放 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 播放多首 --&gt;</span><br><span class="line">&#123;% aplayerlist %&#125;&#123;<span class="string">"narrow"</span>: <span class="literal">false</span>,<span class="string">"autoplay"</span>: <span class="literal">true</span>,<span class="string">"showlrc"</span>: 3,<span class="string">"mode"</span>: <span class="string">"random"</span>,<span class="string">"music"</span>: [&#123;<span class="string">"title"</span>: <span class="string">"平凡之路"</span>,<span class="string">"author"</span>: <span class="string">"朴树"</span>,<span class="string">"url"</span>: <span class="string">"http://xxx.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3"</span>,<span class="string">"pic"</span>: <span class="string">"https://xxx.com/1.jpg"</span>,<span class="string">"lrc"</span>: <span class="string">"http://og9ocpmwk.bkt.clouddn.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.txt"</span>&#125;,&#123;<span class="string">"title"</span>: <span class="string">"野子"</span>,<span class="string">"author"</span>: <span class="string">"苏运莹"</span>,<span class="string">"url"</span>: <span class="string">"http://xxx.com/01%20%E9%87%8E%E5%AD%90.m4a"</span>,<span class="string">"pic"</span>: <span class="string">"http://xxxx.com/%E9%87%8E%E5%AD%90.jpg"</span>,<span class="string">"lrc"</span>:<span class="string">"https://xxx.com/%E9%87%8E%E5%AD%90.txt"</span>&#125;]&#125;&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Aplayer的作者还有一款html5的视频播放器，叫Dplayer，对应有一款hexo的插件，叫hexo-tag-dplayer，有需求的可以去看看，用法都差不多</p>
+<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 一级引用</span><br><span class="line">&gt;&gt; 二级引用</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一级引用</p>
+<blockquote>
+<p>二级引用</p>
+</blockquote>
+</blockquote>
+<h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><p>转义字符<code>\</code><br>可转义的字符有<br>\ 反斜杠<br>` 反引号<br>* 星号<br>_ 下划线<br>{} 大括号<br>[] 中括号<br>() 小括号<br># 井号<br>+ 加号<br>- 减号<br>. 英文句号<br>! 感叹号</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">两都名胜</span><br><span class="line"></span><br><span class="line">* 南京</span><br><span class="line"></span><br><span class="line">  - 玄武湖</span><br><span class="line"></span><br><span class="line">  - 中山陵</span><br><span class="line"></span><br><span class="line">  - 鸡鸣寺</span><br><span class="line"></span><br><span class="line">* 杭州</span><br><span class="line"></span><br><span class="line">  - 西湖</span><br><span class="line"></span><br><span class="line">    + 苏堤</span><br><span class="line"></span><br><span class="line">    + 湖心亭</span><br><span class="line"></span><br><span class="line">    + 太子湾</span><br><span class="line"></span><br><span class="line">  - 九溪</span><br><span class="line">  - 灵隐</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br>两都名胜</p>
+<ul>
+<li>南京<ul>
+<li>玄武湖</li>
+<li>中山陵</li>
+<li>鸡鸣寺</li>
+</ul>
+</li>
+<li>杭州<ul>
+<li>西湖<ul>
+<li>苏堤</li>
+<li>湖心亭</li>
+<li>太子湾</li>
+</ul>
+</li>
+<li>九溪</li>
+<li>灵隐</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">南京名胜</span><br><span class="line"></span><br><span class="line">1 玄武湖</span><br><span class="line">2 中山陵</span><br><span class="line">3 鸡鸣寺</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p>南京名胜</p>
+<p>1 玄武湖<br>2 中山陵<br>3 鸡鸣寺</p>
+<p>三个注意点：</p>
+<p>如果前面有内容，在输入字符前，应先空一行；<br>符号与内容之间，须隔一个空格符，列表模式才能生效；<br>第一行内容输入完成，换行会自动补全下一行的开头符号（有序列表数字递增，无序列表符号不变），接下去只需继续输下一行内容，以此类推；<br>多层级列表，为美观也为减少出错考虑，注意同级列表符号的统一和上下对齐。</p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> d:text <span class="comment">#切换目录到`D:\text`</span></span><br></pre></td></tr></table></figure>
+<h2 id="Git-上传文件、文件夹到Github-com（可行！！！）"><a href="#Git-上传文件、文件夹到Github-com（可行！！！）" class="headerlink" title="Git 上传文件、文件夹到Github.com（可行！！！）"></a>Git 上传文件、文件夹到Github.com（可行！！！）</h2><h3 id="配置Git、SSH"><a href="#配置Git、SSH" class="headerlink" title="配置Git、SSH"></a>配置Git、SSH</h3><ul>
+<li>下载、安装 Git</li>
+<li><p>绑定用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Your Name"</span> </span><br><span class="line">git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 SSH</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>第一次使用，按照上述操作获得SSH Key。Git会提示如何操作，密码可以空。SSH Key保存在<code>C:\Users\Administrator\.ssh</code>。推荐将<code>.ssh</code>保存至一个专门的地方，下次使用时copy至<code>C:\Users\Administrator</code>即可。</p>
+</li>
+<li><p>.ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。用记事本打开 id_rsa.pub，得到ssh key 公钥。</p>
+</li>
+<li><p>为 Github 账户添加 ssh key 。登录 Github，展开个人头像的小三角，点settings，然后打开SSH keys菜单，点击Add SSH key新增密钥，填上标题。</p>
+</li>
+</ul>
+</li>
+<li>验证账户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="克隆远程仓库到本地"><a href="#克隆远程仓库到本地" class="headerlink" title="克隆远程仓库到本地"></a>克隆远程仓库到本地</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/IonBeamScience/ionbeamscience.github.io.git</span><br></pre></td></tr></table></figure>
+<h3 id="初始化文件夹、文件"><a href="#初始化文件夹、文件" class="headerlink" title="初始化文件夹、文件"></a>初始化文件夹、文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h3 id="上传-README-文件"><a href="#上传-README-文件" class="headerlink" title="上传 README 文件"></a>上传 README 文件</h3><p>如果在创建 Github 仓库时没有勾选创建 README.md 文件，则要先创建 README.md 文件，不然上传文件会报错。如果已经勾选，可以跳过此步骤。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">touch README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">'first_commit'</span></span><br><span class="line">git remote add origin https://github.com/IonBeamScience/ionbeamscience.github.io.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h3 id="上传所有文件夹、文件"><a href="#上传所有文件夹、文件" class="headerlink" title="上传所有文件夹、文件"></a>上传所有文件夹、文件</h3><ul>
+<li><p>跟踪项目文件夹中的所有文件和文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入本次的提交说明，准备提交暂存区中的更改的已跟踪文件，单引号内为说明内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">'first_commit'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关联远程仓库，添加后，远程库的名字就是 origin，这是 Git 默认的叫法，也可以改成别的，但是 origin 这个名字一看就知道是远程库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/IonBeamScience/ionbeamscience.github.io.git</span><br></pre></td></tr></table></figure>
+<p>如果关联出现错误 fatal: remote origin already exists，则执行下列语句再进行关联</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把本地库的所有内容推送到远程库上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master <span class="comment">#origin是地址！！！</span></span><br><span class="line">git push -u https://github.com/IonBeamScience/ionbeamscience.github.io.git master</span><br></pre></td></tr></table></figure>
+<p>如果在推送时出现错误 <code>error:failed to push som refs to.......</code>，则执行下列语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master  <span class="comment">#将远程仓库 Github 上的文件拉下来合并之后重新推送上去</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意：git是不能管理空的文件夹的，文件夹里必须有文件才能上传</p>
+<h2 id="Git上传"><a href="#Git上传" class="headerlink" title="Git上传"></a>Git上传</h2><p>1.使用git clone命令将新建的git 项目信息下载到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span>  git address</span><br></pre></td></tr></table></figure>
+<p>2.进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status   </span><br><span class="line">git add -A  </span><br><span class="line">git commit -a -m<span class="string">"first commit"</span></span><br></pre></td></tr></table></figure></p>
+<p>3.上传更新到git 版本库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>注：git add上传本地项目所有变化的命令三种有 git add -A、git add -u、git add .<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add -A  提交所有变化  </span><br><span class="line">git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)  </span><br><span class="line">git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/02/Syntax_2_MS Series/" rel="prev" title="Syntax_MicroSoft">
+                Syntax_MicroSoft <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-自动添加-Read-More-标记"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo 自动添加 Read More 标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建目录"><span class="nav-number">1.2.</span> <span class="nav-text">新建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建文章"><span class="nav-number">1.3.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块显示"><span class="nav-number">1.4.</span> <span class="nav-text">代码块显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入音乐播放器"><span class="nav-number">1.5.</span> <span class="nav-text">插入音乐播放器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown"><span class="nav-number">2.</span> <span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义"><span class="nav-number">2.2.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.3.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">2.3.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">2.3.2.</span> <span class="nav-text">有序列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-上传文件、文件夹到Github-com（可行！！！）"><span class="nav-number">3.1.</span> <span class="nav-text">Git 上传文件、文件夹到Github.com（可行！！！）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Git、SSH"><span class="nav-number">3.1.1.</span> <span class="nav-text">配置Git、SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆远程仓库到本地"><span class="nav-number">3.1.2.</span> <span class="nav-text">克隆远程仓库到本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化文件夹、文件"><span class="nav-number">3.1.3.</span> <span class="nav-text">初始化文件夹、文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传-README-文件"><span class="nav-number">3.1.4.</span> <span class="nav-text">上传 README 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传所有文件夹、文件"><span class="nav-number">3.1.5.</span> <span class="nav-text">上传所有文件夹、文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git上传"><span class="nav-number">3.2.</span> <span class="nav-text">Git上传</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

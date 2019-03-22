@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="VORONOI是一种算法, 用于">
+<meta name="keywords" content="LAMMPS,VORONOI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | Build LAMMPS with VORONOI package">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="VORONOI是一种算法, 用于">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-03-18T14:49:20.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | Build LAMMPS with VORONOI package">
+<meta name="twitter:description" content="VORONOI是一种算法, 用于">
+<meta name="twitter:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LAMMPS | Build LAMMPS with VORONOI package | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LAMMPS | Build LAMMPS with VORONOI package
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-19 19:49:44" itemprop="dateCreated datePublished" datetime="2018-12-19T19:49:44+08:00">2018-12-19</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">VORONOI是一种算法, 用于</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="太长不看版-Quick-Start"><a href="#太长不看版-Quick-Start" class="headerlink" title="太长不看版 | Quick Start"></a>太长不看版 | Quick Start</h2><ul>
+<li><p>在未名超算，执行以下命令即可，其他超算平台类似。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	<span class="comment">#添加模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src                   <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-b"</span>      <span class="comment">#安装voronoi库。此时切到lib/voronoi目录下，会看到两个动态链接，如下图所示。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src                   <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make ps                         <span class="comment">#查看当前已经安装的包</span></span><br><span class="line">make yes-VORONOI                <span class="comment">#添加VORONOI包</span></span><br><span class="line">make mpi                        <span class="comment">#编译生成可执行文件lmp_mpi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果超算不能链接外网进行下载，那么需要手动安装<br>①下载voronoi包, 当前版本<a href="http://math.lbl.gov/voro++/download/" target="_blank" rel="noopener">voro++-0.4.6</a><br>②上传到lammps安装目录中的<code>lib/voronoi</code>, 例如<code>/home/chenhuaqiang/lammps-16Mar18/lib/voronoi</code><br>③解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf voro++-0.4.6.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>④进入解压后的文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd voro++-0.4.6</span><br></pre></td></tr></table></figure></p>
+<p>⑤修改<strong>config.mk</strong>文件，将<code>PREFIX</code>项改成你想安装voro++-0.4.6的路径, 我的路径是<code>/home/chenhuaqiang/apps/Plugs/voronoi</code>, 保存退出<br>⑥然后make, 再make install<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>⑦配置voronoi的环境变量, 让LAMMPS在编译的时候知道去哪里找voronoi.进入lammps安装目录中的<code>lib/voronoi</code>, 修改<strong>Makefile.lammps</strong>文件的如下几项, 然后保存退出.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">voronoi_SYSINC = -I/home/chenhuaqiang/apps/Plugs/voronoi/include/voro++</span><br><span class="line">voronoi_SYSLIB = -lvoro++</span><br><span class="line">voronoi_SYSPATH = -L/home/chenhuaqiang/apps/Plugs/voronoi/lib</span><br></pre></td></tr></table></figure></p>
+<p>⑧进入lammps安装目录中的<code>src</code>, 加载voronoi包, 编译LAMMPS的可执行文件.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/chenhuaqiang/lammps-16Mar18/src</span><br><span class="line">make yes-voronoi</span><br><span class="line">make mpi</span><br></pre></td></tr></table></figure></p>
+<p>如果你看到类似：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text data bss dec hex filename</span><br><span class="line">30886917 55160 1612612576 1643554653 61f6a75d ../lmp_omp</span><br><span class="line">make[1]: Leaving directory ‘/home/chenhuaqiang/lammps-16Mar18/src/Obj_mpi’</span><br></pre></td></tr></table></figure></p>
+<p>这样的结束输出，那么恭喜你，编译成功了。如果报错了，请仔细检查上面的步骤，如果有必要，请在<code>cd /home/chenhuaqiang/lammps-16Mar18/src</code>中执行<code>make clean-all</code>，然后再来一次。</p>
+<h2 id="刨根问底版-Full-Instructions"><a href="#刨根问底版-Full-Instructions" class="headerlink" title="刨根问底版 | Full Instructions"></a>刨根问底版 | Full Instructions</h2><p>We use traditional make.</p>
+<p>To build with this package, you must download and build the <a href="http://math.lbl.gov/voro++" target="_blank" rel="noopener">Voro++ library</a>.<br>You can download and build the Voro++ library manually if you prefer; follow the instructions in lib/voronoi/README. You can also do it in one step from the lammps/src dir, using a command like these, which simply invoke the lib/voronoi/Install.py script with the specified args:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make lib-voronoi                          <span class="comment"># print help message</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-b"</span>                <span class="comment"># download and build the default version in lib/voronoi/voro++-&lt;version&gt;</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-p <span class="variable">$HOME</span>/voro++"</span>   <span class="comment"># use existing Voro++ installation in $HOME/voro++</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-b -v voro++0.4.6"</span> <span class="comment"># download and build the 0.4.6 version in lib/voronoi/voro++-0.4.6</span></span><br></pre></td></tr></table></figure>
+<p>Note that 2 symbolic (soft) links, “includelink” and “liblink”, are created in lib/voronoi to point to the Voro++ src dir. When LAMMPS builds in src it will use these links. You should not need to edit the lib/voronoi/Makefile.lammps file.<br><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1" alt="liblink"></p>
+<h3 id="The-README-in-src-VORONOI"><a href="#The-README-in-src-VORONOI" class="headerlink" title="The README in src/VORONOI"></a>The README in src/VORONOI</h3><p>The VORONOI package adds a compute voronoi/atom command which calculates a Voronoi tesselation of the system.</p>
+<p>It uses the Voro++ library, available at <a href="http://math.lbl.gov/voro++/" target="_blank" rel="noopener">http://math.lbl.gov/voro++/</a> to compute the tesselation locally on each processor.  Voro++ was developed by Chris H. Rycroft while at UC Berkeley / Lawrence Berkeley Laboratory.</p>
+<p>That library can be downloaded and built in lib/voronoi or elsewhere on your system, which must be done before bulding LAMMPS with this package.  Details of the download, build, and install process for Voro++ are given in the lib/voronoi/README file, and scripts are provided to help automate the process.  Also see the LAMMPS manual for general information on building LAMMPS with external libraries. The settings in the Makefile.lammps file in lib/voronoi must be correct for LAMMPS to build correctly with this package installed.</p>
+<p>Once you have successfully built LAMMPS with this package and Voro++, you can test it using an input file from the examples dir:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./lmp_serial &lt; lammps/examples/voronoi/in.voronoi | grep <span class="string">'^TEST_'</span></span><br><span class="line">./lmp_serial &lt; ./voronoi/in.voronoi</span><br></pre></td></tr></table></figure>
+<p>The output should conclude with ‘TEST_DONE’ and every line should  report an error of 0%. </p>
+<p>== Credits and license ==</p>
+<p>This compute was written by Daniel Schwen (<a href="mailto:daniel@schwen.de" target="_blank" rel="noopener">daniel@schwen.de</a>) and is licensed under the GPLv2 license.</p>
+<p>Please contribute changes back to the community.</p>
+<h3 id="The-README-in-lib-voronoi"><a href="#The-README-in-lib-voronoi" class="headerlink" title="The README in lib/voronoi"></a>The README in lib/voronoi</h3><p>This directory contains links to the Voro++ library which is required to use the VORONOI package and its compute voronoi/atom command in a LAMMPS input script.</p>
+<p>The Voro++ library is available at <a href="http://math.lbl.gov/voro++" target="_blank" rel="noopener">http://math.lbl.gov/voro++</a> and was developed by Chris H. Rycroft while at UC Berkeley / Lawrence Berkeley Laboratory.</p>
+<p>You can type “make lib-voronoi” from the src directory to see help on how to download and build this library via make commands, or you can do the same thing by typing “python Install.py” from within this directory, or you can do it manually by following the instructions below.</p>
+<hr>
+<p>Instructions:</p>
+<ol>
+<li><p>Download Voro++ at <a href="http://math.lbl.gov/voro++/download" target="_blank" rel="noopener">http://math.lbl.gov/voro++/download</a><br>either as a tarball or via SVN, and unpack the<br>tarball either in this /lib/voronoi directory<br>or somewhere else on your system.</p>
+</li>
+<li><p>Compile Voro++ from within its home directory<br>% make</p>
+</li>
+<li><p>There is no need to install Voro++ if you only wish<br>to use it from LAMMPS.  You can install it if you<br>wish to use it stand-alone or from other codes:<br>a) install under the default /usr/local<br>   % sudo make install<br>b) install under a user-writeable location by first</p>
+<pre><code>changing the PREFIX variable in the config.mk file, then
+</code></pre><p>   % make install</p>
+</li>
+<li><p>Create two soft links in this dir (lib/voronoi)<br>to the Voro++ src directory is.  E.g if you built Voro++ in this dir:<br>  % ln -s voro++-0.4.6/src includelink<br>  % ln -s voro++-0.4.6/src liblink<br>These links could instead be set to the include and lib<br>directories created by a Voro++ install, e.g.<br>  % ln -s /usr/local/include includelink<br>  % ln -s /usr/local/lib liblink</p>
+</li>
+</ol>
+<hr>
+<p>When these steps are complete you can build LAMMPS with the VORONOI package installed:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> lammps/src</span><br><span class="line">make yes-voronoi</span><br><span class="line">make g++ (or whatever target you wish)</span><br></pre></td></tr></table></figure>
+<p>Note that if you download and unpack a new LAMMPS tarball, the “includelink” and “liblink” files will be lost and you will need to re-create them (step 4).  If you built Voro++ in this directory (as opposed to somewhere else on your system) and did not install it somewhere else, you will also need to repeat steps 1,2,3.</p>
+<p>The Makefile.lammps file in this directory is there for compatibility with the way other libraries under the lib dir are linked with by LAMMPS.  However, Voro++ requires no auxiliary files or settings, so its variables are blank.</p>
+<h2 id="治bug者"><a href="#治bug者" class="headerlink" title="治bug者"></a>治bug者</h2><p>出错原因有二<br>1.没有加载模块。执行<code>module add mpi/mpich/3.2.1 intel/2018.0 gcc/6.4.0</code>后，无法并行编译的问题解决。<br>2.没有安装python<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">mpicxx -g -O3   -DLAMMPS_GZIP -DLAMMPS_MEMALIGN=64 -I../../lib/voronoi/includelink -DLMP_PYTHON  -DMPICH_SKIP_MPICXX -DOMPI_SKIP_MPICXX=1      -c ../fix_python_invoke.cpp</span><br><span class="line">../fix_python_invoke.cpp:18:20: fatal error: Python.h: No such file or directory</span><br><span class="line"> <span class="comment">#include &lt;Python.h&gt;</span></span><br><span class="line">                    ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make[1]: *** [fix_python_invoke.o] Error 1</span><br><span class="line">make[1]: Leaving directory `/nfs-share/home/1701110088/apps/lammps/src/Obj_mpi<span class="string">'</span></span><br><span class="line"><span class="string">make: *** [mpi] Error 2</span></span><br></pre></td></tr></table></figure></p>
+<p>由于lammps只能使用python2,所以通过<code>module anacode/2.5.2</code>加载python模块。</p>
+<p>然后<code>make mpi</code>，结果又出现了下面bug:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">/usr/bin/ld: cannot find -lpython2.7</span><br><span class="line">collect2: error: ld returned 1 <span class="built_in">exit</span> status</span><br><span class="line">make[1]: *** [../lmp_mpi] Error 1</span><br><span class="line">make[1]: Leaving directory `/nfs-share/home/1701110088/apps/lammps/src/Obj_mpi<span class="string">'</span></span><br><span class="line"><span class="string">make: *** [mpi] Error 2</span></span><br></pre></td></tr></table></figure></p>
+<p>第二天，才发现，是PYTHON包的原因，在src中卸载该包，再次编译，成功！！！</p>
+<p>原因回顾：并不因为VORONOI包的原因，而是PYTHON包的原因。我感觉即使是加载了ANACODA，也没有调用成功python。需要联系超算管理员给权限安装python。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+          
+            <a href="/tags/VORONOI/" rel="tag"># VORONOI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/19/LAMMPS_compute voronoi/" rel="next" title="LAMMPS | compute voronoi/atom">
+                <i class="fa fa-chevron-left"></i> LAMMPS | compute voronoi/atom
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/LAMMPS_Creat NC/" rel="prev" title="LAMMPS | Create a Polycrystal">
+                LAMMPS | Create a Polycrystal <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#太长不看版-Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">太长不看版 | Quick Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#刨根问底版-Full-Instructions"><span class="nav-number">2.</span> <span class="nav-text">刨根问底版 | Full Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-README-in-src-VORONOI"><span class="nav-number">2.1.</span> <span class="nav-text">The README in src/VORONOI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-README-in-lib-voronoi"><span class="nav-number">2.2.</span> <span class="nav-text">The README in lib/voronoi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#治bug者"><span class="nav-number">3.</span> <span class="nav-text">治bug者</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

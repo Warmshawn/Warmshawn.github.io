@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Hexo 中的数学公式是通过 MathJax 渲染 LaTeX 代码实现的，具体开启步骤以及简要语法介绍如下。">
+<meta name="keywords" content="Hexo,Latex,Math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo · Math">
+<meta property="og:url" content="http://yoursite.com/2018/12/18/Hexo-Math/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="Hexo 中的数学公式是通过 MathJax 渲染 LaTeX 代码实现的，具体开启步骤以及简要语法介绍如下。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/MathJax_1586x528.png?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-01-20T13:41:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo · Math">
+<meta name="twitter:description" content="Hexo 中的数学公式是通过 MathJax 渲染 LaTeX 代码实现的，具体开启步骤以及简要语法介绍如下。">
+<meta name="twitter:image" content="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/MathJax_1586x528.png?x-oss-process=style/style1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/18/Hexo-Math/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hexo · Math | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/18/Hexo-Math/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo · Math
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-18 20:26:34" itemprop="dateCreated datePublished" datetime="2018-12-18T20:26:34+08:00">2018-12-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/MathJax_1586x528.png?x-oss-process=style/style1" rel="gallery_cjtk5ne2n0012hwi4p1pitphv" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/MathJax_1586x528.png?x-oss-process=style/style1" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>Hexo 中的数学公式是通过 MathJax 渲染 LaTeX 代码实现的，具体开启步骤以及简要语法介绍如下。<br><a id="more"></a></p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>在 next 主题配置文件 _config.yaml 中找到 <code>MathJax</code> 选项，将 <code>enable</code> 改成 <code>true</code> 即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MathJax Support</span></span><br><span class="line">mathjax:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">    per_page: <span class="literal">false</span></span><br><span class="line">    cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></table></figure></p>
+<!--more-->
+<h2 id="如何插入公式"><a href="#如何插入公式" class="headerlink" title="如何插入公式"></a>如何插入公式</h2><p>1.行内插入公式, 不居中显示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$E</span>=mc^2$  <span class="comment">#$公式$</span></span><br></pre></td></tr></table></figure></p>
+<p>$E=mc^2$</p>
+<p>2.行间插入公式, 居中显示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="variable">$E</span>=mc^2$$  <span class="comment">#$$公式$$</span></span><br></pre></td></tr></table></figure></p>
+<p>$$E=mc^2$$</p>
+<h2 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h2><h3 id="！！注意转义情况的发生"><a href="#！！注意转义情况的发生" class="headerlink" title="！！注意转义情况的发生"></a>！！注意转义情况的发生</h3><p>在 Markdown 中，<code>_</code> 表示斜体；在 Latex 中，<code>_</code> 表示下标。<br>在生成文档的时候，先是 Markdown 解释成斜体，再到 Mathjax 解释的时候， <code>_</code> 就不再了，所以我们要在前面加转义字符 <code>\</code> ，即写成 <code>\_</code> 的形式，就可以正确显示了。</p>
+<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><p><code>^</code> 表示上标，<code>_</code> 表示下标。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$<span class="variable">$a_</span>&#123;1&#125; x^&#123;2&#125; $$</span><br><span class="line">$<span class="variable">$e</span>^&#123;-alpha t&#125; $$</span><br><span class="line">$<span class="variable">$a</span>^&#123;i&#125;_&#123;ij&#125;$$</span><br><span class="line">$<span class="variable">$e</span>^&#123;x^2&#125; \neq &#123;e^x&#125;^2$$</span><br></pre></td></tr></table></figure></p>
+<p>$$a_{1}$$<br>$$x^{2}$$<br>$$e^{-\alpha t}$$<br>$$a^{i}_{ij}$$<br>$$e{x2} \neq {ex}2$$</p>
+<p>此外，如果左右两边都有上下标，则使用 <code>\sideset</code> 命令，效果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset&#123;^xy&#125;&#123;^xy&#125;\bigotimes$$</span><br><span class="line">$$\sideset&#123;^n_m&#125;&#123;&#125;&#123;H&#125;$$</span><br><span class="line">$$\sideset&#123;^n_m&#125;&#123;&#125;&#123;\mathop&#123;H&#125;&#125;$$</span><br><span class="line">$$\sideset&#123;^n_m&#125;&#123;&#125;&#123;\mathop&#123;\mathrm&#123;H&#125;&#125;&#125;$$</span><br><span class="line">$$\sideset&#123;^\beta_a&#125;&#123;^\ast_\triangle&#125;&#123;\mathop&#123;\mathrm&#123;H&#125;&#125;&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\sideset{^xy}{^xy}\bigotimes$$<br>$$\sideset{^n_m}{}{H}$$<br>$$\sideset{^n_m}{}{\mathop{H}}$$<br>$$\sideset{^n_m}{}{\mathop{\mathrm{H}}}$$<br>$$\sideset{^\beta_a}{^\ast_\triangle}{\mathop{\mathrm{H}}}$$</p>
+<h3 id="平方根"><a href="#平方根" class="headerlink" title="平方根"></a>平方根</h3><p>平方根输入命令为 <code>\sqrt</code>，n次方根命令为 <code>\sqrt[n]</code>，其符号大小由LaTeX 自动给定：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt&#123;x&#125;$$</span><br><span class="line">$$\sqrt&#123;x^2&#125;+\sqrt&#123;y&#125;$$</span><br><span class="line">$$\sqrt[3]&#123;x^2+y^2+z^2&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\sqrt{x}$$<br>$$\sqrt{x^2}+\sqrt{y}$$<br>$$\sqrt[3]{x^2+y^2+z^2}$$</p>
+<h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><p>使用 <code>\overline</code> 和 <code>\underline</code> 分别在表达式上下方画出水平线：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$\overline&#123;m + n&#125;$$</span><br><span class="line">$$\underline&#123;m + n&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\overline{m + n}$$<br>$$\underline{m + n}$$</p>
+<h3 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h3><p>命令 <code>\overbrace</code> 和 <code>\underrace</code>，效果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$\underbrace&#123;a+b+\cdots+z&#125;$$</span><br><span class="line">$$\overbrace&#123;a+b+\cdots+z&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\overbrace{a+b+\cdots+z}$$<br>$$\underbrace{a+b+\cdots+z}$$</p>
+<h3 id="矢量"><a href="#矢量" class="headerlink" title="矢量"></a>矢量</h3><p>矢量的命令是 <code>\vec</code>，用于单个字母的向量表示。<code>\overrightarrow</code> 和 <code>\overleftarrow</code>分别表示向右和向左的向量箭头：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\vec&#123;a&#125;$$</span><br><span class="line">$$\overrightarrow&#123;AB&#125;$$</span><br><span class="line">$$\overleftarrow&#123;BA&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\vec{a}$$<br>$$\overrightarrow{AB}$$<br>$$\overleftarrow{BA}$$</p>
+<h3 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h3><p>分数使用 <code>\frac{...}{...}</code> 进行排版：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$<span class="variable">$1</span>\frac&#123;1&#125;&#123;2&#125;$$</span><br><span class="line">$$\frac&#123;x^2&#125;&#123;k+1&#125;$$</span><br><span class="line">$<span class="variable">$x</span>^&#123;1/2&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$1\frac{1}{2}$$<br>$$\frac{x^2}{k+1}$$<br>$$x^{1/2}$$</p>
+<h3 id="积分运算符"><a href="#积分运算符" class="headerlink" title="积分运算符"></a>积分运算符</h3><p>积分运算符使用 <code>\int</code> 生成。求和运算符使用 <code>\sum</code> 生成。乘积运算符使用 <code>\prod</code> 生成。上下限使用<code>^</code> 和<code>_</code> 命令，类似 上下标：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_&#123;i=1&#125;^&#123;n&#125;$$</span><br><span class="line">$$\int_&#123;0&#125;^&#123;\frac&#123;\pi&#125;&#123;2&#125;&#125;$$</span><br><span class="line">$$\prod_\epsilon$$</span><br></pre></td></tr></table></figure></p>
+<p>$$\sum_{i=1}^{n}$$<br>$$\int_{0}^{\frac{\pi}{2}}$$<br>$$\prod_\epsilon$$</p>
+<h3 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h3><table>
+<thead>
+<tr>
+<th>希腊字母</th>
+<th>效果</th>
+<th>希腊字母</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\alpha          $</td>
+<td>\alpha</td>
+<td>$\mu    $</td>
+<td>\mu</td>
+</tr>
+<tr>
+<td>$\beta        $</td>
+<td>\beta</td>
+<td>$\nu    $</td>
+<td>\nu</td>
+</tr>
+<tr>
+<td>$\gamma        $</td>
+<td>\gamma</td>
+<td>$\xi    $</td>
+<td>\xi</td>
+</tr>
+<tr>
+<td>$\delta        $</td>
+<td>\delta</td>
+<td>$\pi    $</td>
+<td>\pi</td>
+</tr>
+<tr>
+<td>$\epsilon    $</td>
+<td>\epsilon</td>
+<td>$\rho    $</td>
+<td>\rho</td>
+</tr>
+<tr>
+<td>$\zeta        $</td>
+<td>\zeta</td>
+<td>$\sigma    $</td>
+<td>\sigma</td>
+</tr>
+<tr>
+<td>$\eta        $</td>
+<td>\eta</td>
+<td>$\tau    $</td>
+<td>\tau</td>
+</tr>
+<tr>
+<td>$\theta        $</td>
+<td>\theta</td>
+<td>$\phi    $</td>
+<td>\phi</td>
+</tr>
+<tr>
+<td>$\iota        $</td>
+<td>\iota</td>
+<td>$\chi    $</td>
+<td>\chi</td>
+</tr>
+<tr>
+<td>$\kappa        $</td>
+<td>\kappa</td>
+<td>$\psi    $</td>
+<td>\psi</td>
+</tr>
+<tr>
+<td>$\lambda    $</td>
+<td>\lambda</td>
+<td>$\omega    $</td>
+<td>\omega</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>若需要大写希腊字母，将命令首字母大写即可。<br><code>$\Gamma$</code>呈现为$\Gamma$</p>
+</li>
+<li><p>若需要斜体希腊字母，将命令前加上var前缀即可。<br><code>$\varGamma$</code>呈现为$\varGamma$</p>
+</li>
+</ul>
+<h3 id="字体转换"><a href="#字体转换" class="headerlink" title="字体转换"></a>字体转换</h3><p>要对公式的某一部分字符进行字体转换，可以用<code>{\rm需转换的部分字符}</code>命令，其中<code>\rm</code>可以参照下表选择合适的字体。<br>一般情况下，公式默认为意大利体。</p>
+<table>
+<thead>
+<tr>
+<th>字体</th>
+<th>关键词</th>
+<th>代码</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>罗马体</td>
+<td>\rm</td>
+<td><code>$\rm test$</code></td>
+<td>$\rm  test$</td>
+</tr>
+<tr>
+<td>黑体</td>
+<td>\bf</td>
+<td><code>$\bf test$</code></td>
+<td>$\bf  test$</td>
+</tr>
+<tr>
+<td>花体</td>
+<td>\cal</td>
+<td><code>$\cal test$</code></td>
+<td>$\cal test$</td>
+</tr>
+<tr>
+<td>倾斜体</td>
+<td>\sl</td>
+<td><code>$\sl test$</code></td>
+<td>$\sl  test$</td>
+</tr>
+<tr>
+<td>等线体</td>
+<td>\sf</td>
+<td><code>$\sf test$</code></td>
+<td>$\sf  test$</td>
+</tr>
+<tr>
+<td>数学斜体</td>
+<td>\mit</td>
+<td><code>$\mit test$</code></td>
+<td>$\mit test$</td>
+</tr>
+<tr>
+<td>打字机字体</td>
+<td>\tt</td>
+<td><code>$\tt test$</code></td>
+<td>$\tt  test$</td>
+</tr>
+<tr>
+<td>小体大写字母体</td>
+<td>\sc</td>
+<td><code>$\sc test$</code></td>
+<td>$\sc  test$</td>
+</tr>
+</tbody>
+</table>
+<p>注：<br>1）|、-、:之间的多余空格会被忽略，不影响布局。<br>2）默认标题栏居中对齐，内容居左对齐。<br>3） <code>-</code> :表示内容和标题栏居右对齐， <code>:-</code> 表示内容和标题栏居左对齐， <code>:-:</code> 表示内容和标题栏居中对齐。<br>4）内容和|之间的多余空格会被忽略，每行第一个|和最后一个|可以省略，-的数量至少有一个。</p>
+<h2 id="矩阵环境"><a href="#矩阵环境" class="headerlink" title="矩阵环境"></a>矩阵环境</h2><p>矩阵环境：array, matrix, bmatrix, Bmatrix, pmatrix, vmatrix, Vmatrix,<br>分段函数环境：cases<br>公式对齐环境：split, align, eqnarray, gathered  </p>
+<div style="width:100%"><br><table><br>    <tr><br>        <td><br>            $\left[\begin{matrix}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{matrix}\right]$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\left[\begin&#123;matrix&#125; </span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;matrix&#125;\right]$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br>    <tr><br>        <td><br>            $\left[\begin{array}{ccc}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{array}\right]$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\left[\begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;array&#125;\right]$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br>    <tr><br>        <td><br>            $\begin{bmatrix}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{bmatrix}$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\begin&#123;bmatrix&#125; </span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;bmatrix&#125;$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br>    <tr><br>        <td><br>            $\begin{Bmatrix}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{Bmatrix}$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\begin&#123;Bmatrix&#125; </span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;Bmatrix&#125;$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br>    <tr><br>        <td><br>            $\begin{vmatrix}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{vmatrix}$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\begin&#123;vmatrix&#125; </span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;vmatrix&#125;$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br>    <tr><br>        <td><br>            $\begin{Vmatrix}<br>            1 &amp; 2 &amp; 3 \\<br>            4 &amp; 5 &amp; 6 \\<br>            7 &amp; 8 &amp; 9<br>            \end{Vmatrix}$<br>        </td><br>        <td><br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$\begin&#123;Vmatrix&#125; </span><br><span class="line">1 &amp; 2 &amp; 3\\ </span><br><span class="line">4 &amp; 5 &amp; 6\\ </span><br><span class="line">7 &amp; 8 &amp; 9 </span><br><span class="line">\end&#123;Vmatrix&#125;$</span><br></pre></td></tr></table></figure><br><br>        </td><br>    </tr><br></table><br></div>
+
+
+
+
+
+
+
+
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p><a href="https://www.jianshu.com/p/e4d4433d418a" target="_blank" rel="noopener">cat4coffee</a><br><a href="https://www.jianshu.com/p/a0aa94ef8ab2" target="_blank" rel="noopener">ColdRomantic</a><br><a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">MathJax basic tutorial and quick reference</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Latex/" rel="tag"># Latex</a>
+          
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/18/LAMMPS_compute/" rel="next" title="LAMMPS | compute">
+                <i class="fa fa-chevron-left"></i> LAMMPS | compute
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/18/Windows_Tricks/" rel="prev" title="Windows | Tricks">
+                Windows | Tricks <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-number">1.</span> <span class="nav-text">安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何插入公式"><span class="nav-number">2.</span> <span class="nav-text">如何插入公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用语法"><span class="nav-number">3.</span> <span class="nav-text">常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#！！注意转义情况的发生"><span class="nav-number">3.1.</span> <span class="nav-text">！！注意转义情况的发生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下标"><span class="nav-number">3.2.</span> <span class="nav-text">上下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平方根"><span class="nav-number">3.3.</span> <span class="nav-text">平方根</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平线"><span class="nav-number">3.4.</span> <span class="nav-text">水平线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平大括号"><span class="nav-number">3.5.</span> <span class="nav-text">水平大括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矢量"><span class="nav-number">3.6.</span> <span class="nav-text">矢量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数"><span class="nav-number">3.7.</span> <span class="nav-text">分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#积分运算符"><span class="nav-number">3.8.</span> <span class="nav-text">积分运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希腊字母"><span class="nav-number">3.9.</span> <span class="nav-text">希腊字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体转换"><span class="nav-number">3.10.</span> <span class="nav-text">字体转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵环境"><span class="nav-number">4.</span> <span class="nav-text">矩阵环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

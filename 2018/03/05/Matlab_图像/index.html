@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="Matlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab图像">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/Matlab_图像/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-20T13:50:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Matlab图像">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/Matlab_图像/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Matlab图像 | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/Matlab_图像/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Matlab图像
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-05 22:11:27" itemprop="dateCreated datePublished" datetime="2018-03-05T22:11:27+08:00">2018-03-05</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-Q/" itemprop="url" rel="index"><span itemprop="name">Tech - Q</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description"><div style="float:left border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Matlab_SandClock.png?x-oss-process=style/style1" width="894" height="300"></div><div style="float:none;clear:both;"></div></div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="【常用函数介绍】"><a href="#【常用函数介绍】" class="headerlink" title="【常用函数介绍】"></a>【常用函数介绍】</h2><h3 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clc                 %清屏, 即Command Window里的内容会被清除掉，但变量的值仍在</span><br><span class="line">clear               %清除所有的变量</span><br><span class="line">close all           %关闭所有打开的图片</span><br></pre></td></tr></table></figure>
+<h3 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">doc function_name   %查看名为function_name的函数的用法</span><br><span class="line">help function_name  %同上，但是没有上面解释的详细</span><br></pre></td></tr></table></figure>
+<!-- 要用空格对齐！ -->
+<!-- Sublime注释快捷键[ctrl+/] -->
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">whos                %输出当前工作区中所有变量的属性</span><br><span class="line">whos Variable_name  %输出当前工作区中名为Variable_name的变量的属性</span><br><span class="line"></span><br><span class="line">mkdir(&apos;image&apos;)      %在Matlab主目录下创建一个文件夹, 名为image</span><br><span class="line">mkdir(&apos;D:\image&apos;)   %在D盘创建一个文件夹, 名为image</span><br></pre></td></tr></table></figure>
+<h2 id="【坐标轴设置】"><a href="#【坐标轴设置】" class="headerlink" title="【坐标轴设置】"></a>【坐标轴设置】</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f1=ezplot(<span class="string">'sinx'</span>);</span><br><span class="line"></span><br><span class="line">%设置x轴的显示范围，x坐标刻度数字的字体、大小</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'Xlim'</span>,([35 46]),<span class="string">'Fontname'</span>,<span class="string">'Arial'</span>,<span class="string">'Fontsize'</span>,25);</span><br><span class="line"></span><br><span class="line">%设置y轴的显示范围，坐标刻度，数字的字体、大小</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'Ylim'</span>,([0 2]),<span class="string">'ytick'</span>,[0.1 0.5 0.7],<span class="string">'yticklabel'</span>,&#123;<span class="string">'0.1'</span> <span class="string">'0.5'</span> <span class="string">'c'</span>&#125;,<span class="string">'Fontname'</span>,<span class="string">'Arial'</span>,<span class="string">'Fontsize'</span>,25);</span><br><span class="line"></span><br><span class="line">    %| <span class="string">'Ylim'</span>,([0 2]) |, 设置y轴的显示范围为[0 2]</span><br><span class="line">    %| <span class="string">'ytick'</span>,[0.1 0.5 0.7] |, 设置y轴只在y=0.1, y=0.5, y=0.7处显示刻度; 空缺表示不显示</span><br><span class="line">    %| <span class="string">'yticklabel'</span>,&#123;<span class="string">'0.1'</span> <span class="string">'0.5'</span> <span class="string">'c'</span>&#125; |, 设置y轴在y=0.1, y=0.5, y=0.7处的标签依次为0.1, 0.5, c; 空缺表示不显示</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p>
+
+<h2 id="【图片设置】"><a href="#【图片设置】" class="headerlink" title="【图片设置】"></a>【图片设置】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%以比例的方式设置图片在屏幕的显示位置，大小</span><br><span class="line">%x0, y0分别表示图片窗口的起始点在屏幕中的横纵位置,。如果起始点在屏幕的最左下角, 则x0为0, y0也为0;</span><br><span class="line">%Lx, Ly分别表示图片窗口的长度和高度</span><br><span class="line">%set(f1,&apos;units&apos;,&apos;normalized&apos;,&apos;position&apos;,[x0 y0 Lx Ly]); </span><br><span class="line">set(f1,&apos;units&apos;,&apos;normalized&apos;,&apos;position&apos;,[0 0 0.7 0.9]); </span><br><span class="line"></span><br><span class="line">%以比例的方式设置坐标轴在图片中的显示位置，大小</span><br><span class="line">%x0, y0分别表示图片的起始点在图片窗口的横纵位置,。如果起始点在图片窗口的最左下角, 则x0为0, y0也为0;</span><br><span class="line">%Lx, Ly分别表示图片的长度和高度；如果是比例，则表示图片窗口的比例</span><br><span class="line">%set(gca,&apos;units&apos;,&apos;normalized&apos;,&apos;Position&apos;,[x0 y0 Lx Ly]);             </span><br><span class="line">set(gca,&apos;units&apos;,&apos;normalized&apos;,&apos;Position&apos;,[.15 .15 .75 .75]);</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p>
+
+<h2 id="【图片标注】"><a href="#【图片标注】" class="headerlink" title="【图片标注】"></a>【图片标注】</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">%Math works有个文档叫Controlling Legends, 讲如何控制Legend。下例中，legend中跳过了图像h2。</span><br><span class="line">figure(1)</span><br><span class="line">x=0:0.1:1;</span><br><span class="line">y1=sin(x);</span><br><span class="line">y2=cos(x);</span><br><span class="line">y3=sin(x).*cos(x);</span><br><span class="line">h1=plot(x,y1);</span><br><span class="line">hold on</span><br><span class="line">h2=plot(x,y2);</span><br><span class="line">hold on</span><br><span class="line">h3=plot(x,y3);</span><br><span class="line">legend([h1 h3],&#123;<span class="string">'sinx'</span>,<span class="string">'sinx*cosx'</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p>
+
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h4 id="将矩阵的一部分取出并赋值"><a href="#将矩阵的一部分取出并赋值" class="headerlink" title="将矩阵的一部分取出并赋值"></a>将矩阵的一部分取出并赋值</h4><p>A=load(‘Zone_1.txt’);<br>A_sub=Data(2:10,3:9);                %将A的第2:10行，第3:9行赋值给A_sub。</p>
+<p></p><br><p></p>
+
+<hr>
+<h2 id="【读取图像】"><a href="#【读取图像】" class="headerlink" title="【读取图像】"></a>【读取图像】</h2><h3 id="读取内置图像"><a href="#读取内置图像" class="headerlink" title="读取内置图像"></a>读取内置图像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">I=imread(‘pout.tif’)                   %读取Matlab的内置图像<span class="string">'pout.tif'</span>, 并将值存储在变量I中。</span><br><span class="line">I=imread(<span class="string">'image\image_name.jpg'</span>)       %相对路径读取, image是Matlab主目录下的一个文件夹</span><br><span class="line">I=imread(<span class="string">'D:\image\image_name.jpg'</span>)    %绝对路径读取, image是D盘下的一个文件夹</span><br><span class="line"></span><br><span class="line">%循环读取多个图像</span><br><span class="line"><span class="keyword">for</span> i=1:20</span><br><span class="line">    I=imread([<span class="string">'D:\image\'</span>,num2str(i),<span class="string">'.jpg'</span>]);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h3 id="图像的值的意义"><a href="#图像的值的意义" class="headerlink" title="图像的值的意义"></a>图像的值的意义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">%读取图像I的属性</span><br><span class="line">&gt;&gt; whos I</span><br><span class="line">   Name        Size             Bytes  Class    Attributes</span><br><span class="line"></span><br><span class="line">   I         291x240            69840  uint8</span><br><span class="line"></span><br><span class="line">%输出图像I的值(只示一部分结果)，数值表示灰度值</span><br><span class="line">&gt;&gt; I</span><br><span class="line">    82    82    82    84    87    83    82    83    83    83    82    80</span><br><span class="line">    80    82    82    82    89    83    84    83    83    82    82    80</span><br><span class="line">    82    82    80    80    84    84    84    84    83    82    82    83</span><br><span class="line">    84    84    82    82    84    87    87    89    87    84    84    86</span><br><span class="line">    97    93    93    93    94    97    97    95    95    97    97    97</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h3 id="显示图像"><a href="#显示图像" class="headerlink" title="显示图像"></a>显示图像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">imshow(I)           %按照图像原始比例显示</span><br><span class="line">imtool(I)           %暂时用不到, 待补充</span><br><span class="line">image(I)            %暂时用不到, 待补充</span><br><span class="line"></span><br><span class="line">%如果只是让Matlab显示多张图片，而不对图片进行操作</span><br><span class="line">figure;</span><br><span class="line">imshow(I1)</span><br><span class="line">figure;</span><br><span class="line">imshow(I2)</span><br><span class="line">figure;</span><br><span class="line">imshow(I3)</span><br><span class="line"></span><br><span class="line">%如果既要让Matlab显示多张图片，又要对图片进行操作，则需要指定图像句柄</span><br><span class="line">f1=figure(1);</span><br><span class="line">imshow(I1)</span><br><span class="line">f2=figure(2);</span><br><span class="line">imshow(I2)</span><br><span class="line">f3=figure(3);</span><br><span class="line">imshow(I3)</span><br><span class="line"></span><br><span class="line">%在一张图中显示多个子图</span><br><span class="line">I=imread(<span class="string">'pout.tif'</span>);</span><br><span class="line">subplot(2,2,1);imshow(I);title(<span class="string">'1'</span>);</span><br><span class="line">subplot(2,2,2);imshow(I);title(<span class="string">'2'</span>);</span><br><span class="line">subplot(2,2,3);imshow(I);title(<span class="string">'3'</span>);</span><br><span class="line">subplot(2,2,4);imshow(I);title(<span class="string">'4'</span>);</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p>
+
+<hr>
+<h2 id="【存储图像】"><a href="#【存储图像】" class="headerlink" title="【存储图像】"></a>【存储图像】</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%将图像I存储为image_name.format, 路径为Matlab主目录。image_name是图片的名字；format是图片的格式, 可选jpg, png, tif等 </span><br><span class="line">imwrite(I,strcat(<span class="string">'image_name'</span>,<span class="string">'.format'</span>))</span><br><span class="line"></span><br><span class="line">%将图像I存储为image_name.format, 路径为D:\image                   </span><br><span class="line">imwrite(I,[<span class="string">'D:\image\'</span>, strcat(<span class="string">'image_name'</span>,<span class="string">'.format'</span>)])    </span><br><span class="line">													</span><br><span class="line"></span><br><span class="line">%循环存储多个图像</span><br><span class="line"><span class="keyword">for</span> i=1:20</span><br><span class="line">    imwrite(I, [<span class="string">'D:\image\'</span>,num2str(i),<span class="string">'.jpg'</span>]);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p><a href="https://www.zhihu.com/question/23230625" target="_blank" rel="noopener">https://www.zhihu.com/question/23230625</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Matlab/" rel="tag"># Matlab</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/03/网易云音乐/" rel="next" title="网易云音乐">
+                <i class="fa fa-chevron-left"></i> 网易云音乐
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/16/Software/" rel="prev" title="Software">
+                Software <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【常用函数介绍】"><span class="nav-number">1.</span> <span class="nav-text">【常用函数介绍】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化操作"><span class="nav-number">1.1.</span> <span class="nav-text">初始化操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Help"><span class="nav-number">1.2.</span> <span class="nav-text">Help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Others"><span class="nav-number">1.3.</span> <span class="nav-text">Others</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【坐标轴设置】"><span class="nav-number">2.</span> <span class="nav-text">【坐标轴设置】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【图片设置】"><span class="nav-number">3.</span> <span class="nav-text">【图片设置】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【图片标注】"><span class="nav-number">4.</span> <span class="nav-text">【图片标注】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-number">5.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将矩阵的一部分取出并赋值"><span class="nav-number">5.0.1.</span> <span class="nav-text">将矩阵的一部分取出并赋值</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#【读取图像】"><span class="nav-number">6.</span> <span class="nav-text">【读取图像】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取内置图像"><span class="nav-number">6.1.</span> <span class="nav-text">读取内置图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像的值的意义"><span class="nav-number">6.2.</span> <span class="nav-text">图像的值的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示图像"><span class="nav-number">6.3.</span> <span class="nav-text">显示图像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【存储图像】"><span class="nav-number">7.</span> <span class="nav-text">【存储图像】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

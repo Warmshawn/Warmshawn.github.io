@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="世界大国在互相约束停止核试验后，核武器的维持和更新失去了现实数据支持。各个国家转而投向了超级计算机，希望利用它们模拟爆炸来保持前端核研究的推进。只有科技领先，才能保持威慑力。">
+<meta name="keywords" content="HPC,Nuclear Power">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Never Ending Quest To Simulate Doomsday">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/The Never Ending Quest To Simulate Doomsday/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="世界大国在互相约束停止核试验后，核武器的维持和更新失去了现实数据支持。各个国家转而投向了超级计算机，希望利用它们模拟爆炸来保持前端核研究的推进。只有科技领先，才能保持威慑力。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_900x858.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_1146x1200.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearCore_645x1134.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoomHole_900x720.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/%E6%97%A5%E6%9C%AC%E5%BD%92%E8%BF%98%E7%BE%8E%E5%9B%BD%E5%86%B7%E6%88%98%E6%97%B6%E6%8F%90%E4%BE%9B%E7%9A%84%E6%AD%A6%E5%99%A8%E7%BA%A7%E9%92%9A.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/ParallelComputing_700x350.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/HPC-ORNL_900x506.jpg?x-oss-process=style/style1">
+<meta property="og:image" content="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/HPC-Rank2019.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_900X706.jpg?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-02-26T20:12:03.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Never Ending Quest To Simulate Doomsday">
+<meta name="twitter:description" content="世界大国在互相约束停止核试验后，核武器的维持和更新失去了现实数据支持。各个国家转而投向了超级计算机，希望利用它们模拟爆炸来保持前端核研究的推进。只有科技领先，才能保持威慑力。">
+<meta name="twitter:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_900x858.jpg?x-oss-process=style/style1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/29/The Never Ending Quest To Simulate Doomsday/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>The Never Ending Quest To Simulate Doomsday | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/The Never Ending Quest To Simulate Doomsday/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">The Never Ending Quest To Simulate Doomsday
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-29 22:00:00" itemprop="dateCreated datePublished" datetime="2018-11-29T22:00:00+08:00">2018-11-29</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-Q/" itemprop="url" rel="index"><span itemprop="name">Tech - Q</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">世界大国在互相约束停止核试验后，核武器的维持和更新失去了现实数据支持。各个国家转而投向了超级计算机，希望利用它们模拟爆炸来保持前端核研究的推进。只有科技领先，才能保持威慑力。 <div style="float:left"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBomb_650x365.png?x-oss-process=style/style1" width="894" height="312"></div></div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p>
+
+<h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><blockquote>
+<p>Latest Source: 环球科学<br>Original Source: Discovery<br>Author: Eric Betz<br>Translator: Dai Chen (戴晨)</p>
+</blockquote>
+<p>几十年前，美国研究人员制造了一个名叫Kearsarge的炸弹。在拿到炸弹元件后，他们在沙漠中进行了组装，并将放射性材料和高爆物质混合到了一起。在1988年8月的一天，工作人员将其放到内华达试验场一个数千英尺深的洞中，并埋在了数百万磅重的砂砾之下。</p>
+<p>30英里以外，时任洛斯阿拉莫斯国家实验室主任的Siegfried Hecker紧张地坐在控制中心。7位苏联核科学家全程观看着这一过程。在相当长的一段时间里，美国和苏联不断用更强大的武器执行了爆炸实验，双方都想在这场竞赛中展示自己的力量。如果当天的核武器试验顺利进行了，那么它可能是最后一场。</p>
+<p>引爆的命令发出了。Kearsarge爆发出的能量比广岛原子弹要多十倍。爆炸过程中来自炸弹的关键信号被电缆接收，并将十万原始数据点输送给了电脑。炸弹带来的大地震动，即使远在90英里以外的拉斯维加斯也能感受到。</p>
+<p>第二年，冷战结束了，那些震荡沙漠的日子也结束了。</p>
+<center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_900x858.jpg?x-oss-process=style/style1" alt="地爆"></center><br><center><font color="grey"> 1957年在地面上进行的核炸弹实验。| Omikron @Science Source</font></center>
+
+
+
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+
+
+<!--========== 1 ==========-->
+<h2 id="计算机时代的开始"><a href="#计算机时代的开始" class="headerlink" title="计算机时代的开始"></a><center>计算机时代的开始</center></h2><p><br></p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_1146x1200.jpg?x-oss-process=style/style1" alt="模拟"></center></p>
+<p><center><font color="grey"> Digital mushroom cloud | Kellie Jaeger @Discover</font></center></p>
+<p></p>
+
+
+<p>在1992年，时任美国总统的老不什忍痛签署了一份为期9个月的核武器试验暂停令。如果不使用核武器，美国就需要一种新的方法来证明自己武器的安全可靠。他们在创造这些核武器时预期能存放10-15年，其中有一些已经存在十多年了。</p>
+<p>由于科学家长期以来是基于理论模型对这些炸弹进行测试，对炸弹的物理性质了解并不完整。现在他们需要去预测，衰变的放射性元素会如何改变这些陈旧的武器的性能。</p>
+<p>从20世纪40年代的曼哈顿计划（Manhattan Project）开始，高性能计算机一直是武器实验室中的重要工具。如果不能在实际中在引爆炸弹，科学家只能转向模拟爆炸。但首先，他们需要一台比世界上现存计算机快1万倍的新计算机。</p>
+<p>现在，核武器的设计者再一次开始试图发起新的科技变革。美国花费了一万亿美金去更新它的核武器库，同时还花费了超过数十亿的美金来推动超级计算机的发展。计算机发展带来的一场新竞争又开始了，同时还给美国带来了新的竞争对手：中国。两个大国都在竞争建设第一台具有人脑计算能力的机器，它的出现会同时推动天气预报和医疗的发展。但是就像在过去的二十年中一样，这些新技术会为它真实的目标服务：翻新和维护我们的核炸弹。</p>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+<!--========== 2 ==========-->
+<h2 id="不爆炸的炸弹"><a href="#不爆炸的炸弹" class="headerlink" title="不爆炸的炸弹"></a><center>不爆炸的炸弹</center></h2><p><br><br>美国现代的核武器计划是一位工程师出身的官员Vic Reis设想出来的。他在前总统老布什的任期内领导了军队的研究机构，美国国防部高级研究计划局（DARPA）。随着前苏联的解体，人们针对核炸弹的未来展开了激烈的争论。武器实验室和军方想要重启核试验，而其他人想要把禁令无限期延长。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearCore_645x1134.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 核弹头就像是牛油果一样。它们都有一个内部核，称为核心（pit）。这个西柚大小的核心装置通常是中空的，里面充满了钚。弹头里有着目标向内的烈性炸药，以产生内爆。这种爆炸会挤压钚直到其密度过高被粉碎成了多个原子核，也就是说原子会裂开并释放巨大的能量。| Alex Wellerstein @Nuclearsecrecy.com </font></center></p>
+<p></p>
+
+
+
+<p>在Reis看来，美国已经引爆了上千颗核炸弹了。再多引爆几颗炸弹也不会加深对其的了解。而重要的是，想要在军事上领先，就需要开展一个对现有实验室有挑战性的项目。只有科技领先才能继续保持威慑力。如果核武器的研究不是以物理实验为基础，那还能是什么呢？</p>
+<p>为了弄清楚这个问题，Reis聚集了一批顶级科学家和主任，他们来自三个核武器实验室——洛斯·阿拉莫斯国家实验室和桑迪亚国家实验室，以及劳伦斯利弗莫尔国家实验室。他们聚集在一起负责研发这项新项目，研究经费与核武器实验持平，每年多达40亿到50亿美金左右，这些资金被用于建造世界上最大的计算机，且仅仅用来模拟炸弹爆炸。从1992年开始，所有的核试验都是模拟试验。但不是所有人都支持这一计划。许多保守的科学家认为计算机模拟不能取代实际试验。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoomHole_900x720.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 在内华达州丝兰平地上由于地下爆炸实验留下的弹坑，展示了冷战时期美国的核试验方式。| 洛斯阿拉莫斯国家实验室 @Science Source </font></center></p>
+<p></p>
+
+
+
+<p>洛斯·阿拉莫斯武器项目负责人Bob Webster表示，现实试验有一个好处，即可以在确定的温度、密度、压力等条件下研究爆炸。所以即使计算机可以进行模拟爆炸，我们仍需要进行物理实验来为计算机提供现实的参数，对模拟结果进行检验。</p>
+<p>当然要想实现计算机模拟，还有两个主要的障碍：没有完整理解的钚元素，以及缺乏足够的计算能力。</p>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+
+
+
+<h2 id="需要解决的基本问题"><a href="#需要解决的基本问题" class="headerlink" title="需要解决的基本问题"></a><center>需要解决的基本问题</center></h2><p><br><br>钚不是自然存在的元素。人们在1940年代创造了这种元素，而如何利用这种致命金属可能是曼哈顿计划面临的最大的挑战。没有人知道随着时间推移钚元素会如何衰变，这意味着没有人知道我们的核武器能保存多长时间。用新生产的核武器进行替代似乎不太可行，美国唯一的制钚工厂在1989年因为有毒废料泄露关闭了。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/%E6%97%A5%E6%9C%AC%E5%BD%92%E8%BF%98%E7%BE%8E%E5%9B%BD%E5%86%B7%E6%88%98%E6%97%B6%E6%8F%90%E4%BE%9B%E7%9A%84%E6%AD%A6%E5%99%A8%E7%BA%A7%E9%92%9A.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 日本归还美国冷战时提供的武器级钚 </font></center></p>
+<p></p>
+
+
+<p>此外，钚也不是唯一会衰变的元素，弹头上包含大量复杂的金属和电子器件，任何一个都可能因为存放时间过长产生问题。武器科学家并不能保证这些炸弹还能正常工作，他们认为这就像放了40年的古董，我们还期望能让它完美工作。</p>
+<p>在上世纪90年代，科学家认识到，要解决这些问题需要基础材料科学和物理学出现巨大进步。为了实现这一点，他们需要更好的计算机来测试老化的组件是如何改变一次核爆炸的，并且在武器还能使用之前找到答案。</p>
+<p>1965年提出的著名的摩尔定律认为计算机的速度每18个月翻一番。但研究人员估计，这个速度至少还得再增加一倍。幸运的是，研究人员已经有一个可行的选择。</p>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+
+
+
+<h2 id="提升速度"><a href="#提升速度" class="headerlink" title="提升速度"></a><center>提升速度</center></h2><p><br><br>数十年来，超级计算机一次只能解决一个问题。“我们可以把它想象成一根管道，” 超级计算机先驱、田纳西大学的Jack Dongarra这样解释。“你从管道的一头开始，沿着这根管道一直走，直到完成任务。”在Reis领导DARPA时，该机构把大量的经费用于建造革命性的大规模并行计算机。与单根管道不同的是，并行过程可以同时处理多个任务。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/ParallelComputing_700x350.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> Parallel Computing | verifyrecruitment.com </font></center></p>
+<p></p>
+
+
+
+<p>“人可以同时处理多个任务，这可以让你做事做得更快。”Dongarra说到。他是“世界超级计算机500强”榜单的联合创始人，这个半官方榜单展示了世界上最快计算机排名。但随着冷战的结束，大部分大规模并行计算机只在大学和工业研究实验室中使用，政府的需求则非常小。面对老化的核武器储备，Reis主动接手了这个问题，并在1995年启动了提高战略计算能力计划（ASCI）。</p>
+<p>之前的超级计算机利用定制元件制造，而ASCI想要全部用现成的普通电脑芯片和元件来制造。决定利用现成的组件被证明是革命性的，劳伦斯伯克利国家实验室的副主任Horst Simon表示。这使得像IBM和英特尔这样的科技公司得以将政府资助的科技成果出售给公众。“最终，民用计算机的科技也将进步，”他说道，“但是如果没有ASCI的投入，这种进步不会这么迅速。”</p>
+<p>在1996年，英特尔完成了这个项目的第一台超级计算机，称为ASCI Red。这台设备首次突破了万亿次浮点运算门槛，实现了每秒一万亿次计算。有了这个设备，桑迪亚一跃成为了拥有世界上最快计算机的实验室。</p>
+<p>4年后在劳伦斯利弗莫尔国家实验室，由IBM制造的ASCI White超过了ASCI Red。之后的十年，超级计算机不断发展。美国和日本的国家实验室相继吹嘘自己拥有了世界上最快的计算机，直到2010年中国突然取得了领导地位。一台中国制造的超级计算机——神威太湖一号横空出世，它几乎可以击败美国武器实验室里所有机器的总和。</p>
+<p>这对于美国来说，就像几十年前有国家抢先发射了人造卫星。直到今年6月美国才利用橡树林国家实验室的新“顶峰”超级计算机收回了第一的位置。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/HPC-ORNL_900x506.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 橡树林国家实验室在6月公布了它的“顶峰”超级计算机，这是目前世界上最快的超级计算机。| 橡树林国家实验室 </font></center></p>
+<p></p>
+
+
+
+<p>但是科学家说，这种你追我赶的现象这不是一场竞赛。因为世界面临的重大问题需要更快的超级计算机。这是一种自然而然的进步，而不是竞赛。而超级计算机的能做到的也不仅是改进核武器模拟。</p>
+<p>“这些计算机能帮助我们构建新的东西、解决问题、展望未来，” Dongarra表示，“如果你有最快的计算机，你就可以用更短的时间周期来解决这些问题。”</p>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+
+
+<h2 id="下一台超级计算机"><a href="#下一台超级计算机" class="headerlink" title="下一台超级计算机"></a><center>下一台超级计算机</center></h2><p><br><br>这也是为什么两个大国在下一代超级计算机发起竞争，也就是百万兆级别计算机。这样的计算机每秒可以完成百亿亿（10^18）次的计算。2021年左右,两个国家都有可能成为第一个上线百万兆级别计算机的国家。</p>
+<p>在过去的5年里，世界超级计算机500强的名单展示了一个令人担忧的趋势：超级计算机的发展速度没有想象中那么快。现在，它的发展速度已经跟不上核武器科学家和研究者需求。John Sarrao作为洛斯阿拉莫斯国家实验室理论、模拟和计算方面的副主任，管理着约700个核武器研究者。他表示，科学家已经有需要百万兆级别的计算机才能解决的问题。</p>
+<p><center><img src="https://warmshawn.oss-cn-beijing.aliyuncs.com/Science/HPC-Rank2019.png?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 世界超级计算机2019排名 | <a href="https://www.top500.org" target="_blank" rel="noopener">https://www.top500.org</a> </font></center></p>
+<p></p>
+
+
+<p>对Sarrao来说，理解钚元素的衰变是最迫切的。在2007年，一份报告认为在弹头内的钚元素衰变很缓慢，至少可以存在85到100年。Hecker不同意该结论，并主动要求在洛斯阿拉莫斯再次研究钚衰变。</p>
+<p>百万兆级别的计算机不仅仅能帮助我们制造更好的炸弹。它们可以用于模拟超精细级别的现象，比如复杂的洋流或是流经全身的血流。超级计算机甚至能用于建立气候模型，所以能力更强的计算机技术意味着更精准的天气预报。这些进步最终都会让公众受益。</p>
+<p>“百亿亿不是竞赛的终点，” Dongarra表示，只要内华达试验场还保持沉寂，世界还倾向于模拟爆炸，科学家和政府就会确保计算能力继续进步。“具有最快速的计算机就像是放在壁炉架上的战利品一样，”他表示，“真正的问题是，我们会用这样的设备研究什么科学项目。”</p>
+<p></p><br><p></p><br><p></p><br><p></p>
+
+
+
+
+
+<h2 id="模拟爆炸能拯救人类？"><a href="#模拟爆炸能拯救人类？" class="headerlink" title="模拟爆炸能拯救人类？"></a><center>模拟爆炸能拯救人类？</center></h2><p><br><br>即使在冷战巅峰之时，时任美国总统肯尼迪建议家庭建造辐射避难所，仍然有许多美国人怀疑是否真的会被核武器攻击。而如果真的发生了，大部分人认为他们会死在那个世界末日中。</p>
+<p>所以，你要如何让人们为一场未必会发生却又难以存活的灾难做准备呢？这对于应急管理人员来说仍是一个问题，美国新泽西州斯蒂文斯理工学院的核炸弹历史学家Alex Wellerstein表示。</p>
+<p>几年以前，他开展了一个项目来重新审视如何向美国人讲述核威胁的备战状态和风险。一开始，他的团队很难引起人们的兴趣。直到2017年，在朝鲜核试验之后，突然之间即使是美国联邦应急管理局也在寻求培训帮助。但是美国人，或者美国政府机构仍然没有做好应做的准备。</p>
+<p>Wellerstein希望他的研究能有所帮助。他表示，研究的目的不是要引起恐慌，而是希望人们把核爆炸当做实际存在的东西，而不是只会出现在好莱坞末日灾难片中。这些研究会提升人们生存的几率。</p>
+<p><center><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/NuclearBoom_900X706.jpg?x-oss-process=style/style1" alt></center></p>
+<p><center><font color="grey"> 好莱坞喜欢在灾难片中引爆它的故乡。但是当非营利性智库兰德公司（RAND Corporation）研究了核攻击对真实世界的影响的时候，他们发现其余波影响远超好莱坞的范围。在长滩附近港口的核爆炸——这里展示的是150千吨级爆炸——在重要的全球航运中心附近杀死了近6万人。但是紧接着会发生混乱，有6百万人逃离洛杉矶，全球的航运需要寻找新的路线，保险公司破产，美国西海岸需要寻找新的汽油来源。| Zach Bush </font></center></p>
+<p></p>
+
+
+
+<p>超级计算机的历史可以分为三个时期，劳伦斯伯克利国家实验室副主任Horst Simon表示，“如果你想砍掉亚马逊雨林的树，你可以用一台电锯，100只海狸或是一百万只蚂蚁。”</p>
+<p>链锯代表了早期的超级计算机——价格贵、性能高，但是一次只能砍一棵树。海狸解决一棵树的时间更长，但是考虑到有100只同时工作，所以他们最终更有效率。这就是大规模并行超级计算机，也是现在的主导者。</p>
+<p>现在行业想要向蚂蚁推进——也就是由小型部件构成的百亿亿级别超级计算机。这些部件数量大，使用能量少，将能更快地完成项目。<br><br><br></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p><a href="http://discovermagazine.com/2018/sep/the-nuclear-options" target="_blank" rel="noopener">环球科学</a></p>
+</blockquote>
+<h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>《环球科学》是《科学美国人(Scientific American)》的中文版，超过70%的文章来自《科学美国人》英文版和其他版本，适合高科技企业管理者、专业技术人才、科研工作者、教师、以及所有科学爱好者阅读。这是一本以普及科学知识、培育民族科学精神为宗旨，以立足中国、人文视角、实用导向为编辑方针的科普读物，力求文风活泼轻松，语言简明易懂，及时报道全球最新科学成果以及科技对人类未来商业、文化、伦理和政治等方面的深刻影响。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HPC/" rel="tag"># HPC</a>
+          
+            <a href="/tags/Nuclear-Power/" rel="tag"># Nuclear Power</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/04/Ion Beam Science/" rel="next" title="Ion Beam Science">
+                <i class="fa fa-chevron-left"></i> Ion Beam Science
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/29/Hexo-1.环境搭建/" rel="prev" title="Hexo-环境搭建">
+                Hexo-环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#导读"><span class="nav-number">1.</span> <span class="nav-text">导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机时代的开始"><span class="nav-number">2.</span> <span class="nav-text">计算机时代的开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不爆炸的炸弹"><span class="nav-number">3.</span> <span class="nav-text">不爆炸的炸弹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要解决的基本问题"><span class="nav-number">4.</span> <span class="nav-text">需要解决的基本问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升速度"><span class="nav-number">5.</span> <span class="nav-text">提升速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一台超级计算机"><span class="nav-number">6.</span> <span class="nav-text">下一台超级计算机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟爆炸能拯救人类？"><span class="nav-number">7.</span> <span class="nav-text">模拟爆炸能拯救人类？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About"><span class="nav-number">9.</span> <span class="nav-text">About</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

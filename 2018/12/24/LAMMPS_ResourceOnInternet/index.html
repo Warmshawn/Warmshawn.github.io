@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Potentials Interatomic Potentials Repository, NIST (National Institute os Standards and Technology) This repository provides a source for interatomic potentials (force fields), related files, and eval">
+<meta name="keywords" content="LAMMPS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | Accessible Resource On Internet">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/LAMMPS_ResourceOnInternet/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="Potentials Interatomic Potentials Repository, NIST (National Institute os Standards and Technology) This repository provides a source for interatomic potentials (force fields), related files, and eval">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-21T12:37:50.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | Accessible Resource On Internet">
+<meta name="twitter:description" content="Potentials Interatomic Potentials Repository, NIST (National Institute os Standards and Technology) This repository provides a source for interatomic potentials (force fields), related files, and eval">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/24/LAMMPS_ResourceOnInternet/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LAMMPS | Accessible Resource On Internet | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/LAMMPS_ResourceOnInternet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LAMMPS | Accessible Resource On Internet
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-24 10:49:18" itemprop="dateCreated datePublished" datetime="2018-12-24T10:49:18+08:00">2018-12-24</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-Q/" itemprop="url" rel="index"><span itemprop="name">Tech - Q</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Potentials"><a href="#Potentials" class="headerlink" title="Potentials"></a>Potentials</h2><ol>
+<li><p><a href="https://www.ctcms.nist.gov/potentials/" target="_blank" rel="noopener">Interatomic Potentials Repository</a>, NIST (National Institute os Standards and Technology)<br> This repository provides a source for interatomic potentials (force fields), related files, and evaluation tools to help researchers obtain interatomic models and judge their quality and applicability. Users are encouraged to download and use interatomic potentials, with proper acknowledgement, and developers are welcome to contribute potentials for inclusion. The files provided have been submitted or vetted by their developers and appropriate references are provided. All classes of potentials (e.g., MEAM, ADP, COMB, Reax, EAM, etc.) and materials are welcome. Interatomic potentials and/or related files are currently available for various metals, semiconductors, oxides, and carbon-containing systems.</p>
+</li>
+<li><p><a href="https://github.com/lammps/lammps/tree/master/potentials" target="_blank" rel="noopener">Github - LAMMPS</a></p>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p><a href="https://openkim.org/" target="_blank" rel="noopener">OPenKIM</a><br> OpenKIM is an online framework for making molecular simulations reliable, reproducible, and portable. Computer implementations of interatomic models are archived in OpenKIM, verified for coding integrity, and tested by computing their predictions for a variety of material properties. Models conforming to the KIM application programming interface (API) work seamlessly with major simulation codes that have adopted the KIM API standard.</p>
+</li>
+<li><p><a href="https://sites.google.com/site/akohlmey/" target="_blank" rel="noopener">Axel Kohlmeyer</a><br> My current position is that of a Full Professor of Research in the Chemistry department of the College of Science and Technology as well as Associate Director of the Institute for Computational Molecular Science and Assistant Vice President for High-Performance Computing, all at Temple University in Philadelphia, PA. Previously i was working as Senior Scientific Computing Expert on a project assignment in the Information and Communication Technology Section at the Abdus Salam International Centre for Theoretical Physics in Trieste, Italy, and I am still advising them and collaborating with them on projects related to High-Performance Computing.</p>
+</li>
+</ol>
+<ol>
+<li><a href="https://www.potfit.net/wiki/doku.php" target="_blank" rel="noopener">potfit</a><br> potfit is a free implementation of the force-matching algorithm to generate effective potentials from ab-initio reference data.</li>
+</ol>
+<p></p><br><p></p>
+
+
+
+
+
+<h2 id="Visualization-Software"><a href="#Visualization-Software" class="headerlink" title="Visualization Software"></a>Visualization Software</h2><ol>
+<li><p><a href="http://www.ovito.org/" target="_blank" rel="noopener">Ovito</a><br> OVITO is a scientific visualization and analysis software for atomistic and particle simulation data. It helps scientists gain better insights into materials phenomena and physical processes. The program is freely available for all major platforms under an open source license. It has served in a growing number of computational simulation studies as a powerful tool to analyze, understand and illustrate simulation results.</p>
+</li>
+<li><p><a href="http://www.ks.uiuc.edu/Research/vmd/" target="_blank" rel="noopener">VMD</a><br> VMD is designed for modeling, visualization, and analysis of biological systems such as proteins, nucleic acids, lipid bilayer assemblies, etc. It may be used to view more general molecules, as VMD can read standard Protein Data Bank (PDB) files and display the contained structure. VMD provides a wide variety of methods for rendering and coloring a molecule: simple points and lines, CPK spheres and cylinders, licorice bonds, backbone tubes and ribbons, cartoon drawings, and others. VMD can be used to animate and analyze the trajectory of a molecular dynamics (MD) simulation. In particular, VMD can act as a graphical front end for an external MD program by displaying and animating a molecule undergoing simulation on a remote computer.</p>
+</li>
+<li><p><a href="https://www.diffpy.org/" target="_blank" rel="noopener">DiffPy</a><br> A free and open source software project to provide python software for diffraction analysis and the study of the atomic structure of materials.</p>
+<p> The project is currently centered at Brookhaven National Laboratory, a US Department of Energy, Office of Basic Energy Sciences funded laboratory. Many parts of the code were developed under the diffraction part of the DANSE project, a software construction project funded by the National Science Foundation to provide data analysis software tools for neutron scattering experiments. This project was previously centered at Columbia University and, before that, Michigan State University.</p>
+</li>
+<li><p><a href="http://www.numericalsolutions.org/software.html" target="_blank" rel="noopener">Numerical Solutions, Inc.</a><br> Numerical Solutions, Inc. (NSI) is a scientific consulting group with broad experience in numerical and computational mathematics, engineering, physics, and chemistry. We work together with our partners and clients to develop scientific questions, numerical methods, and software implementations for their efficient solution.</p>
+</li>
+<li><p><a href="http://mdlab.sourceforge.net/" target="_blank" rel="noopener">MDLab</a><br> MDLab is a user-friendly environment for prototyping molecular dynamics simulation protocols and numerical methods, built with the scripting language Python. Our goal is to provide developers of propagator scheme and force computation algorithms with (1) mathematical syntax which enables them to develop these methods using array and matrix operations, and (2) a set of domain-specific libraries which enable testing and debugging of these methods using real biological systems.</p>
+</li>
+<li><p><a href="http://li.mit.edu/Archive/Graphics/A/" target="_blank" rel="noopener">AtomEye</a></p>
+</li>
+<li><p><a href="https://www.szfki.hu/~nphys/rmcsans++/AtomEye.html" target="_blank" rel="noopener">AtomEye3.1 configuration viewer</a><br> AtomEye is originally written by J. Li and modified to create AtomEye3 by S. Futoshi. It is a Linux –based software capable of visualizing atomistic configurations.</p>
+<p> In order to be able to use AtomEye easily to display larger sphere with custom size, and to display a sequence of configurations created by RMCSANS, and wait for the new configurations if they are not yet available, AtomEye had to be modified.</p>
+</li>
+<li><p><a href="https://imagej.nih.gov/ij/" target="_blank" rel="noopener">ImageJ</a>  </p>
+</li>
+<li><p><a href="https://www.scientificlinux.org/" target="_blank" rel="noopener">Scientific Linux</a><br> Scientific Linux is an Enterprise Linux rebuild sponsored by Fermi National Accelerator Laboratory.</p>
+</li>
+</ol>
+<h2 id="Courses"><a href="#Courses" class="headerlink" title="Courses"></a>Courses</h2><p>Here are some courses provided by universities and institutions.</p>
+<h3 id="Introduction-to-Atomistic-Simulations"><a href="#Introduction-to-Atomistic-Simulations" class="headerlink" title="Introduction to Atomistic Simulations"></a><a href="http://people.virginia.edu/~lz2n/mse627/" target="_blank" rel="noopener">Introduction to Atomistic Simulations</a></h3><ul>
+<li>Recommendation: ★★★★  </li>
+<li>Topics that will be covered include:<ul>
+<li><ol>
+<li>Introduction</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>Example of continuum modeling: Conduction/diffusion equation</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>Atomistic models: Molecular dynamics</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>Monte Carlo methods</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>Interatomic potentials</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>Analysis of the simulation results</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>Mesoscopic methods (time permitting)  </li>
+</ol>
+</li>
+<li><ol start="8">
+<li>Bridging the scale gaps between different simulation levels</li>
+</ol>
+</li>
+<li><ol start="9">
+<li>Codes to be provided</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Provided by University of Virginia (弗吉尼亚大学), Department of Materials Science and Engineering, USA, 2018</li>
+</ul>
+<h3 id="Atomic-Scale-Simulation-MatSE485-Phys466-CSE485"><a href="#Atomic-Scale-Simulation-MatSE485-Phys466-CSE485" class="headerlink" title="Atomic-Scale Simulation MatSE485/Phys466/CSE485"></a><a href="https://courses.physics.illinois.edu/phys466/sp2013/links.html" target="_blank" rel="noopener">Atomic-Scale Simulation MatSE485/Phys466/CSE485</a></h3><ul>
+<li>待查阅，资料还挺多的</li>
+</ul>
+<h3 id="Computational-Methods-of-Physics"><a href="#Computational-Methods-of-Physics" class="headerlink" title="Computational Methods of Physics"></a><a href="http://www.physics.udel.edu/~bnikolic/teaching/phys660/lectures.html" target="_blank" rel="noopener">Computational Methods of Physics</a></h3><p>比较老，最近活跃是在2012. 特拉华大学</p>
+<h3 id="Molecular-Simulation"><a href="#Molecular-Simulation" class="headerlink" title="Molecular Simulation"></a><a href="http://www.eng.buffalo.edu/~kofke/ce530/index.html" target="_blank" rel="noopener">Molecular Simulation</a></h3><p>也比较老。纽约州立大学</p>
+<h3 id="MATHERIALS"><a href="#MATHERIALS" class="headerlink" title="MATHERIALS"></a><a href="https://team.inria.fr/matherials/" target="_blank" rel="noopener">MATHERIALS</a></h3><p>国立路桥学院, 法国巴黎</p>
+<h3 id="Computer-Simulation-Course"><a href="#Computer-Simulation-Course" class="headerlink" title="Computer Simulation Course"></a><a href="http://research.chem.psu.edu/shsgroup/chem647/" target="_blank" rel="noopener">Computer Simulation Course</a></h3><p>该课程是由shsgroup开设，课程比较老，最近活跃是在2009.这个时候是在The Pennsylvania State University(PSU, 宾夕法尼亚州立大学, 美国)<br>直接解析网址往回查找，发现重定向到了一个新的网站， <a href="https://www.hammes-schiffer-group.org" target="_blank" rel="noopener">The Hammes-Schiffer Research Group</a>， 这个时候是在Yale University (Yale, 康涅狄格州, 美国).</p>
+<h3 id="PRACE"><a href="#PRACE" class="headerlink" title="PRACE"></a><a href="http://www.prace-ri.eu/" target="_blank" rel="noopener">PRACE</a></h3><p>PRACE是欧洲超级计算联合平台(Partnership for Advanced Computing in Europe), 该平台由分布于西班牙(BSC)、意大利(CINECA)、德国(BSC)、法国(GENCI)、瑞士(ETH Zurich/CSCS)的五个子超算中心共同构成, 在这里你可以获得很多帮助。<br>The mission of PRACE is to enable high-impact scientific discovery and engineering research and development across all disciplines to enhance European competitiveness for the benefit of society. PRACE seeks to realise this mission by offering world class computing and data management resources and services through a peer review process.  </p>
+<h3 id="ARCHER"><a href="#ARCHER" class="headerlink" title="ARCHER"></a><a href="http://www.archer.ac.uk/training/" target="_blank" rel="noopener">ARCHER</a></h3><p>ARCHER是英国国家超级计算中心，该中心位于The University of Edinburgh (爱丁堡大学，爱丁堡·苏格兰·英国）在这里你可以获得很多帮助.<br>ARCHER, i.e. Advanced Research Computing High End Resource, is the latest UK National Supercomputing Service. The ARCHER Service started in November 2013 and is expected to run for 5 years. ARCHER provides a capability resource to allow researchers to run simulations and calculations that require large numbers of processing cores working in a tightly-coupled, parallel fashion.</p>
+<h3 id="Prof-Kai-Nordlund"><a href="#Prof-Kai-Nordlund" class="headerlink" title="Prof. Kai Nordlund"></a><a href="http://www.acclab.helsinki.fi/~knordlun/" target="_blank" rel="noopener">Prof. Kai Nordlund</a></h3><ul>
+<li>Recommendation: ★★★★★<br>Kai Nordlund is professor of computational materials physics and dean of the Faculty of Science at the University of Helsinki. He received his PhD in physics in 1995 at the University of Helsinki, and after postdoc positions at the University of Illinois and Academy of Finland was appointed full professor at his alma mater in 2003. He is leading a 20-person research group doing quantum mechanical, classical and mesoscale atomistic simulations of radiation and other non-equilibrium effects in all classes of materials. As of 2018, he has published more than 510 refereed publications, and his h-index exceeds his age.</li>
+</ul>
+<h3 id="WorkShop-in-NIST"><a href="#WorkShop-in-NIST" class="headerlink" title="WorkShop in NIST"></a><a href="https://www.ctcms.nist.gov/potentials/Download/2018Workshop/" target="_blank" rel="noopener">WorkShop in NIST</a></h3><ul>
+<li>Recommendation: ★★★★<br>学习一下以前的workshop。</li>
+</ul>
+<h3 id="LAMMPS-Movies"><a href="#LAMMPS-Movies" class="headerlink" title="LAMMPS Movies"></a><a href="https://lammps.sandia.gov/movies.html" target="_blank" rel="noopener">LAMMPS Movies</a></h3><ul>
+<li>Recommendation: ★★★★<br>看看别人做的，给自己以启发。</li>
+</ul>
+<h3 id="Integrated-Computational-Material-Engineering-ICME"><a href="#Integrated-Computational-Material-Engineering-ICME" class="headerlink" title="Integrated Computational Material Engineering (ICME)"></a><a href="https://icme.hpc.msstate.edu/mediawiki/index.php/Main_Page" target="_blank" rel="noopener">Integrated Computational Material Engineering (ICME)</a></h3><ul>
+<li>Recommendation: ★★★★★<br>Integrated Computational Material Engineering (ICME) is an emerging discipline transforming materials science. Computational engineering accelerates materials development, integrates design and manufacturing, and unifies these with the engineering design optimization process, as well as efficiently employs greater accuracy in simulation-based design。</li>
+</ul>
+<h3 id="Workshops-in-Max-Plack-Institut"><a href="#Workshops-in-Max-Plack-Institut" class="headerlink" title="Workshops in Max-Plack-Institut"></a><a href="https://www.pks.mpg.de/~bemod12/Slides/" target="_blank" rel="noopener">Workshops in Max-Plack-Institut</a></h3><h3 id="Dr-Ruifeng-Zhang-webpage"><a href="#Dr-Ruifeng-Zhang-webpage" class="headerlink" title="Dr. Ruifeng Zhang webpage"></a><a href="https://sites.google.com/site/zrftum/home/links" target="_blank" rel="noopener">Dr. Ruifeng Zhang webpage</a></h3><p>Dr. Ruifeng Zhang在这里总结了很多相关的内容。</p>
+<h3 id="Understanding-Molecular-Simulations"><a href="#Understanding-Molecular-Simulations" class="headerlink" title="Understanding Molecular Simulations"></a><a href="http://www.cchem.berkeley.edu/chem195/index.html" target="_blank" rel="noopener">Understanding Molecular Simulations</a></h3><p>内容很多，涉及Matlab在势函数的使用。</p>
+<h3 id="MATLAB在分子动力学的应用"><a href="#MATLAB在分子动力学的应用" class="headerlink" title="MATLAB在分子动力学的应用"></a><a href="http://people.sc.fsu.edu/~jburkardt/m_src/md/md.html" target="_blank" rel="noopener">MATLAB在分子动力学的应用</a></h3><p>最近一次活跃是在2018/10/19</p>
+<h3 id="MD-simulation-of-crack-propagation-in-brittle-crystals"><a href="#MD-simulation-of-crack-propagation-in-brittle-crystals" class="headerlink" title="MD simulation of crack propagation in brittle crystals "></a><a href="http://phelafel.technion.ac.il/~bbliron/manual.html" target="_blank" rel="noopener">MD simulation of crack propagation in brittle crystals </a></h3><p>值得学习，使用的是lammps</p>
+<h3 id="Atomic-Simulation-Environment"><a href="#Atomic-Simulation-Environment" class="headerlink" title="Atomic Simulation Environment"></a><a href="https://wiki.fysik.dtu.dk/ase/ase/calculators/lammps.html#module-ase.calculators.lammps" target="_blank" rel="noopener">Atomic Simulation Environment</a></h3><p>一个综合平台，必须学习之。讲了很多东西！！<br>回溯解析网址，发现<a href="https://wiki.fysik.dtu.dk/" target="_blank" rel="noopener">CAMPOS-Wiki</a>, 去学习一个。</p>
+<h3 id="Modeling-Materials"><a href="#Modeling-Materials" class="headerlink" title="Modeling Materials"></a><a href="http://www.modelingmaterials.org/home" target="_blank" rel="noopener">Modeling Materials</a></h3><p>主要讲作者关于MD的两本书 $Modeling Materials$,  $Continuum Mechanics and Thermodynamics$. 作者的代码是fortran&amp;C. 也讲了一下MD的其他东西。</p>
+<h3 id="Slip-Transmission-Matlab-toolbox"><a href="#Slip-Transmission-Matlab-toolbox" class="headerlink" title="Slip Transmission Matlab toolbox"></a><a href="https://stabix.readthedocs.io/en/latest/" target="_blank" rel="noopener">Slip Transmission Matlab toolbox</a></h3><p>一个作者自建的Matlab工具，用于分析晶粒。这个哥们做得很好，还有他的博士论文,去他们学校的<a href="https://d.lib.msu.edu/etd/16479" target="_blank" rel="noopener">图书馆</a>就能找到PhD thesis。</p>
+<h3 id="SoftSimu-the-Karttunen-Group"><a href="#SoftSimu-the-Karttunen-Group" class="headerlink" title="SoftSimu - the Karttunen Group"></a><a href="http://www.softsimu.net/downloads.shtml" target="_blank" rel="noopener">SoftSimu - the Karttunen Group</a></h3><p>做大分子动力学模拟的，很新。</p>
+<h3 id="OpenMM"><a href="#OpenMM" class="headerlink" title="OpenMM"></a><a href="https://simtk.org/projects/openmm" target="_blank" rel="noopener">OpenMM</a></h3><p>没看懂他说的是拿来干嘛的</p>
+<h3 id="Atomic-Scale-Simulation"><a href="#Atomic-Scale-Simulation" class="headerlink" title="Atomic-Scale Simulation"></a><a href="https://courses.physics.illinois.edu/phys466/sp2013/projects/" target="_blank" rel="noopener">Atomic-Scale Simulation</a></h3><p>很棒，还有代码</p>
+<h3 id="Debyer"><a href="#Debyer" class="headerlink" title="Debyer"></a><a href="https://debyer.readthedocs.io/en/latest/" target="_blank" rel="noopener">Debyer</a></h3><p>Debyer can calculate diffraction pattern (from Debye’s scattering equation), pair distribution function and a few other statistics of an atomistic model.]</p>
+<h3 id="Kedharnath’s-Site"><a href="#Kedharnath’s-Site" class="headerlink" title="Kedharnath’s Site"></a><a href="https://kedharnath1992.wordpress.com" target="_blank" rel="noopener">Kedharnath’s Site</a></h3><p>这位印度老哥让我增长了很多见识, 是个引路人(The guider for a lost boy)。看了他的博文<a href="https://kedharnath1992.wordpress.com/2016/07/21/life-metallurgy/" target="_blank" rel="noopener">Life &amp; Metallurgy</a>，知道是个人文素养过的人。<br>老哥在Google Scohlar的主页: <a href="https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_154580285063614&amp;key=5229d68d9dbd9c51df83a3e2aa5d9234&amp;libId=jpxr5ttz0102syag000DLgxwu1ybz&amp;subId=8982&amp;loc=https%3A%2F%2Fkedharnath1992.wordpress.com%2F&amp;v=1&amp;out=https%3A%2F%2Fscholar.google.co.in%2Fcitations%3Fuser%3DqcX-mnsAAAAJ%26hl%3Den&amp;ref=https%3A%2F%2Fkedharnath1992.wordpress.com%2Fcategory%2Fgrain-boundary%2F&amp;title=Kedharnath%27s%20Site%20%7C%20Find%20possibilities%20in%20impossibles&amp;txt=" target="_blank" rel="noopener">Kedharnath Arumugakani</a><br>在Research Gate的主页: <a href="https://www.researchgate.net/profile/Kedharnath_Arumugakani" target="_blank" rel="noopener">Kedharnath Arumugakani</a><br>在Mendeley的主页: <a href="https://www.mendeley.com/profiles/kedharnath-a/" target="_blank" rel="noopener">Kedharnath A.</a><br>在Youtube的主页: <a href="https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_154580279842713&amp;key=5229d68d9dbd9c51df83a3e2aa5d9234&amp;libId=jpxr5ttz0102syag000DLgxwu1ybz&amp;subId=8982&amp;loc=https%3A%2F%2Fkedharnath1992.wordpress.com%2F&amp;v=1&amp;out=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCtYe7nddoBm55yApyroTfpw&amp;ref=https%3A%2F%2Fkedharnath1992.wordpress.com%2Fcategory%2Fgrain-boundary%2F&amp;title=Kedharnath%27s%20Site%20%7C%20Find%20possibilities%20in%20impossibles&amp;txt=" target="_blank" rel="noopener">A. Kedharnath</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/Hexo-文章代码显示/" rel="next" title="Hexo | 文章代码显示">
+                <i class="fa fa-chevron-left"></i> Hexo | 文章代码显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/MD_AnimationOfCollisionCascade/" rel="prev" title="MD | Animation of Collision Cascade">
+                MD | Animation of Collision Cascade <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Potentials"><span class="nav-number">1.</span> <span class="nav-text">Potentials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualization-Software"><span class="nav-number">2.</span> <span class="nav-text">Visualization Software</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Courses"><span class="nav-number">3.</span> <span class="nav-text">Courses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-to-Atomistic-Simulations"><span class="nav-number">3.1.</span> <span class="nav-text">Introduction to Atomistic Simulations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Atomic-Scale-Simulation-MatSE485-Phys466-CSE485"><span class="nav-number">3.2.</span> <span class="nav-text">Atomic-Scale Simulation MatSE485/Phys466/CSE485</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computational-Methods-of-Physics"><span class="nav-number">3.3.</span> <span class="nav-text">Computational Methods of Physics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Molecular-Simulation"><span class="nav-number">3.4.</span> <span class="nav-text">Molecular Simulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MATHERIALS"><span class="nav-number">3.5.</span> <span class="nav-text">MATHERIALS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computer-Simulation-Course"><span class="nav-number">3.6.</span> <span class="nav-text">Computer Simulation Course</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PRACE"><span class="nav-number">3.7.</span> <span class="nav-text">PRACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARCHER"><span class="nav-number">3.8.</span> <span class="nav-text">ARCHER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prof-Kai-Nordlund"><span class="nav-number">3.9.</span> <span class="nav-text">Prof. Kai Nordlund</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WorkShop-in-NIST"><span class="nav-number">3.10.</span> <span class="nav-text">WorkShop in NIST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAMMPS-Movies"><span class="nav-number">3.11.</span> <span class="nav-text">LAMMPS Movies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integrated-Computational-Material-Engineering-ICME"><span class="nav-number">3.12.</span> <span class="nav-text">Integrated Computational Material Engineering (ICME)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Workshops-in-Max-Plack-Institut"><span class="nav-number">3.13.</span> <span class="nav-text">Workshops in Max-Plack-Institut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dr-Ruifeng-Zhang-webpage"><span class="nav-number">3.14.</span> <span class="nav-text">Dr. Ruifeng Zhang webpage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-Molecular-Simulations"><span class="nav-number">3.15.</span> <span class="nav-text">Understanding Molecular Simulations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MATLAB在分子动力学的应用"><span class="nav-number">3.16.</span> <span class="nav-text">MATLAB在分子动力学的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD-simulation-of-crack-propagation-in-brittle-crystals"><span class="nav-number">3.17.</span> <span class="nav-text">MD simulation of crack propagation in brittle crystals </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Atomic-Simulation-Environment"><span class="nav-number">3.18.</span> <span class="nav-text">Atomic Simulation Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modeling-Materials"><span class="nav-number">3.19.</span> <span class="nav-text">Modeling Materials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Slip-Transmission-Matlab-toolbox"><span class="nav-number">3.20.</span> <span class="nav-text">Slip Transmission Matlab toolbox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SoftSimu-the-Karttunen-Group"><span class="nav-number">3.21.</span> <span class="nav-text">SoftSimu - the Karttunen Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenMM"><span class="nav-number">3.22.</span> <span class="nav-text">OpenMM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Atomic-Scale-Simulation"><span class="nav-number">3.23.</span> <span class="nav-text">Atomic-Scale Simulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debyer"><span class="nav-number">3.24.</span> <span class="nav-text">Debyer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kedharnath’s-Site"><span class="nav-number">3.25.</span> <span class="nav-text">Kedharnath’s Site</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="费米科技的产品介绍 - ReaxFF模块">
+<meta name="keywords" content="ReaxFF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simulation | FermiTech_SCM">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/Simulation_FermiTech_SCM/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="费米科技的产品介绍 - ReaxFF模块">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-26T19:23:45.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Simulation | FermiTech_SCM">
+<meta name="twitter:description" content="费米科技的产品介绍 - ReaxFF模块">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/Simulation_FermiTech_SCM/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Simulation | FermiTech_SCM | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/Simulation_FermiTech_SCM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Simulation | FermiTech_SCM
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-18 12:44:29" itemprop="dateCreated datePublished" datetime="2019-02-18T12:44:29+08:00">2019-02-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">费米科技的产品介绍 - ReaxFF模块</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="FF-Optimizer-Force-Field-Optimizer"><a href="#FF-Optimizer-Force-Field-Optimizer" class="headerlink" title="FF Optimizer: (Force Field Optimizer)"></a>FF Optimizer: (Force Field Optimizer)</h2><p>A framework for force field parameter optimization.<br>The FF Optimizer is a base module that can be extended with other modules that implement specific optimization methods. The base FF Optimizer module offers methods to compute the cost function (also known as the error or the fitness function) and its first and second derivatives with respect to the force-field parameter values. Besides that, there are two extensions available that implement global optimization methods: Monte-Carlo (MCFF) and Covariance Matrix Adaptation Evolution Strategy (CMA-ES).<br>力场优化模块提供方法计算价值函数(亦作误差函数、适配函数)及其关于各个力场参量的一阶导数和二阶导数。此外, 还有两个可选的扩展优化方法MCFF(蒙卡力场优化)和CMA-ES(协方差矩阵适应演化策略).</p>
+<h2 id="Input-files-common-for-all-optimizers"><a href="#Input-files-common-for-all-optimizers" class="headerlink" title="Input files common for all optimizers"></a>Input files common for all optimizers</h2><p>In order to optimize a ReaxFF forcefield, the files listed below must be present in the directory where the reaxff program is executed.<br>为了优化反应力场, 下面的文件需放置在Reaxff程序运行的目录下.</p>
+<ul>
+<li><p>iopt<br>file containing a line of text with a single number on it. To use the basic FFOptimizer features this file must contain 6. See the <code>ffoact</code> description below for more details.</p>
+</li>
+<li><p><a href="https://www.scm.com/doc/ReaxFF/ffield_descrp.html#ffield" target="_blank" rel="noopener">ffield</a><br>the initial force-field file.<br>初始力场文件</p>
+</li>
+<li><p>control<br>in addition to general ReaxFF control parameters it may also contain the FFOptimizer-related ones explained in the corresponding sections.</p>
+</li>
+<li><p><a href="https://www.scm.com/doc/ReaxFF/trainset_descrp.html#trainset-in" target="_blank" rel="noopener">trainset.in</a><br>file with test values from the training set, the same as in the original reaxff force-field optimization, see page 27 of the ReaxFF User Manual.</p>
+</li>
+<li><p>params<br>file that describes variable forcefield parameters, one line per parameter (see example below).<br><br>This format is a generalization of the original params file format.<br><br>The hash symbol <code>#</code> starts a comment. Each non-comment line must begin with three integer numbers, the section-block-item coordinates of the corresponding parameter. The first coordinate specifies a section: 1 - general parameters, 2 - atomic parameters, 3 - bonds, 4 - off-diagonal terms, 5 - valence angles, 6 - torsion angles, 7 - hydrogen bonds. The second coordinate specifies a block within the given section or an item index for the general parameters section (section=1). The third coordinate specifies an item index within the block, except for section 1 for which the third coordinate is ignored. The coordinates can optionally be followed by a one or more real number. The number and the meaning of the reals depends on the selected task. For some force-field optimization methods the first three real number have a special meaning referred to as delta (or sigma), ffmin, and ffmax in the following sections, respectively.<br><code>#</code>开始一个注释。<br><br>An example of the params file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># i j k   x1   x2   x3  ...</span><br><span class="line">  1 1 0  0.1 -1.0  1.0   # The 1st general parameter</span><br><span class="line">  2 3 4  0.1 -1.0  1.0   # The 4th parameter of the 3rd atoms block</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ffield_bool<br>an alternative way to specify variable parameters if the params file is not present. This file has the same format as ffield but instead of parameter values it contains 1.0 or 0.0 as a flag whether the corresponding value is to be variable or not, respectively.</p>
+</li>
+<li><p>ffield_min<br>an alternative way to specify minimum values (ffmin) for the variable parameters if the params file is not present. This file has the same format as ffield.</p>
+</li>
+<li><p>ffield_max<br>an alternative way to specify maximum values (ffmax) for the variable parameters if the params file is not present. This file has the same format as ffield.</p>
+</li>
+<li><p>geo<br>file with the training set geometries in the BGF format, the same as in the original reaxff force-field optimization. Geometries of different molecules in this file must be concatenated.</p>
+</li>
+<li><p>models.in<br>as an alternative to a single geo file one can save each geometry in its own file and list the files that are part of the training set here. The molecule name specified in the models.in file must match that in the trainset.in file and it takes precedence over any molecule name specified inside the geometry file (filename1, etc.). The format of the file is as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename1 MoleculeName1</span><br><span class="line">filename2 MoleculeName2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Control-parameters-common-for-all-optimizers"><a href="#Control-parameters-common-for-all-optimizers" class="headerlink" title="Control parameters common for all optimizers"></a>Control parameters common for all optimizers</h2><p>The following control parameters are related to the FFOptimizer. The default value for each parameter is given in parentheses.<br>以下控制参数与FFOptimizer相关. 每个参数的默认值在括号中给出.</p>
+<ul>
+<li><p>ffoact<br>the task ID to be performed by the base FFOptimizer module (i.e. when the iopt file contains 6):</p>
+<ol>
+<li>calculate gradient of the error function with respect to the variable FF parameters by finite differences. This option requires $2N + 1$ error function evaluations, where $N$ is the number of variable force-field parameters.</li>
+<li>calculate the second derivatives (Hessian) matrix of the error function with respect to the variable FF parameters by finite differences. The eigenvalues and eigenvectors of the obtained Hessian matrix will also be computed. In this case, $N^2 + N + 1$ function evaluations will be done. Note: a calculation of derivatives can be very slow so make sure you run it on as many processors as possible.</li>
+<li>calculate an error function value for each column-vector of parameters specified in the params file. If the params file does not contain any column-vectors (i.e. there are no real numbers at all in the file) then the error function for the current ffield file is calcualted. This feature can be used, for example, by external force-field optimizers. The result per trainset.in entry is written to the fort.99 file.</li>
+<li>find replic random vectors of parameter values that result in a valid (non-NaN) error function value. The random values are distributed uniformly in the allowed parameter space.</li>
+</ol>
+</li>
+<li><p>ffostp<br>the delta used for calculating first and second derivatives by finite differences (0.01).<br>The following options may apply to any FF optimization type.</p>
+</li>
+<li><p>ffdedi<br>If running in parallel and ffdedi is set to 1 then the master process will run as a dedicated dispatcher and will not perform any computations. The default value depends on the number shared-memory nodes used in the calculation (0 for single-node calculation, 1 otherwise).</p>
+</li>
+<li><p>replic<br>number of parameter sets to calculate at once for ffoact = 4 (1 by default). This control parameter may have different meaning and defaults for other force-field optimizers.</p>
+</li>
+<li><p>fort99<br>if this parameters is set to 0 then the fort.99 files will not be written. By default, every fitness function evaluation produces a fort.99.xxx.yyy file, where xxx is an iteration number and yyy is a replica index at the iteration. This may potentially lead to a large number of fort.99.* files so setting fort99 to 0 can be useful for saving space in long production runs.</p>
+</li>
+<li><p>fort90<br>MCFFOptimizer will create a geo file with optimized geometries corresponding to the current best parameter set.</p>
+</li>
+</ul>
+<h2 id="MCFF-Optimizer-Monte-Carlo-force-field-parameter-optimizer"><a href="#MCFF-Optimizer-Monte-Carlo-force-field-parameter-optimizer" class="headerlink" title="MCFF Optimizer: Monte Carlo force field parameter optimizer"></a>MCFF Optimizer: Monte Carlo force field parameter optimizer</h2><h2 id="CMA-ES-Force-field-Optimizer"><a href="#CMA-ES-Force-field-Optimizer" class="headerlink" title="CMA-ES Force-field Optimizer"></a>CMA-ES Force-field Optimizer</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ReaxFF/" rel="tag"># ReaxFF</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/18/Simulation_FermiTech/" rel="next" title="Simulation | FermiTech">
+                <i class="fa fa-chevron-left"></i> Simulation | FermiTech
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/18/LAMMPS_MPC/" rel="prev" title="Lammps_MPC">
+                Lammps_MPC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FF-Optimizer-Force-Field-Optimizer"><span class="nav-number">1.</span> <span class="nav-text">FF Optimizer: (Force Field Optimizer)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-files-common-for-all-optimizers"><span class="nav-number">2.</span> <span class="nav-text">Input files common for all optimizers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-parameters-common-for-all-optimizers"><span class="nav-number">3.</span> <span class="nav-text">Control parameters common for all optimizers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MCFF-Optimizer-Monte-Carlo-force-field-parameter-optimizer"><span class="nav-number">4.</span> <span class="nav-text">MCFF Optimizer: Monte Carlo force field parameter optimizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMA-ES-Force-field-Optimizer"><span class="nav-number">5.</span> <span class="nav-text">CMA-ES Force-field Optimizer</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="&amp;#9930;语法 | Syntax  cfile = NULL or name of a control file zero or more keyword/value pairs may be appendedkeyword = checkqeq or lgvdw or safezone or mincap checkqeq value = yes or no = whether or not">
+<meta name="keywords" content="LAMMPS,ReaxFF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS-CMD | Reax&#x2F;c">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/LAMMPS-CMD_Reaxc/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="&amp;#9930;语法 | Syntax  cfile = NULL or name of a control file zero or more keyword/value pairs may be appendedkeyword = checkqeq or lgvdw or safezone or mincap checkqeq value = yes or no = whether or not">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-16T09:41:02.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS-CMD | Reax&#x2F;c">
+<meta name="twitter:description" content="&amp;#9930;语法 | Syntax  cfile = NULL or name of a control file zero or more keyword/value pairs may be appendedkeyword = checkqeq or lgvdw or safezone or mincap checkqeq value = yes or no = whether or not">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/16/LAMMPS-CMD_Reaxc/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LAMMPS-CMD | Reax/c | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/LAMMPS-CMD_Reaxc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LAMMPS-CMD | Reax/c
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-16 12:13:52" itemprop="dateCreated datePublished" datetime="2019-03-16T12:13:52+08:00">2019-03-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="9930-语法-Syntax"><a href="#9930-语法-Syntax" class="headerlink" title="&#9930;语法 | Syntax"></a>&#9930;语法 | Syntax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pair_style reax/c cfile keyword value</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cfile = NULL or name of a control file</li>
+<li>zero or more keyword/value pairs may be appended<br>keyword = checkqeq or lgvdw or safezone or mincap<ul>
+<li>checkqeq value = yes or no = whether or not to require qeq/reax fix</li>
+<li>enobonds value = yes or no = whether or not to tally energy of atoms with no bonds</li>
+<li>lgvdw value = yes or no = whether or not to use a low gradient vdW correction</li>
+<li>safezone = factor used for array allocation</li>
+<li>mincap = minimum size for array allocation<a id="more"></a>
+<p></p><br><p></p>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="9930-示例-Examples"><a href="#9930-示例-Examples" class="headerlink" title="&#9930;示例 | Examples"></a>&#9930;示例 | Examples</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pair_style reax/c NULL</span><br><span class="line">pair_style reax/c controlfile checkqeq no</span><br><span class="line">pair_style reax/c NULL lgvdw yes</span><br><span class="line">pair_style reax/c NULL safezone 1.6 mincap 100</span><br><span class="line">pair_coeff * * ffield.reax C H O N</span><br></pre></td></tr></table></figure>
+<p></p><br><p></p>
+
+<h2 id="9930-详解-Description"><a href="#9930-详解-Description" class="headerlink" title="&#9930;详解 | Description"></a>&#9930;详解 | Description</h2><h3 id="①-版本概述-ReaxFF-Versions"><a href="#①-版本概述-ReaxFF-Versions" class="headerlink" title="①. 版本概述 | ReaxFF Versions"></a>①. 版本概述 | ReaxFF Versions</h3><p><code>reax/c</code>用于ReaxFF类的势函数的计算, 该函数的创始人为van Duin (PSU), Goddard (CIT). ReaxFF使用距离依赖的键序函数代表化学键对势能的贡献. ReaxFF有很多个版本, LAMMPS当前使用的ReaxFF是<a href="https://lammps.sandia.gov/doc/pair_reaxc.html#chenoweth-20082" target="_blank" rel="noopener">(Chenoweth et al., 2008)</a>发表的版本. 这个版本集成到LAMMPS自从2010年. 关于更多ReaxFF如何在LAMMPS实现的技术细节请参见本文档Reference处记载的Aktulga的论文. <code>reax/c</code>一开始以独立标准的C语言进行实现, 现在已经以一个扩展包的形式集成到LAMMPS.<br>Style <code>reax/c</code> computes the ReaxFF potential of van Duin, Goddard and co-workers. ReaxFF uses distance-dependent bond-order functions to represent the contributions of chemical bonding to the potential energy. There is more than one version of ReaxFF. The version implemented in LAMMPS uses the functional forms documented in the supplemental information of the following paper: (Chenoweth et al., 2008). The version integrated into LAMMPS matches the most up-to-date version of ReaxFF as of summer 2010. For more technical details about the pair reax/c implementation of ReaxFF, see the (Aktulga) paper. The reax/c style was initially implemented as a stand-alone C code and is now integrated into LAMMPS as a package.</p>
+<p><code>reax/c/kk</code>是Kokkos版本的ReaxFF势函数, 是<code>reac/x</code>版本的变种, 可以运行在GPU上, 同时还支持OpenMP多线程. 更多信息请查看文档<a href="https://lammps.sandia.gov/doc/Packages_details.html" target="_blank" rel="noopener">Packages details</a>和<a href="https://lammps.sandia.gov/doc/Speed_kokkos.html" target="_blank" rel="noopener">Speed kokkos</a>. 在使用时, 有一个重要的考虑, 那就是选择半邻列表还是全邻列表, 该设置在使用<a href="https://lammps.sandia.gov/doc/package.html" target="_blank" rel="noopener">Kokkos package command</a>时可以设置.<br>The <code>reax/c/kk</code> style is a Kokkos version of the ReaxFF potential that is derived from the <code>reax/c</code> style. The Kokkos version can run on GPUs and can also use OpenMP multithreading. For more information about the Kokkos package, see Packages details and Speed kokkos doc pages. One important consideration when using the <code>reax/c/kk</code> style is the choice of either half or full neighbor lists. This setting can be changed using the Kokkos package command.</p>
+<p><code>reax/c</code>在实现细节上是不同于已经淘汰的<code>pair_style reax</code>. 后者是一个链接到LAMMPS的Fortran库, 自2018-12-12版本后被移除.<br>The <code>reax/c</code> style differs from the (obsolete) “pair_style reax” command in the implementation details. The reax style was a Fortran library, linked to LAMMPS. The reax style has been removed from LAMMPS after the 12 December 2018 version.</p>
+<p>LAMMPS提供了几种不同类型的ReaxFF势函数ffield.reax, 这些势函数可以在<code>potentials</code>文件中找到, 每一个都有相应的说明文字. 默认的ffield.reax包含的势参数可用于描述C、H、O、N.<br>LAMMPS provides several different versions of ffield.reax in its potentials dir, each called potentials/ffield.reax.label. These are documented in potentials/README.reax. The default ffield.reax contains parameterizations for the following elements: C, H, O, N.</p>
+<p>？？？<br>The format of these files is identical to that used originally by van Duin. We have tested the accuracy of pair_style reax/c potential against the original ReaxFF code for the systems mentioned above. You can use other ffield files for specific chemical systems that may be available elsewhere (but note that their accuracy may not have been tested).</p>
+<p>我们LAMMPS团队不发布ReaxFF势函数, 需要势函数请向Adri van Duin发信请求. Adri van Duin的团队在宾夕法尼亚州立大学专门从事ReaxFF势函数的开发和更新. 你可以提交一份请求在<a href="https://www.mri.psu.edu/materials-computation-center/connect-mcc" target="_blank" rel="noopener">Materials Computation Center (MCC)</a>, 描述你想要研究的材料, 然后他们会告诉你当前有哪些势函数是可以直接提供给你的, 或者需要做一些修正的.<br>We do not distribute a wide variety of ReaxFF force field files with LAMMPS. Adri van Duin’s group at PSU is the central repository for this kind of data as they are continuously deriving and updating parameterizations for different classes of materials. You can submit a contact request at the Materials Computation Center (MCC) website <a href="https://www.mri.psu.edu/materials-computation-center/connect-mcc" target="_blank" rel="noopener">https://www.mri.psu.edu/materials-computation-center/connect-mcc</a>, describing the material(s) you are interested in modeling with ReaxFF. They can tell you what is currently available or what it would take to create a suitable ReaxFF parameterization.</p>
+<h3 id="②-控制文件设置-cfile-setting"><a href="#②-控制文件设置-cfile-setting" class="headerlink" title="②. 控制文件设置 | cfile setting"></a>②. 控制文件设置 | cfile setting</h3><p>The cfile setting can be specified as NULL, in which case default settings are used. A control file can be specified which defines values of control variables. Some control variables are global parameters for the ReaxFF potential. Others define certain performance and output settings. Each line in the control file specifies the value for a control variable. The format of the control file is described below.</p>
+<p></p><br><p></p>
+
+
+
+<h2 id="9930-限制-Restrictions"><a href="#9930-限制-Restrictions" class="headerlink" title="&#9930;限制 | Restrictions"></a>&#9930;限制 | Restrictions</h2><p>要想LAMMPS能够计算ReaxFF, 在编译可执行文件lmp_mpi时, Package必须包含了USER-REAXC.<br>This pair style is part of the USER-REAXC package. It is only enabled if LAMMPS was built with that package. See the Build package doc page for more info.</p>
+<p>ReaxFF默认单位是real类; 如果想要用其他单位, 须重写势函数中的参数.<br>The ReaxFF potential files provided with LAMMPS in the potentials directory are parameterized for real units. You can use the ReaxFF potential with any LAMMPS units, but you would need to create your own potential file with coefficients listed in the appropriate units if your simulation doesn’t use “real” units.</p>
+<p></p><br><p></p>
+
+
+<h2 id="9930-相关命令-Related-commands"><a href="#9930-相关命令-Related-commands" class="headerlink" title="&#9930;相关命令 | Related commands"></a>&#9930;相关命令 | Related commands</h2><p>pair_coeff, fix qeq/reax, fix reax/c/bonds, fix reax/c/species</p>
+<p></p><br><p></p>
+
+
+<h2 id="9930-默认设置-Default"><a href="#9930-默认设置-Default" class="headerlink" title="&#9930;默认设置 | Default"></a>&#9930;默认设置 | Default</h2><p>The keyword defaults are checkqeq = yes, enobonds = yes, lgvdw = no, safezone = 1.2, mincap = 50.</p>
+<p></p><br><p></p>
+
+
+<h2 id="9930-参考资料-References"><a href="#9930-参考资料-References" class="headerlink" title="&#9930;参考资料 | References"></a>&#9930;参考资料 | References</h2><p>(Chenoweth_2008) Chenoweth, van Duin and Goddard, Journal of Physical Chemistry A, 112, 1040-1053 (2008).</p>
+<p>(Aktulga) Aktulga, Fogarty, Pandit, Grama, Parallel Computing, 38, 245-259 (2012).</p>
+<p>(Liu) L. Liu, Y. Liu, S. V. Zybin, H. Sun and W. A. Goddard, Journal of Physical Chemistry A, 115, 11016-11022 (2011).</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+          
+            <a href="/tags/ReaxFF/" rel="tag"># ReaxFF</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/Speech_THE DECLARATION OF INDEPENDENCE/" rel="next" title="THE DECLARATION OF INDEPENDENCE">
+                <i class="fa fa-chevron-left"></i> THE DECLARATION OF INDEPENDENCE
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/18/LAMMPS-CMD_velocity/" rel="prev" title="LAMMPS-CMD | velocity">
+                LAMMPS-CMD | velocity <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-语法-Syntax"><span class="nav-number">1.</span> <span class="nav-text">⛊语法 | Syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-示例-Examples"><span class="nav-number">2.</span> <span class="nav-text">⛊示例 | Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-详解-Description"><span class="nav-number">3.</span> <span class="nav-text">⛊详解 | Description</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#①-版本概述-ReaxFF-Versions"><span class="nav-number">3.1.</span> <span class="nav-text">①. 版本概述 | ReaxFF Versions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#②-控制文件设置-cfile-setting"><span class="nav-number">3.2.</span> <span class="nav-text">②. 控制文件设置 | cfile setting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-限制-Restrictions"><span class="nav-number">4.</span> <span class="nav-text">⛊限制 | Restrictions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-相关命令-Related-commands"><span class="nav-number">5.</span> <span class="nav-text">⛊相关命令 | Related commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-默认设置-Default"><span class="nav-number">6.</span> <span class="nav-text">⛊默认设置 | Default</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9930-参考资料-References"><span class="nav-number">7.</span> <span class="nav-text">⛊参考资料 | References</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

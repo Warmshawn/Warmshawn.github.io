@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Syntaxcompute ID group-ID voronoi/atom keyword arg ...  ID, group-ID are documented in compute command voronoi/atom = style name of this compute command zero or more keyword/value pairs may be appende">
+<meta name="keywords" content="LAMMPS,VORONOI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | compute voronoi&#x2F;atom">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/LAMMPS_compute voronoi/index.html">
+<meta property="og:site_name" content="BakerStreet&#39;s Cat">
+<meta property="og:description" content="Syntaxcompute ID group-ID voronoi/atom keyword arg ...  ID, group-ID are documented in compute command voronoi/atom = style name of this compute command zero or more keyword/value pairs may be appende">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-18T07:36:16.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | compute voronoi&#x2F;atom">
+<meta name="twitter:description" content="Syntaxcompute ID group-ID voronoi/atom keyword arg ...  ID, group-ID are documented in compute command voronoi/atom = style name of this compute command zero or more keyword/value pairs may be appende">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/19/LAMMPS_compute voronoi/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LAMMPS | compute voronoi/atom | BakerStreet's Cat</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BakerStreet's Cat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hello</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/LAMMPS_compute voronoi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dr.Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/纪田正臣.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BakerStreet's Cat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LAMMPS | compute voronoi/atom
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-19 10:04:33" itemprop="dateCreated datePublished" datetime="2018-12-19T10:04:33+08:00">2018-12-19</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><p><code>compute ID group-ID voronoi/atom keyword arg ...</code></p>
+<ul>
+<li>ID, group-ID are documented in compute command</li>
+<li>voronoi/atom = style name of this compute command</li>
+<li>zero or more keyword/value pairs may be appended</li>
+</ul>
+<p>keyword = only_group or surface or radius or edge_histo or edge_threshold or face_threshold or neighbors or peratom<br><a id="more"></a></p>
+<p>only_group = no arg<br>occupation = no arg<br>surface arg = sgroup-ID<br>  sgroup-ID = compute the dividing surface between group-ID and sgroup-ID this keyword adds a third column to the compute output<br>radius arg = v_r<br>  v_r = radius atom style variable for a poly-disperse Voronoi tessellation<br>edge_histo arg = maxedge<br>  maxedge = maximum number of Voronoi cell edges to be accounted in the histogram<br>edge_threshold arg = minlength<br>  minlength = minimum length for an edge to be counted<br>face_threshold arg = minarea<br>  minarea = minimum area for a face to be counted<br>neighbors value = yes or no, i.e. store list of all neighbors or no<br>peratom value = yes or no, i.e. per-atom quantities accessible or no  </p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">compute 1 all voronoi/atom  </span><br><span class="line">compute 2 precipitate voronoi/atom surface matrix  </span><br><span class="line">compute 3 precipitate voronoi/atom radius v_r  </span><br><span class="line">compute 4 solute voronoi/atom only_group  </span><br><span class="line">compute 5 defects voronoi/atom occupation  </span><br><span class="line">compute 6 all voronoi/atom neighbors yes</span><br></pre></td></tr></table></figure>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>定义一个计算，用来计算原子对应的泰森多面体 (voronoi cell)。该计算针对给定组中的所有原子，非零值的属性会被存储。<br>Define a computation that calculates the Voronoi tessellation of the atoms in the simulation box. The tessellation is calculated using all atoms in the simulation, but non-zero values are only stored for atoms in the group.</p>
+<p>默认情况下，有两个物理量会被计算，两个物理量都是原子的属性 （per-atom） 。一个是每个原子的voronoi cell的体积，处于任何一个原子的voronoi cell中的点，到该原子的距离小于到周边其他原子的距离。另一个是voronoi多面体的面数，这个量等于中心原子的最近邻原子数再加上与该中心原子接壤的外表面的个数。如果一个原子位于无限大外表面上，那么与该中心原子接壤的外表面的个数为1。<br>By default two per-atom quantities are calculated by this compute. The first is the volume of the Voronoi cell around each atom. Any point in an atom’s Voronoi cell is closer to that atom than any other. The second is the number of faces of the Voronoi cell. This is equal to the number of nearest neighbors of the central atom, plus any exterior faces (see note below). If the peratom keyword is set to “no”, the per-atom quantities are still calculated, but they are not accessible.</p>
+<h3 id="Keywords"><a href="#Keywords" class="headerlink" title="Keywords"></a>Keywords</h3><p>If the <code>only_group</code> keyword is specified the tessellation is performed only with respect to the atoms contained in the compute group. This is equivalent to deleting all atoms not contained in the group prior to evaluating the tessellation.</p>
+<p>If the <code>surface</code> keyword is specified a third quantity per atom is computed: the Voronoi cell surface of the given atom. surface takes a group ID as an argument. If a group other than all is specified, only the Voronoi cell facets facing a neighbor atom from the specified group are counted towards the surface area.</p>
+<p>In the example above, a precipitate embedded in a matrix, only atoms at the surface of the precipitate will have non-zero surface area, and only the outward facing facets of the Voronoi cells are counted (the hull of the precipitate). The total surface area of the precipitate can be obtained by running a “reduce sum” compute on c_2[3]</p>
+<p>If the <code>radius</code> keyword is specified with an atom style variable as the argument, a poly-disperse Voronoi tessellation is performed. Examples for radius variables are<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">variable r1 atom (<span class="built_in">type</span>==1)*0.1+(<span class="built_in">type</span>==2)*0.4</span><br><span class="line">compute radius all property/atom radius</span><br><span class="line">variable r2 atom c_radius</span><br></pre></td></tr></table></figure></p>
+<p>Here <code>v_r1</code> specifies a per-type radius of 0.1 units for type 1 atoms and 0.4 units for type 2 atoms, and <code>v_r2</code> accesses the radius property present in atom_style sphere for granular models.</p>
+<p>The <code>edge_histo</code> keyword activates the compilation of a histogram of number of edges on the faces of the Voronoi cells in the compute group. The argument maxedge of the this keyword is the largest number of edges on a single Voronoi cell face expected to occur in the sample. This keyword adds the generation of a global vector with maxedge+1 entries. The last entry in the vector contains the number of faces with with more than maxedge edges. Since the polygon with the smallest amount of edges is a triangle, entries 1 and 2 of the vector will always be zero.</p>
+<p>The <code>edge_threshold</code> and <code>face_threshold</code> keywords allow the suppression of edges below a given minimum length and faces below a given minimum area. Ultra short edges and ultra small faces can occur as artifacts of the Voronoi tessellation. These keywords will affect the neighbor count and edge histogram outputs.</p>
+<p>If the <code>occupation</code> keyword is specified the tessellation is only performed for the first invocation of the compute and then stored. For all following invocations of the compute the number of atoms in each Voronoi cell in the stored tessellation is counted. In this mode the compute returns a per-atom array with 2 columns. The first column is the number of atoms currently in the Voronoi volume defined by this atom at the time of the first invocation of the compute (note that the atom may have moved significantly). The second column contains the total number of atoms sharing the Voronoi cell of the stored tessellation at the location of the current atom. Numbers in column one can be any positive integer including zero, while column two values will always be greater than zero. Column one data can be used to locate vacancies (the coordinates are given by the atom coordinates at the time step when the compute was first invoked), while column two data can be used to identify interstitial atoms.</p>
+<p>If the <code>neighbors</code> value is set to yes, then this compute creates a local array with 3 columns. There is one row for each face of each Voronoi cell. The 3 columns are the atom ID of the atom that owns the cell, the atom ID of the atom in the neighboring cell (or zero if the face is external), and the area of the face. The array can be accessed by any command that uses local values from a compute as input. See the Howto output doc page for an overview of LAMMPS output options. More specifically, the array can be accessed by a dump local command to write a file containing all the Voronoi neighbors in a system:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compute	6 all voronoi/atom neighbors yes</span><br><span class="line">dump	d2 all <span class="built_in">local</span> 1 dump.neighbors index c_6[1] c_6[2] c_6[3]</span><br></pre></td></tr></table></figure></p>
+<p>If the <code>face_threshold</code> keyword is used, then only faces with areas greater than the threshold are stored.</p>
+<p>Voronoi计算是借助开源的voro++包完成的，由任职于UC伯克利以及劳伦斯国家实验室的Chris Rycroft教授编写。如果你想要进行voronoi计算的话，此包必须安装在你的系统上，然后编译LAMMPS, 得到带有voronoi计算功能的可执行文件。查看src/VORONOI目录下的README以获取更多信息。<br>The Voronoi calculation is performed by the freely available Voro++ package, written by Chris Rycroft at UC Berkeley and LBL, which must be installed on your system when building LAMMPS for use with this compute. See instructions on obtaining and installing the Voro++ software in the src/VORONOI/README file.</p>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>在Voronoi体积计算的时候，每个处理器计算各自处理器中存储的原子的voronoi信息，并且包含虚原子的影响。<br>The calculation of Voronoi volumes is performed by each processor for the atoms it owns, and includes the effect of ghost atoms stored by the processor. This assumes that the Voronoi cells of owned atoms are not affected by atoms beyond the ghost atom cut-off distance. This is usually a good assumption for liquid and solid systems, but may lead to underestimation of Voronoi volumes in low density systems. By default, the set of ghost atoms stored by each processor is determined by the cutoff used for pair_style interactions. The cutoff can be set explicitly via the comm_modify cutoff command. The Voronoi cells for atoms adjacent to empty regions will extend into those regions up to the communication cutoff in x, y, or z. In that situation, an exterior face is created at the cutoff distance normal to the x, y, or z direction. For triclinic systems, the exterior face is parallel to the corresponding reciprocal lattice vector.</p>
+<h3 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h3><p>voro++包本来是针对三维体系的。但是二维体系也可以使用，所有的原子有同一个z坐标值。每一个原子的voronoi多面体都是一个多棱柱，沿着z方向有相同的截面面积并能找到上下两个外表面。如果原子并没有同一个z坐标，那么多棱柱将会是倾斜的，我理解的是多棱柱的棱不再与z轴平行。此时多棱柱的截面面积等于多棱柱的总体积除以多棱柱沿z方向的高度。需要注意的是，这个沿z方向的高度是你人为决定的，在使用<code>creat_atom</code>或者<code>read_data</code>的时候。<br>The Voro++ package performs its calculation in 3d. This will still work for a 2d LAMMPS simulation, provided all the atoms have the same z coordinate. The Voronoi cell of each atom will be a columnar polyhedron with constant cross-sectional area along the z direction and two exterior faces at the top and bottom of the simulation box. If the atoms do not all have the same z coordinate, then the columnar cells will be accordingly distorted. The cross-sectional area of each Voronoi cell can be obtained by dividing its volume by the z extent of the simulation box. Note that you define the z extent of the simulation box for 2d simulations when using the create_box or read_data commands.</p>
+<h2 id="Output-info"><a href="#Output-info" class="headerlink" title="Output info:"></a>Output info:</h2><p>默认情况下，该命令计算得到一个二维数组。第一列是每个原子的voronoi体积。第二列是每个原子的最近邻数，要保存此列需启用关键词<code>occupation</code>，详见上面的关键词解读。这两列值可被获取通过任何per-atom类型的计算或者赋值操作，详见LAMMPS官方文档中的how to output一节。如果关键词<code>peratom</code>关闭，那么这两列数据任然会被计算，但不可获取。<br>By default, this compute calculates a per-atom array with 2 columns. In regular dynamic tessellation mode the first column is the Voronoi volume, the second is the neighbor count, as described above (read above for the output data in case the <code>occupation</code> keyword is specified). These values can be accessed by any command that uses per-atom values from a compute as input. See the Howto output doc page for an overview of LAMMPS output options. If the <code>peratom</code> keyword is set to “no”, the per-atom array is still created, but it is not accessible.</p>
+<p>如果关键词<code>edge_histo</code>启用，那么该计算会产生一个全局矢量，其长度为$最大面数+1$，包含一个直方图描述每个面的棱数 (the number of edges)???<br>If the <code>edge_histo</code> keyword is used, then this compute generates a global vector of length maxedge+1, containing a histogram of the number of edges per face.</p>
+<p>如果关键词<code>neighbor</code>的值取为yes，那么该计算将会产生一个局域数组 (local array) ，此数组有三列，有一列存储的是每个voronoi多面体的每一面???<br>If the <code>neighbor</code> value is set to yes, then this compute calculates a local array with 3 columns. There is one row for each face of each Voronoi cell.</p>
+<h3 id="Note-2"><a href="#Note-2" class="headerlink" title="Note"></a>Note</h3><p>LAMMPS中的变量类型有: per-atom quantity, local quantity. scalar, vector.<br>Some LAMMPS commands such as the compute reduce command can accept either a per-atom or local quantity. If this compute produces both quantities, the command may access the per-atom quantity, even if you want to access the local quantity. This effect can be eliminated by using the peratom keyword to turn off the production of the per-atom quantities. For the default value yes both quantities are produced. For the value no, only the local array is produced.</p>
+<p>voronoi多面体的体积具有长度立方的量纲，每个面的面积具有长度平方的量纲。<br>The Voronoi cell volume will be in distance units cubed. The Voronoi face area will be in distance units squared.</p>
+<h2 id="Restrictions"><a href="#Restrictions" class="headerlink" title="Restrictions"></a>Restrictions</h2><p>要使用此命令，需先启用VORONOI包，然后编译获得可进行voronoi计算的可执行文件。如何编译，详见LAMMPS官方文档的Build package.<br>This compute is part of the VORONOI package. It is only enabled if LAMMPS was built with that package. See the Build package doc page for more info.</p>
+<p>同时，一份voro++库的复制版本是需要的。详见src/VORONOI目录下的README以获取更多信息。<br>It also requires you have a copy of the Voro++ library built and installed on your system. See instructions on obtaining and installing the Voro++ software in the src/VORONOI/README file.</p>
+<h2 id="Related-commands"><a href="#Related-commands" class="headerlink" title="Related commands"></a>Related commands</h2><p>dump custom, dump local</p>
+<h2 id="Default"><a href="#Default" class="headerlink" title="Default"></a>Default</h2><p>neighbors no, peratom yes</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+          
+            <a href="/tags/VORONOI/" rel="tag"># VORONOI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/18/Windows_Tricks/" rel="next" title="Windows | Tricks">
+                <i class="fa fa-chevron-left"></i> Windows | Tricks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/" rel="prev" title="LAMMPS | Build LAMMPS with VORONOI package">
+                LAMMPS | Build LAMMPS with VORONOI package <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/纪田正臣.jpg" alt="Dr.Chen">
+            
+              <p class="site-author-name" itemprop="name">Dr.Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/warmshawn" title="GitHub &rarr; https://github.com/warmshawn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:hqchen@pku.edu.cn" title="E-Mail &rarr; mailto:hqchen@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Syntax"><span class="nav-number">1.</span> <span class="nav-text">Syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">2.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">3.</span> <span class="nav-text">Description</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keywords"><span class="nav-number">3.1.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">3.2.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-1"><span class="nav-number">3.3.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-info"><span class="nav-number">4.</span> <span class="nav-text">Output info:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-2"><span class="nav-number">4.1.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Restrictions"><span class="nav-number">5.</span> <span class="nav-text">Restrictions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-commands"><span class="nav-number">6.</span> <span class="nav-text">Related commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default"><span class="nav-number">7.</span> <span class="nav-text">Default</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dr.Chen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+    overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
