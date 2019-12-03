@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="再次总结以备日后忘记时查阅。其主要内容翻译、综合自LAMMPS的用户手册。查阅手册最好的学习途径。 compute atom/molecule将per atomvector以分子为单位求和，atom储存的质量和受力也可以以分子为单位求和起来 （on a per-molecule basis）。输入的是per-atom vector（可以由compute，fix和variable得到），输出的是一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | compute">
+<meta property="og:url" content="http://yoursite.com/2018/12/18/LAMMPS_compute/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="再次总结以备日后忘记时查阅。其主要内容翻译、综合自LAMMPS的用户手册。查阅手册最好的学习途径。 compute atom/molecule将per atomvector以分子为单位求和，atom储存的质量和受力也可以以分子为单位求和起来 （on a per-molecule basis）。输入的是per-atom vector（可以由compute，fix和variable得到），输出的是一个">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-23T06:21:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | compute">
+<meta name="twitter:description" content="再次总结以备日后忘记时查阅。其主要内容翻译、综合自LAMMPS的用户手册。查阅手册最好的学习途径。 compute atom/molecule将per atomvector以分子为单位求和，atom储存的质量和受力也可以以分子为单位求和起来 （on a per-molecule basis）。输入的是per-atom vector（可以由compute，fix和variable得到），输出的是一个">
+  <link rel="canonical" href="http://yoursite.com/2018/12/18/LAMMPS_compute/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>LAMMPS | compute | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/18/LAMMPS_compute/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">LAMMPS | compute
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-18 19:23:27" itemprop="dateCreated datePublished" datetime="2018-12-18T19:23:27+08:00">2018-12-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:39" itemprop="dateModified" datetime="2019-05-23T14:21:39+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-Q/" itemprop="url" rel="index"><span itemprop="name">Tech - Q</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>再次总结以备日后忘记时查阅。其主要内容翻译、综合自LAMMPS的用户手册。查阅手册最好的学习途径。</p>
+<h2 id="compute-atom-molecule"><a href="#compute-atom-molecule" class="headerlink" title="compute atom/molecule"></a>compute atom/molecule</h2><p>将per atomvector以分子为单位求和，atom储存的质量和受力也可以以分子为单位求和起来 （on a per-molecule basis）。输入的是per-atom vector（可以由compute，fix和variable得到），输出的是一个全局向量或者全局二位矩阵，向量的长度或者矩阵的列数等于inputs的个数。</p>
+<a id="more"></a>
+
+
+<h2 id="compute-bond-local"><a href="#compute-bond-local" class="headerlink" title="compute bond/local"></a>compute bond/local</h2><p>计算系统中单个bond的性质，比如说bond distance，eng，force这些keywords等等，计算得到数据的行数是当前系统中bonds的个数。输出的是local vector或者local array，向量的长度或者矩阵的列数等于输入的keywords的个数。</p>
+<h2 id="compute-centro-atom"><a href="#compute-centro-atom" class="headerlink" title="compute centro/atom"></a>compute centro/atom</h2><p>计算指定group中的每个atom的中心对称参数(centro-symmetry parameter)，该参数是每个atom周围的local lattice disorder的一个评价指标，所以可以用来判断该atom是位于完美晶格中(part of a perfect lattice), 还是局域缺陷区(a local defect), 抑或是在表面(at a surface)。输出一个per-atom vector。Vector内的值是无量纲的。</p>
+<h2 id="compute-cluster-atom"><a href="#compute-cluster-atom" class="headerlink" title="compute cluster/atom"></a>compute cluster/atom</h2><p>给每个atom指定一个clusterID。Cluster中的每个atom都至少与cluster中的另外一个atom处于cutoff距离内，也就是串联的一些atoms构成一个cluster，clusterID是每个cluster构成atoms内的最小ID。这个compute需要建立neighbor list，过频繁的使用会影响计算速度。对于指定group外的atom指定clusterID为0。输出一个per-atom vector。</p>
+<h2 id="compute-cna-atom"><a href="#compute-cna-atom" class="headerlink" title="compute cna/atom"></a>compute cna/atom</h2><p>对指定group内的每个atom进行共近邻分析(Common Neighbor Analysis)，在固体状态下，这种分析是对单个atom周围的局部晶体结构的一种评价，当前有5中CNA输出结果。输出一个per-atom vector, 向量值为1-5中的一个数，每个数都代表一定意义。</p>
+<h2 id="compute-com"><a href="#compute-com" class="headerlink" title="compute com"></a>compute com</h2><p>计算指定的group的atoms的质心，输出一个长度为3的全局向量，分别为x，y，z坐标。</p>
+<h2 id="compute-com-molecule"><a href="#compute-com-molecule" class="headerlink" title="compute com/molecule"></a>compute com/molecule</h2><p>计算单个分子（molecule）的质心，包括了穿越周期性边界的影响。需要计算的molecule至少应该有一个atom在指定的group内。输出一个global array，行数等于molecule的个数，3列分别是质心的x，y，z坐标。</p>
+<h2 id="compute-contact-atom"><a href="#compute-contact-atom" class="headerlink" title="compute contact/atom"></a>compute contact/atom</h2><p>计算指定group内的每个atom的接触数目，输出一个per-atom vector。这个命令的好处是可以自动把两种type的接触的atom的cutoff设置为两种type的半径之和。</p>
+<h2 id="compute-coord-atom"><a href="#compute-coord-atom" class="headerlink" title="compute coord/atom"></a>compute coord/atom</h2><p>计算每个atom的配位数，注意，如果系统中存在bonds的话可以通过special_bonds把bonds内的atom排除。 输出的是一个per-atom vector或者per-atom array，关键看TypeN这个keyword的值是几组。</p>
+<h2 id="compute-coord-gran"><a href="#compute-coord-gran" class="headerlink" title="compute coord/gran"></a>compute coord/gran</h2><p>计算指定group内的每个atom的配位数，指定group外的赋值为0.该命令没有多余的keyword。输出一个per-atom vector。该命令不适合于multisphere，因为输出的结果不是基于per-body的。</p>
+<h2 id="compute-displace-atom"><a href="#compute-displace-atom" class="headerlink" title="compute displace/atom"></a>compute displace/atom</h2><p>计算指定group内的每个atom的位移，位移原点是该compute发布的时间点。计算产生一个per-atom array，四列分别是，xyz方向的位移和$\sqrt[]{dx \cdot dx + dy \cdot dy + dz \cdot dz}$。</p>
+<h2 id="compute-erotate-asphere"><a href="#compute-erotate-asphere" class="headerlink" title="compute erotate/asphere"></a>compute erotate/asphere</h2><p>计算非球形颗粒的旋转动能，可以是ellipsoids, or line segments, or triangles。输出一个全局标量，表示的是所有旋转动能的和。</p>
+<h2 id="compute-erotate-multisphere"><a href="#compute-erotate-multisphere" class="headerlink" title="compute erotate/multisphere"></a>compute erotate/multisphere</h2><p>计算体系内所有的multisphere的旋转动能的和，输出的是一个全局标量global scalar。</p>
+<h2 id="compute-erotate-sphere"><a href="#compute-erotate-sphere" class="headerlink" title="compute erotate/sphere"></a>compute erotate/sphere</h2><p>计算一组球形颗粒颗粒的旋转动能之和，该命令需要储存半径和角速度的atom style。输出的是全局标量为旋转动能之和。</p>
+<h2 id="compute-erotate-sphere-atom"><a href="#compute-erotate-sphere-atom" class="headerlink" title="compute erotate/sphere/atom"></a>compute erotate/sphere/atom</h2><p>计算每个球颗粒的旋转动能。输出的是per-atom vector。</p>
+<h2 id="compute-group-group"><a href="#compute-group-group" class="headerlink" title="compute group/group"></a>compute group/group</h2><p>计算指定的两个group的atom之间的total energy and force interaction。输出的是 a global scalar (the energy) and a global vector of length 3 (force)。</p>
+<h2 id="compute-gyration"><a href="#compute-gyration" class="headerlink" title="compute gyration"></a>compute gyration</h2><p>计算一组atoms的回转半径，a global scalar (Rg) and a global vector of length 6 (Rg tensor)。</p>
+<h2 id="compute-gyration-molecule"><a href="#compute-gyration-molecule" class="headerlink" title="compute gyration/molecule"></a>compute gyration/molecule</h2><p>以molecule为单位计算每个molecule的回转半径，输出的是一个全局向量和全局二维矩阵a global scalar (Rg) and a global vector of length 6 (Rg tensor)取决于是否使用keyword 【tensor】。向量的长度和矩阵的行数是分子molecule的数目。</p>
+<h2 id="compute-inertia-molecule"><a href="#compute-inertia-molecule" class="headerlink" title="compute inertia/molecule"></a>compute inertia/molecule</h2><p>计算每个molecule的inertia tensor。 输出的是a global array where the number of rows = Nmolecules and the number of columns = 6 for the 6 components of the inertia tensor of each molecule,</p>
+<h2 id="compute-ke"><a href="#compute-ke" class="headerlink" title="compute ke"></a>compute ke</h2><p>计算指定group的原子的总的平动动能。输出一个全局标量， global scalar。</p>
+<h2 id="compute-ke-atom"><a href="#compute-ke-atom" class="headerlink" title="compute ke/atom"></a>compute ke/atom</h2><p>计算指定group内的每个atom的平动动能。输出一个 per-atom vector。</p>
+<h2 id="compute-ke-multisphere"><a href="#compute-ke-multisphere" class="headerlink" title="compute ke/multisphere"></a>compute ke/multisphere</h2><p>计算所有multisphere的平动动能之和。输出一个global scalar。</p>
+<h2 id="compute-msd"><a href="#compute-msd" class="headerlink" title="compute msd"></a>compute msd</h2><p>计算指定group的atoms的mean-squared displacement (MSD)，这是和评价扩散速率的量。输出a global vector of length 4。The first 3 elements of the vector are the squared dx,dy,dz displacements, summed and averaged over atoms in the group. The 4th element is the total squared displacement, i.e. $(dx \cdot dx + dy \cdot dy + dz \cdot dz)$, summed and averaged over atoms in the group</p>
+<h2 id="compute-msd-molecule"><a href="#compute-msd-molecule" class="headerlink" title="compute msd/molecule"></a>compute msd/molecule</h2><p>以分子为单位计算the mean-squared displacement (MSD)。输出的是一个global array，其行数等于分子的数目，列数为4，参见23号compute。</p>
+<h2 id="compute-msd-nongauss"><a href="#compute-msd-nongauss" class="headerlink" title="compute msd/nongauss"></a>compute msd/nongauss</h2><p>计算指定group的atoms的mean-squared displacement (MSD)和non-Gaussian parameter (NGP)这两个参数。输出的是a global vector of length 3。三个量的具体意义见manual。</p>
+<h2 id="compute-multisphere"><a href="#compute-multisphere" class="headerlink" title="compute multisphere"></a>compute multisphere</h2><p>计算一些multisphere的性质。输出的是local vector或者是local array，取决于keyword的个数。不知道为什么这个命令使用总是出错，在自带的例子里用也出错。</p>
+<h2 id="compute-nparticles-tracer-region"><a href="#compute-nparticles-tracer-region" class="headerlink" title="compute nparticles/tracer/region"></a>compute nparticles/tracer/region</h2><p>计算给定region内的标记和未标记的particles的质量和数目。 reset_marker这个关键词可以决定是不是被计数一遍之后该particle的标记是不是消失。目前该命令只支持一个周期性边界。输出一个 a global vector。其四个值分别是</p>
+<ul>
+<li><p>total number of (marked + un-marked) particles in region</p>
+</li>
+<li><p>number of marked particles in region</p>
+</li>
+<li><p>total mass of (marked + un-marked) particles in region</p>
+</li>
+<li><p>mass of marked particles in region</p>
+</li>
+</ul>
+<h2 id="compute-pair-gran-local"><a href="#compute-pair-gran-local" class="headerlink" title="compute pair/gran/local"></a>compute pair/gran/local</h2><p>计算individual pairwise or particle-wall interactions of a granular pair style的性质。例如接触的位置，两个接触体的速度，接触力等很多，参见manual。输出的是一个local vector或者是local array。取决于keyword的个数。</p>
+<h2 id="compute-pe"><a href="#compute-pe" class="headerlink" title="compute pe"></a>compute pe</h2><p>计算整个系统的potential energy ，输出的是一个global scalar。</p>
+<h2 id="compute-pe-atom"><a href="#compute-pe-atom" class="headerlink" title="compute pe/atom"></a>compute pe/atom</h2><p>Define a computation that computes the per-atom potential energy for each atom in a group。输出的是per-atom vector，如果需要以group为单位的，可以使用compute reduce求和。</p>
+<h2 id="compute-pressure"><a href="#compute-pressure" class="headerlink" title="compute pressure"></a>compute pressure</h2><p>Define a computation that calculates the pressure of the entire system of atoms.输出a global scalar (the pressure) and a global vector of length 6 (pressure tensor)。</p>
+<h2 id="compute-property-atom"><a href="#compute-property-atom" class="headerlink" title="compute property/atom"></a>compute property/atom</h2><p>为指定group内的每个atom储存一些atom attributes。所列的attributes与dump custom的相同。输出一个per-atom array或者是per-atom vector，取决于储存的性质的个数。</p>
+<h2 id="compute-property-local"><a href="#compute-property-local" class="headerlink" title="compute property/local"></a>compute property/local</h2><p>将指定的attributes储存为local data供其他命令使用。比如可以指定bond和pair的某些attributes。输出a local vector or local array取决于输入attribute的个数。向量的长度和array的行数是bond或者pair的个数。</p>
+<h2 id="compute-property-molecule"><a href="#compute-property-molecule" class="headerlink" title="compute property/molecule"></a>compute property/molecule</h2><p>将一些指定的attribute(比如说分子ID和分子内atoms的数目)储存为global data让其可以被其他命令使用，比如说 compute com/molecule and compute msd/molecule.输出a global vector or global array，取决于输入的value的个数。向量的长度和array的行数是molecule的个数。</p>
+<h2 id="compute-rdf"><a href="#compute-rdf" class="headerlink" title="compute rdf"></a>compute rdf</h2><p>计算径向分布函数(RDF, i.e. radial distribution function)和某组原子的配位数(the coordination number for a group of particles)。输出一个global array，其行数是Nbins的个数，列数是$ 1 + 2 \cdot Npairs$。该参数的意义可以查看维基百科。Nbin的最远距离只能是cutoff distance，因为processor并不知道cutoff distance之外的atoms的位置。如果需要更远距离的rdf需要rerun。</p>
+<h2 id="compute-reduce"><a href="#compute-reduce" class="headerlink" title="compute reduce"></a>compute reduce</h2><p>输入per-atom vector或者local vectors然后进行四种可行的操作，ave，sum，min，max后得到一个 global scalar 或者 global vector 。向量的长度是输入的个数。</p>
+<h2 id="compute-reduce-region"><a href="#compute-reduce-region" class="headerlink" title="compute reduce/region"></a>compute reduce/region</h2><p>基本与上个命令相同，但是多了region的选择，可以选择该命令作用的region。</p>
+<h2 id="compute-rigid"><a href="#compute-rigid" class="headerlink" title="compute rigid"></a>compute rigid</h2><p>基本与compute multisphere那个命令相同。</p>
+<h2 id="compute-slice"><a href="#compute-slice" class="headerlink" title="compute slice"></a>compute slice</h2><p>将global vectors或者global array的一部分，指的是一部分行数拿出来形成更小的向量或者矩阵。</p>
+<h2 id="compute-stress-atom"><a href="#compute-stress-atom" class="headerlink" title="compute stress/atom"></a>compute stress/atom</h2><p>计算指定group内的每个atom的 the symmetric per-atom stress tensor。与31号命令是整体和atom的关系。输出的是 a per-atom array with 6 columns。</p>
+<h2 id="compute-voronoi-atom"><a href="#compute-voronoi-atom" class="headerlink" title="compute voronoi/atom"></a>compute voronoi/atom</h2><p>对simulation box内的所有atom计算Voronoi tessellation，这个计算两个值，一个是每个atom的Voronoi tessellation cell的体积，一个是 the number of faces of the Voronoi cell，该数目也是 the number of nearest neighbors of the atom in the middle of the cell。输出一个per-atom array，有两列分别是上述的两个量。需编译VORONOI package。</p>
+<h2 id="compute-wall-gran-local"><a href="#compute-wall-gran-local" class="headerlink" title="compute wall/gran/local"></a>compute wall/gran/local</h2><p>该命令与28号命令相似，只不过一个成了wall。要得到力的分布是需要mesh wall。输出的是a local vector or local array depending on the number of keywords。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p>liggghts, <a href="http://gongbaoping.cn/157.html" target="_blank" rel="noopener">http://gongbaoping.cn/157.html</a></p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/12/18/npm命令/" rel="next" title="npm命令">
+                  <i class="fa fa-chevron-left"></i> npm命令
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/12/18/Hexo-PlugIn_Mathjax/" rel="prev" title="Hexo · Math">
+                  Hexo · Math <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-atom-molecule"><span class="nav-number">1.</span> <span class="nav-text">compute atom/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-bond-local"><span class="nav-number">2.</span> <span class="nav-text">compute bond/local</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-centro-atom"><span class="nav-number">3.</span> <span class="nav-text">compute centro/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-cluster-atom"><span class="nav-number">4.</span> <span class="nav-text">compute cluster/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-cna-atom"><span class="nav-number">5.</span> <span class="nav-text">compute cna/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-com"><span class="nav-number">6.</span> <span class="nav-text">compute com</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-com-molecule"><span class="nav-number">7.</span> <span class="nav-text">compute com/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-contact-atom"><span class="nav-number">8.</span> <span class="nav-text">compute contact/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-coord-atom"><span class="nav-number">9.</span> <span class="nav-text">compute coord/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-coord-gran"><span class="nav-number">10.</span> <span class="nav-text">compute coord/gran</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-displace-atom"><span class="nav-number">11.</span> <span class="nav-text">compute displace/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-erotate-asphere"><span class="nav-number">12.</span> <span class="nav-text">compute erotate/asphere</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-erotate-multisphere"><span class="nav-number">13.</span> <span class="nav-text">compute erotate/multisphere</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-erotate-sphere"><span class="nav-number">14.</span> <span class="nav-text">compute erotate/sphere</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-erotate-sphere-atom"><span class="nav-number">15.</span> <span class="nav-text">compute erotate/sphere/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-group-group"><span class="nav-number">16.</span> <span class="nav-text">compute group/group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-gyration"><span class="nav-number">17.</span> <span class="nav-text">compute gyration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-gyration-molecule"><span class="nav-number">18.</span> <span class="nav-text">compute gyration/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-inertia-molecule"><span class="nav-number">19.</span> <span class="nav-text">compute inertia/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-ke"><span class="nav-number">20.</span> <span class="nav-text">compute ke</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-ke-atom"><span class="nav-number">21.</span> <span class="nav-text">compute ke/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-ke-multisphere"><span class="nav-number">22.</span> <span class="nav-text">compute ke/multisphere</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-msd"><span class="nav-number">23.</span> <span class="nav-text">compute msd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-msd-molecule"><span class="nav-number">24.</span> <span class="nav-text">compute msd/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-msd-nongauss"><span class="nav-number">25.</span> <span class="nav-text">compute msd/nongauss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-multisphere"><span class="nav-number">26.</span> <span class="nav-text">compute multisphere</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-nparticles-tracer-region"><span class="nav-number">27.</span> <span class="nav-text">compute nparticles/tracer/region</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-pair-gran-local"><span class="nav-number">28.</span> <span class="nav-text">compute pair/gran/local</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-pe"><span class="nav-number">29.</span> <span class="nav-text">compute pe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-pe-atom"><span class="nav-number">30.</span> <span class="nav-text">compute pe/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-pressure"><span class="nav-number">31.</span> <span class="nav-text">compute pressure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-property-atom"><span class="nav-number">32.</span> <span class="nav-text">compute property/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-property-local"><span class="nav-number">33.</span> <span class="nav-text">compute property/local</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-property-molecule"><span class="nav-number">34.</span> <span class="nav-text">compute property/molecule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-rdf"><span class="nav-number">35.</span> <span class="nav-text">compute rdf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-reduce"><span class="nav-number">36.</span> <span class="nav-text">compute reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-reduce-region"><span class="nav-number">37.</span> <span class="nav-text">compute reduce/region</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-rigid"><span class="nav-number">38.</span> <span class="nav-text">compute rigid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-slice"><span class="nav-number">39.</span> <span class="nav-text">compute slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-stress-atom"><span class="nav-number">40.</span> <span class="nav-text">compute stress/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-voronoi-atom"><span class="nav-number">41.</span> <span class="nav-text">compute voronoi/atom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-wall-gran-local"><span class="nav-number">42.</span> <span class="nav-text">compute wall/gran/local</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">43.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

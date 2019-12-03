@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Here are some excellent software in scientific research.">
+<meta name="keywords" content="Software">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Software">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/Software/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="Here are some excellent software in scientific research.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Sublime_text3_900x454.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/matlab_900x652.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Jade_900x487.png?x-oss-process=style/style1">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/XRD_Conversion.png?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-05-23T06:21:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Software">
+<meta name="twitter:description" content="Here are some excellent software in scientific research.">
+<meta name="twitter:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Sublime_text3_900x454.png?x-oss-process=style/style1">
+  <link rel="canonical" href="http://yoursite.com/2018/03/16/Software/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Software | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/16/Software/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Software
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-03-16 20:46:26" itemprop="dateCreated datePublished" datetime="2018-03-16T20:46:26+08:00">2018-03-16</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:44" itemprop="dateModified" datetime="2019-05-23T14:21:44+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">Here are some excellent software in scientific research.<div style="float:left"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/grado-tecnicas-aplicaciones-software_888x333.png?x-oss-process=style/style1"  width="894" height="312" ></div></div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Note: Press<code>ctrl</code>+<code>F</code>for searching key words。</p>
+<h2 id="Software-for-Writting"><a href="#Software-for-Writting" class="headerlink" title="Software for Writting"></a>Software for Writting</h2><h3 id="1-Sublime-text-3"><a href="#1-Sublime-text-3" class="headerlink" title="1. Sublime_text 3"></a>1. Sublime_text 3</h3><ul>
+<li><p>Introduction: A sophisticated text editor for code, markup and prose!</p>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Sublime_text3_900x454.png?x-oss-process=style/style1"></div>
+</li>
+<li><p>Download: <a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime_text 3</a> (~8MB)</p>
+</li>
+<li><p>Install: to be continued…</p>
+</li>
+</ul>
+<h2 id="Software-for-Data-Analysis"><a href="#Software-for-Data-Analysis" class="headerlink" title="Software for Data_Analysis"></a>Software for Data_Analysis</h2><h3 id="1-Matlab"><a href="#1-Matlab" class="headerlink" title="1. Matlab"></a>1. Matlab</h3><ul>
+<li><p>Introduction: Whether you’re analyzing data, developing algorithms, or creating models, MATLAB is designed for the way you think and the work you do.</p>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/matlab_900x652.png?x-oss-process=style/style1"></div>
+</li>
+<li><p>Download: <a href="https://www.mathworks.com/" target="_blank" rel="noopener">Matlab</a> (~8.5GB)</p>
+</li>
+<li><p>Install: Just following the guide provided the Mathlab installation management.</p>
+</li>
+</ul>
+<h2 id="Software-for-Material"><a href="#Software-for-Material" class="headerlink" title="Software for Material"></a>Software for Material</h2><h3 id="1-Jade-6-5"><a href="#1-Jade-6-5" class="headerlink" title="1. Jade 6.5"></a>1. Jade 6.5</h3><ul>
+<li><p>Introduction: Jade is a profesional software for XRD analysis.</p>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/Jade_900x487.png?x-oss-process=style/style1"></div>
+</li>
+<li><p>Download: </p>
+<ul>
+<li><a href="http://warmshawn-file.oss-cn-beijing.aliyuncs.com/Software/Jade%206.5%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E7%89%88.rar" target="_blank" rel="noopener">Jade 6.5</a> (~215MB)</li>
+<li>[Jade tutorial]</li>
+<li><a href="http://warmshawn-file.oss-cn-beijing.aliyuncs.com/Software/PDF2-2004.rar" target="_blank" rel="noopener">PDF2-2004</a> (~174MB)</li>
+</ul>
+</li>
+<li><p>Install: See tutorials.</p>
+</li>
+</ul>
+<h3 id="2-XRD-FileConversion"><a href="#2-XRD-FileConversion" class="headerlink" title="2. XRD_FileConversion"></a>2. XRD_FileConversion</h3><ul>
+<li>Introduction: XRD_FileConversion is a little software for XRD data conversion.<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/XRD_Conversion.png?x-oss-process=style/style1"></div>
+<div style="float:none;clear:both;"></div></li>
+<li>Download: <a href="http://warmshawn-file.oss-cn-beijing.aliyuncs.com/Software/XRD_FileConversion.rar" target="_blank" rel="noopener">XRD_FileConversion</a> (~489KB)</li>
+<li>Install: Just unzip, run and enjoy.</li>
+</ul>
+<h2 id="Software-for-Audio-amp-Image"><a href="#Software-for-Audio-amp-Image" class="headerlink" title="Software for Audio &amp; Image"></a>Software for Audio &amp; Image</h2><h3 id="1-Share-X"><a href="#1-Share-X" class="headerlink" title="1. Share X"></a>1. Share X</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Software/" rel="tag"># Software</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/03/05/Matlab_图像/" rel="next" title="Matlab图像">
+                  <i class="fa fa-chevron-left"></i> Matlab图像
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/05/11/Landscape_MackinacBridge/" rel="prev" title="Landscape - Mackinac Bridge">
+                  Landscape - Mackinac Bridge <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Software-for-Writting"><span class="nav-number">1.</span> <span class="nav-text">Software for Writting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Sublime-text-3"><span class="nav-number">1.1.</span> <span class="nav-text">1. Sublime_text 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Software-for-Data-Analysis"><span class="nav-number">2.</span> <span class="nav-text">Software for Data_Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Matlab"><span class="nav-number">2.1.</span> <span class="nav-text">1. Matlab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Software-for-Material"><span class="nav-number">3.</span> <span class="nav-text">Software for Material</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Jade-6-5"><span class="nav-number">3.1.</span> <span class="nav-text">1. Jade 6.5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-XRD-FileConversion"><span class="nav-number">3.2.</span> <span class="nav-text">2. XRD_FileConversion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Software-for-Audio-amp-Image"><span class="nav-number">4.</span> <span class="nav-text">Software for Audio &amp; Image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Share-X"><span class="nav-number">4.1.</span> <span class="nav-text">1. Share X</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

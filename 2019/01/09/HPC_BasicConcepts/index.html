@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="超算标准术语 | Standard terms used in HPC HPC cluster: relatively tightly coupled collection of compute nodes, the interconnect typically allows for high bandwidth, low latency communication. Access to the">
+<meta name="keywords" content="HPC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPC | Basic Concepts">
+<meta property="og:url" content="http://yoursite.com/2019/01/09/HPC_BasicConcepts/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="超算标准术语 | Standard terms used in HPC HPC cluster: relatively tightly coupled collection of compute nodes, the interconnect typically allows for high bandwidth, low latency communication. Access to the">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-23T06:21:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPC | Basic Concepts">
+<meta name="twitter:description" content="超算标准术语 | Standard terms used in HPC HPC cluster: relatively tightly coupled collection of compute nodes, the interconnect typically allows for high bandwidth, low latency communication. Access to the">
+  <link rel="canonical" href="http://yoursite.com/2019/01/09/HPC_BasicConcepts/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>HPC | Basic Concepts | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/09/HPC_BasicConcepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HPC | Basic Concepts
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-01-09 16:57:59" itemprop="dateCreated datePublished" datetime="2019-01-09T16:57:59+08:00">2019-01-09</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:36" itemprop="dateModified" datetime="2019-05-23T14:21:36+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="超算标准术语-Standard-terms-used-in-HPC"><a href="#超算标准术语-Standard-terms-used-in-HPC" class="headerlink" title="超算标准术语 | Standard terms used in HPC"></a>超算标准术语 | Standard terms used in HPC</h2><ul>
+<li><p>HPC cluster: relatively tightly coupled collection of compute nodes, the interconnect typically allows for high bandwidth, low latency communication. Access to the cluster is provided through a login node. A resource manager and scheduler provide the logic to schedule jobs efficiently on the cluster. A detailed description of the VSC clusters and other hardware is available.</p>
+<a id="more"></a>
+</li>
+<li><p>Compute node: an individual computer, part of an HPC cluster. Currently most compute node have two sockets, each with a single CPU, volatile working memory (RAM), a hard drive, typically small, and only used to store temporary files, and a network card. The hardware specifications for the various VSC compute nodes is available.</p>
+</li>
+<li><p>CPU: Central Processing Unit, the chip that performs the actual computation in a compute node. A modern CPU is composed of numerous cores, typically 8 or 10. It has also several cache levels that help in data reuse.</p>
+</li>
+<li><p>Core: part of a modern CPU. A core is capable of running processes, and has its own processing logic and floating point unit. Each core has its own level 1 and level 2 cache for data and instructions. Cores share last level cache.</p>
+</li>
+<li><p>Cache: a relatively small amount of (very) fast memory (when compared to regular RAM), on the CPU chip. A modern CPU has three cache level, L1 and L2 are specific to each core, while L3 (also referred to as Last Level Cache, LLC) is shared among all the cores of a CPU.</p>
+</li>
+<li><p>RAM: Random Access Memory used as working memory for the CPUs. On current hardware, the size of RAM is expressed in gigabytes (GB). The RAM is shared between the two CPUs on each of the sockets. This is volatile memory in the sense that once the process that creates the data ends, the data in the RAM is no longer available. The complete RAM can be accessed by each core.</p>
+</li>
+<li><p>Walltime: the actual time an application runs (as in clock on the wall), or is expected to run. When submitting a job, the walltime refers to the maximum amount of time the application can run, i.e., the requested walltime. For accounting purposes, the walltime is the amount of time the application actually ran, typically less than the requested walltime.</p>
+</li>
+<li><p>Node-hour: unit of work indicating that an application ran for a time t on n nodes, such that $n \bullet t = 1 hour$. Using 1 node for 1 hour is 1 node-hour. This is irrespective of the number of cores on the node you actually use.</p>
+</li>
+<li><p>Core-hour: unit of work indicating that an application ran for a time t on p cores, such that $p \bullet t = 1 hour$. Using 20 cores, no matter on how many nodes, for 1 hour results in 20 core-hours.</p>
+</li>
+<li><p>Node-day: unit of work indicating that an application ran for a time t on n nodes such that $n \bullet t = 24 hours$. Using 3 nodes for 8 hours results in 1 node day.</p>
+</li>
+<li><p>Memory requirement: the amount of RAM needed to successfully run an application. It can be specified per process for a distributed application, expressed in GB.</p>
+</li>
+<li><p>Storage requirement: the amount of disk space needed to store the input and output of an application, expressed in GB or TB.<br>Temporary storage requirement: the amount of disk space needed to store temporary files during the run of an application, expressed in GB or TB.</p>
+</li>
+<li><p>Single user per node policy: indicates that when a process of user A runs on a compute node, no process of another user will run on that compute node concurrently, i.e., the compute node will be exclusive to user A. However, if one or more processes of user A are running on a compute node, and that node’s capacity in terms of available cores and memory is not exceeded, processes part of another job submitted by user A may start on that compute node.</p>
+</li>
+<li><p>Shared memory application: an application that uses multiple cores for its computations, concurrent computations are executed by threads, typically one per core. Each thread has access to the application’s global memory space (hence the name), and has some thread-private memory. A shared memory application runs on a single compute node. See also multi-core application.</p>
+</li>
+<li><p>Multi-core application: a multi-core application uses more than one core during its execution by running multiple threads, also called a shared memory application.</p>
+</li>
+<li><p>Distributed application: an application that uses multiple compute nodes for its computations, concurrent computations are executed as processes. These processes communicate by exchanging messages, typically implemented by calls to an MPI library. Messages can be used to exchange data and coordinate the execution.</p>
+</li>
+<li><p>Serial application: a program that runs a single process, with a single thread. All computations are done sequentially, i.e., one after the other, no explicit parallelism is used.</p>
+</li>
+<li><p>Process: an independent computation running on a computer. It may interact with other processes, and it may run multiple threads. A serial and shared memory application run as a single process, while a distributed application consists of multiple, coordinated processes.</p>
+</li>
+<li><p>Threads: a process can perform multiple computations, i.e., program flows, concurrently. In scientific applications, threads typically process their own subset of data, or a subset of loop iterations.</p>
+</li>
+<li><p>MPI: Message passing interface, a de-facto standard that defines functions for inter-process communication. Many implementations in the form of libraries exist for C/C++/Fortran, some vendor specific.</p>
+</li>
+<li><p>OpenMP: a standard for shared memory programming that makes abstraction of explicit threads.</p>
+</li>
+</ul>
+<p>The first question that pops to mind is: what exactly do Core, Node, and Socket mean?</p>
+<p>·    节点Node (a.k.a. host, machine, computer)<br>refers to an entire compute node.  Each node contains 1 or more sockets.</p>
+<p>·    端口Socket (a.k.a. NUMA node)<br>refers to collection of cores with a direct pipe to memory.  Each socket contains 1 or more cores.  Note that this does not necessarily refer to a physical socket, but rather to the memory architecture of the machine, which will depend on your chip vendor.<br>NUMA, Non Uniform Memory Access Architecture, 非统一内存访问架构.<br>CPU, Central Processing Unit, 中央处理器.</p>
+<p>·    核心Core (a.k.a. CPU, CPU core, processor, logical processor)<br>refers to a single processing unit capable of performing computations.  A core is the smallest unit of allocation available in HPC Server 2008.</p>
+<p>未名一号，1个节点有32个核心<br>未名教学一号,1个节点2个核心</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p>Barndawgie, <a href="https://blogs.technet.microsoft.com/windowshpc/2008/04/14/how-that-nodesocketcore-thing-works/" target="_blank" rel="noopener">How that Node/Socket/Core thing works</a>, The Microsoft HPC &amp; Batch Team Blog, Microsoft, 2008</p>
+</blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/HPC/" rel="tag"># HPC</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/01/02/Celebration_Changsha-JuziZhou_FireworksofNewYear/" rel="next" title="Celebration | New Year's Fireworks, Changsha">
+                  <i class="fa fa-chevron-left"></i> Celebration | New Year's Fireworks, Changsha
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/01/20/Materials_晶体学名词中英对照表/" rel="prev" title="晶体学名词中英对照表">
+                  晶体学名词中英对照表 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#超算标准术语-Standard-terms-used-in-HPC"><span class="nav-number">1.</span> <span class="nav-text">超算标准术语 | Standard terms used in HPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

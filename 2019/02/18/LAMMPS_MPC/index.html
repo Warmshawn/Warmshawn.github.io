@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="利用MPC.exe, i.e. MEAM Parameter Calibration, 来构建MEAM势函数">
+<meta name="keywords" content="LAMMPS,MEAM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lammps_MPC">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/LAMMPS_MPC/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="利用MPC.exe, i.e. MEAM Parameter Calibration, 来构建MEAM势函数">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-23T06:21:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lammps_MPC">
+<meta name="twitter:description" content="利用MPC.exe, i.e. MEAM Parameter Calibration, 来构建MEAM势函数">
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/LAMMPS_MPC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Lammps_MPC | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/LAMMPS_MPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Lammps_MPC
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-02-18 15:36:51" itemprop="dateCreated datePublished" datetime="2019-02-18T15:36:51+08:00">2019-02-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:39" itemprop="dateModified" datetime="2019-05-23T14:21:39+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">利用MPC.exe, i.e. MEAM Parameter Calibration, 来构建MEAM势函数</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="创新-WHAT’S-NEW"><a href="#创新-WHAT’S-NEW" class="headerlink" title="创新 | WHAT’S NEW?"></a>创新 | WHAT’S NEW?</h2><p>In MPCv4 (MEAM Parameter Calibration, ver.4), LAMMPS+MEAM is executed as a library inside the MATLAB workspace, not as an external process. MATLAB gateway functions (mexfunctions) execute LAMMPS library functions listed in src/library.h of the LAMMPS distribution. MATLAB functions carry out user-selected calculations for single elements, binaries, and ternaries.</p>
+<p>In previous versions, LAMMPS+MEAM is separate process executed from a Python script to calculate energies, etc, and the Python script is invoked by MATLAB. <a href="https://icme.hpc.msstate.edu/mediawiki/index.php/MPCv3" target="_blank" rel="noopener">Click here</a> for an earlier version of MPC.<br><br><br><br></p>
+<h2 id="许可-LICENSE"><a href="#许可-LICENSE" class="headerlink" title="许可 | LICENSE"></a>许可 | LICENSE</h2><p>The MPCv4 license is File:<a href="https://icme.hpc.msstate.edu/mediawiki/index.php/File:License_BSD_3_MSU.PDF" target="_blank" rel="noopener">License BSD 3 MSU.PDF</a></p>
+<p>The source codes are <a href="ftp://ftp.hpc.msstate.edu/outgoing/carino/MPCv4/" target="_blank" rel="noopener">here</a>.</p>
+<p>For questions, comments, and suggestions regarding MPC, send e-mail to <a href="http://www.cavs.msstate.edu/directory/information.php?d=39" target="_blank" rel="noopener">Haitham El Kadiri</a> or <a href="http://www.cavs.msstate.edu/directory/information.php?d=63" target="_blank" rel="noopener">Mark F Horstemeyer</a>. The MATLAB scripts for the LAMMPS calculations and the gateway functions were written by <a href="http://www.cavs.msstate.edu/directory/information.php?d=2042" target="_blank" rel="noopener">Christopher D Barrett</a>. The user interface was built by <a href="http://www.cavs.msstate.edu/directory/information.php?d=2335" target="_blank" rel="noopener">Ricolindo L Carino</a>.<br><br><br><br></p>
+<h2 id="出版-PUBLICATIONS"><a href="#出版-PUBLICATIONS" class="headerlink" title="出版 | PUBLICATIONS"></a>出版 | PUBLICATIONS</h2><p>MPC is mentioned in Chapter 6 of Applications from Engineering with MATLAB Concepts - <a href="http://www.intechopen.com/articles/show/title/case-studies-in-using-matlab-to-build-model-calibration-tools-for-multiscale-modeling" target="_blank" rel="noopener">Case Studies in Using MATLAB to Build Model Calibration Tools for Multiscale Modeling</a></p>
+<p><a href="https://immijournal.springeropen.com/articles/10.1186/s40192-016-0051-6" target="_blank" rel="noopener">The MEAM parameter calibration tool: an explicit methodology for hierarchical bridging between ab initio and atomistic scales</a></p>
+<p><a href="http://link.springer.com/article/10.1007%2Fs11837-014-1244-0" target="_blank" rel="noopener">Hierarchical Bridging Between Ab Initio and Atomistic Level Computations: Calibrating the Modified Embedded Atom Method (MEAM) Potential (Part A)</a></p>
+<p><a href="http://link.springer.com/article/10.1007%2Fs11837-014-1205-7" target="_blank" rel="noopener">Hierarchical Bridging Between Ab Initio and Atomistic Level Computations: Sensitivity and Uncertainty Analysis for the Modified Embedded-Atom Method (MEAM) Potential (Part B)</a><br><br><br><br></p>
+<h2 id="总览-OVERVIEW"><a href="#总览-OVERVIEW" class="headerlink" title="总览 | OVERVIEW"></a>总览 | OVERVIEW</h2><p>MEAM Parameter Calibration (MPC) is a graphical MATLAB application for interactive editing of MEAM library and parameter files for single elements or alloys, and for semi-automated calibration of MEAM parameters to fit DFT and/or experimental data. Intended as a teaching tool, the MPC is designed to run on personal computers (Windows 7 64-bit, MacOS X Yosemite) without MATLAB. Video tutorials for use of the MPC tool can be found <a href="https://www.youtube.com/watch?v=bipKWVFX01I" target="_blank" rel="noopener">here</a>, <a href="https://youtu.be/1YTUQm7xY60" target="_blank" rel="noopener">here</a>, and <a href="https://www.youtube.com/watch?v=4hgEv8C_KOw" target="_blank" rel="noopener">here</a>.<br><br><br><br></p>
+<h2 id="特色-FEATURES"><a href="#特色-FEATURES" class="headerlink" title="特色 | FEATURES"></a>特色 | FEATURES</h2><p>■ LAMMPS+MEAM is executed as a library inside the MATLAB workspace, not as an external process.<br><br></p>
+<p>■ Basic operations</p>
+<ol>
+<li>Load MEAM library file</li>
+<li>Select an element, or more if working with an alloy, from the MEAM library</li>
+<li>Specify primary, secondary 1, secondary 2 structures for an element or alloy component</li>
+<li>Load MEAM parameter file</li>
+<li>Edit library entries, parameter file entries<br>
+
+</li>
+</ol>
+<p>■ Operations on single elements</p>
+<ol>
+<li>Run one or more LAMMPS calculations for a single element</li>
+<li>Primary EV curve</li>
+<li>Secondary EV curve</li>
+<li>Secondary 2 EV curve</li>
+<li>Elastic Constants Calculation</li>
+<li>Vacancy Energy Calculation</li>
+<li>Interstitial Energy Calculations</li>
+<li>Surface Energy Calculations</li>
+<li>Generalized Stacking Fault Energy (GSFE) Calculations</li>
+<li>Generalized Interfacial (Twin) Fault Energy (GTFE) Calculations</li>
+<li>Plot results of single element calculations<br>
+
+</li>
+</ol>
+<p>■ Operations on binaries</p>
+<ol>
+<li>Specify one or more binary structures</li>
+<li>Run one or more LAMMPS calculations for one of more binaries</li>
+<li>Binary EV Curves</li>
+<li>Binary Elastic Constants Calculations</li>
+<li>Substitution Energy</li>
+<li>Interstitial Substitution Energy</li>
+<li>Plot results of binary calculations<br>
+
+</li>
+</ol>
+<p>■ Operations on ternaries</p>
+<ol>
+<li>Run binding energy calculation for a ternary</li>
+<li>Plot results of ternary calculations</li>
+<li>Parametric study - investigate the effect of a single parameter on the results of LAMMPS calculations for a selected element, binary, or ternary<br>
+
+</li>
+</ol>
+<p>■  Calibration</p>
+<ol>
+<li>Specify calibration target data for each LAMMPS calculation enumerated above</li>
+<li>Select library file entries associated with elements as calibration parameters</li>
+<li>Select parameter file entries associated with elements, binaries and ternaries as calibration parameters</li>
+<li>Attempt to automatically fit the selected calibration parameters so that the results of the LAMMPS calculations will approach the calibration targets within specified tolerances</li>
+<li>Recall/redisplay results of attempted fits<br>
+
+</li>
+</ol>
+<p>■ Output operations</p>
+<ol>
+<li>Write MEAM library file, MEAM parameter file, MPCv4 restart file</li>
+<li>Write plot data to file</li>
+<li>Write file templates of calibration target data for single element, binary, ternary</li>
+<li>Write LAMMPS output log to file (log.lammps), or ‘none’<br>
+<br>
+
+
+</li>
+</ol>
+<h2 id="安装-SETUP-on-personal-computers-without-MATLAB"><a href="#安装-SETUP-on-personal-computers-without-MATLAB" class="headerlink" title="安装 | SETUP on personal computers without MATLAB"></a>安装 | SETUP on personal computers without MATLAB</h2><p>■ Windows 7, 64-bit</p>
+<ol>
+<li>Download File: <code>MPCv4 Win7 MATLAB R2016b Installer web.zip</code>. Unzip to a temporary folder.</li>
+<li>Run <code>MPCv4_Win7_MATLAB_R2016b_Installer_web.exe</code> in the temporary folder.</li>
+<li>Specify <code>C:\MPCv4</code> as the installation destination. As part of the installation process, the appropriate MATLAB Compiler Runtime will be downloaded automatically if it is not yet installed on the local system. Be prepared to wait for a long download time.</li>
+<li>Run <code>C:\MPCv4\application\MPCv4_Win7.exe</code> as the administrator<br>切记要以管理员身份运行, 否则由于权限不够, 无法进行数据读写。一定要安装在<code>C:\MPCv4</code>, 其他地方, 哪怕是电脑默认的安装位置<code>C:\Program Files\MPCv4</code>都不可以！这应该是编程的时候就决定了的.</li>
+<li>As a first time test of MPCv4, click menu item <code>File | Load restart file</code>, then select the file <code>Al-MPCv4-restart.mat</code>. The display should be similar to the figure above.<br>
+
+</li>
+</ol>
+<p>■ MacOS X (Yosemite) on Intel 64</p>
+<ol>
+<li>Download File: <code>MPCv4 OSX Installer web.zip</code>. Unzip to a temporary folder.</li>
+<li>Run <code>MPCv4_OSX_Installer_web</code> in the temporary folder.</li>
+<li>Specify <code>/Users/your_home_dir/MPCv4</code> as the installation destination. As part of the installation process, the appropriate MATLAB Compiler Runtime will be downloaded automatically if it is not yet installed on the local system. Be prepared to wait for a long download time. Take note of the installation directory for the MATLAB Runtime (for example, <code>/Applications/MATLAB/MATLAB_Runtime/v85/</code>) as it will be needed two steps below.</li>
+<li>Open a command line window. Change directory to <code>/Users/your_home_dir/MPCv4/application</code>.</li>
+<li><code>./run_MPCv4_OSX.sh /Applications/MATLAB/MATLAB_Runtime/v85</code></li>
+<li>As a first time test of MPCv4, click menu item <code>File | Load restart file</code>, then select the file <code>Al-MPCv4-restart.mat</code>. The display should be similar to the figure above.</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+            
+              <a href="/tags/MEAM/" rel="tag"># MEAM</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/02/18/Simulation_FermiTech_SCM/" rel="next" title="Simulation | FermiTech_SCM">
+                  <i class="fa fa-chevron-left"></i> Simulation | FermiTech_SCM
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/02/20/LAMMPS_优化/" rel="prev" title="LAMMPS计算加速">
+                  LAMMPS计算加速 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创新-WHAT’S-NEW"><span class="nav-number">1.</span> <span class="nav-text">创新 | WHAT’S NEW?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#许可-LICENSE"><span class="nav-number">2.</span> <span class="nav-text">许可 | LICENSE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出版-PUBLICATIONS"><span class="nav-number">3.</span> <span class="nav-text">出版 | PUBLICATIONS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总览-OVERVIEW"><span class="nav-number">4.</span> <span class="nav-text">总览 | OVERVIEW</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特色-FEATURES"><span class="nav-number">5.</span> <span class="nav-text">特色 | FEATURES</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-SETUP-on-personal-computers-without-MATLAB"><span class="nav-number">6.</span> <span class="nav-text">安装 | SETUP on personal computers without MATLAB</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="按照我说的去做, 你不可能不安装成功。">
+<meta name="keywords" content="Sublime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime-常用插件">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/Sublime_Plugins&Packages/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="按照我说的去做, 你不可能不安装成功。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-02T15:05:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime-常用插件">
+<meta name="twitter:description" content="按照我说的去做, 你不可能不安装成功。">
+  <link rel="canonical" href="http://yoursite.com/2018/12/28/Sublime_Plugins&Packages/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Sublime-常用插件 | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/Sublime_Plugins&Packages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Sublime-常用插件
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-28 14:21:04" itemprop="dateCreated datePublished" datetime="2018-12-28T14:21:04+08:00">2018-12-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-02 23:05:55" itemprop="dateModified" datetime="2019-09-02T23:05:55+08:00">2019-09-02</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">按照我说的去做, 你不可能不安装成功。</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Print-to-HTML"><a href="#Print-to-HTML" class="headerlink" title="Print to HTML"></a>Print to HTML</h2><p>以HTML的形式打印</p>
+<h2 id="ConvertToUTF8"><a href="#ConvertToUTF8" class="headerlink" title="ConvertToUTF8"></a>ConvertToUTF8</h2><p>转码</p>
+<h2 id="Sublimerge-3"><a href="#Sublimerge-3" class="headerlink" title="Sublimerge 3"></a>Sublimerge 3</h2><p>文档对比.Sublimerge3比Sublimerge Pro要先进</p>
+<h2 id="IMESupport"><a href="#IMESupport" class="headerlink" title="IMESupport"></a>IMESupport</h2><p>解决输入法不跟随</p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><ul>
+<li>从github上下载<a href="https://github.com/zcodes/IMESupport" target="_blank" rel="noopener">IMESupport-master.zip</a></li>
+<li>将<code>IMESupport-master.zip</code>解压，复制到<code>C:\Users\chq_p\AppData\Roaming\Sublime Text 3\Packages</code>目录下 (即<code>Perference</code> &gt; <code>Browse Packages</code> 打开的位置)。<br>cd</li>
+</ul>
+<h2 id="SublimeHighlight"><a href="#SublimeHighlight" class="headerlink" title="SublimeHighlight"></a>SublimeHighlight</h2><p>高亮复制sublime中的代码到word中</p>
+<h3 id="Ho-to-do"><a href="#Ho-to-do" class="headerlink" title="Ho to do"></a>Ho to do</h3><p>首先打开包管理器：CTRL+SHIFT+P</p>
+<p>输入add</p>
+<p>添加下面url：<br><a href="https://github.com/n1k0/SublimeHighlight/tree/python3" target="_blank" rel="noopener">https://github.com/n1k0/SublimeHighlight/tree/python3</a></p>
+<p>然后再次按下CTRL+SHIFT+P，输入install</p>
+<p>查找SublimeHighlight按下回车安装</p>
+<p>选中需要拷贝的文字，右键选择复制为HTML，就可以在word中粘贴了</p>
+<h3 id="复制格式如何设定"><a href="#复制格式如何设定" class="headerlink" title="复制格式如何设定"></a>复制格式如何设定</h3><p>点击菜单栏中首选项（preference）-&gt;Package Settings-&gt;SublimeHighlight-&gt;Settings-User，将以下代码复制到打开文件中并保存：</p>
+<p>{<br>    “theme”: “monokai”,<br>    “linenos”: “inline”,<br>    “noclasses”: true,<br>    “fontface”: “Menlo”<br>}</p>
+<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><ul>
+<li>本质上这个插件，是以RTF或者HTML的形式复制</li>
+<li>除了用sublimetext 还可以用这个网址<a href="http://www.planetb.ca/syntax-highlight-word" target="_blank" rel="noopener">http://www.planetb.ca/syntax-highlight-word</a></li>
+</ul>
+<h2 id="lammps-st3-master"><a href="#lammps-st3-master" class="headerlink" title="lammps-st3-master"></a>lammps-st3-master</h2><p>设置Lammps语法高亮</p>
+<h3 id="Ho-to-do-1"><a href="#Ho-to-do-1" class="headerlink" title="Ho to do"></a>Ho to do</h3><ul>
+<li>从github上下载<a href="https://github.com/ipcamit/lammps-st3" target="_blank" rel="noopener">lammps-st3-master</a></li>
+<li>将<code>lammps-st3-master</code>解压，复制到<code>C:\Users\chq_p\AppData\Roaming\Sublime Text 3\Packages</code>目录下 (即<code>Perference</code> &gt; <code>Browse Packages</code> 打开的位置)。</li>
+</ul>
+<h2 id="Markdown-HTML-Preview"><a href="#Markdown-HTML-Preview" class="headerlink" title="Markdown HTML Preview"></a>Markdown HTML Preview</h2><p><code>ctrl+shift+p</code>，点击<code>Package Control: Install Package</code>,输入<code>Markdown HTML Preview</code>。<br>在sublime中打开任意一个markdown文档，按<code>ctrl+shift+m</code>,即可转换成HTML文档。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Sublime/" rel="tag"># Sublime</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/12/28/Sublime_RecommendedSettings/" rel="next" title="Sublime-推荐设置">
+                  <i class="fa fa-chevron-left"></i> Sublime-推荐设置
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/12/28/Sublime_MostAskedQuestions/" rel="prev" title="Sublime-常见问题">
+                  Sublime-常见问题 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Print-to-HTML"><span class="nav-number">1.</span> <span class="nav-text">Print to HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvertToUTF8"><span class="nav-number">2.</span> <span class="nav-text">ConvertToUTF8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sublimerge-3"><span class="nav-number">3.</span> <span class="nav-text">Sublimerge 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IMESupport"><span class="nav-number">4.</span> <span class="nav-text">IMESupport</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">4.1.</span> <span class="nav-text">Installation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SublimeHighlight"><span class="nav-number">5.</span> <span class="nav-text">SublimeHighlight</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ho-to-do"><span class="nav-number">5.1.</span> <span class="nav-text">Ho to do</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制格式如何设定"><span class="nav-number">5.2.</span> <span class="nav-text">复制格式如何设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注"><span class="nav-number">5.3.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lammps-st3-master"><span class="nav-number">6.</span> <span class="nav-text">lammps-st3-master</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ho-to-do-1"><span class="nav-number">6.1.</span> <span class="nav-text">Ho to do</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-HTML-Preview"><span class="nav-number">7.</span> <span class="nav-text">Markdown HTML Preview</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

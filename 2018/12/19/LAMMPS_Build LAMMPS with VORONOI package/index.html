@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Quick Start在未名超算，执行以下命令即可，其他超算平台类似。 123456789module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	#添加模块cd lammps/src           #切换到lammps/src目录下make make lib-voronoi args=&quot;-b&quot;                 #安装voro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | Build LAMMPS with VORONOI package">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="Quick Start在未名超算，执行以下命令即可，其他超算平台类似。 123456789module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	#添加模块cd lammps/src           #切换到lammps/src目录下make make lib-voronoi args=&quot;-b&quot;                 #安装voro">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1">
+<meta property="og:updated_time" content="2019-05-23T06:21:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | Build LAMMPS with VORONOI package">
+<meta name="twitter:description" content="Quick Start在未名超算，执行以下命令即可，其他超算平台类似。 123456789module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	#添加模块cd lammps/src           #切换到lammps/src目录下make make lib-voronoi args=&quot;-b&quot;                 #安装voro">
+<meta name="twitter:image" content="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1">
+  <link rel="canonical" href="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>LAMMPS | Build LAMMPS with VORONOI package | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/LAMMPS_Build LAMMPS with VORONOI package/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">LAMMPS | Build LAMMPS with VORONOI package
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-19 19:49:44" itemprop="dateCreated datePublished" datetime="2018-12-19T19:49:44+08:00">2018-12-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:38" itemprop="dateModified" datetime="2019-05-23T14:21:38+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>在未名超算，执行以下命令即可，其他超算平台类似。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	<span class="comment">#添加模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src           <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make make lib-voronoi args=<span class="string">"-b"</span>                 <span class="comment">#安装voronoi库。此时切到lib/voronoi目录下，会看到两个动态链接，如下图所示。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src                   <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make ps                         <span class="comment">#查看当前已经安装的包</span></span><br><span class="line">make yes-VORONOI                <span class="comment">#添加VORONOI包</span></span><br><span class="line">make mpi                        <span class="comment">#编译生成可执行文件lmp_mpi</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+
+
+
+<h2 id="Full-Instructions"><a href="#Full-Instructions" class="headerlink" title="Full Instructions"></a>Full Instructions</h2><p>We use traditional make.</p>
+<p>To build with this package, you must download and build the <a href="http://math.lbl.gov/voro++" target="_blank" rel="noopener">Voro++ library</a>.<br>You can download and build the Voro++ library manually if you prefer; follow the instructions in lib/voronoi/README. You can also do it in one step from the lammps/src dir, using a command like these, which simply invoke the lib/voronoi/Install.py script with the specified args:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make lib-voronoi                          <span class="comment"># print help message</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-b"</span>                <span class="comment"># download and build the default version in lib/voronoi/voro++-&lt;version&gt;</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-p <span class="variable">$HOME</span>/voro++"</span>   <span class="comment"># use existing Voro++ installation in $HOME/voro++</span></span><br><span class="line">make lib-voronoi args=<span class="string">"-b -v voro++0.4.6"</span> <span class="comment"># download and build the 0.4.6 version in lib/voronoi/voro++-0.4.6</span></span><br></pre></td></tr></table></figure>
+
+<p>Note that 2 symbolic (soft) links, “includelink” and “liblink”, are created in lib/voronoi to point to the Voro++ src dir. When LAMMPS builds in src it will use these links. You should not need to edit the lib/voronoi/Makefile.lammps file.<br><img src="http://warmshawn.oss-cn-beijing.aliyuncs.com/Science/voronoi_liblink.png?x-oss-process=style/style1" alt="liblink"></p>
+<h3 id="The-README-in-src-VORONOI"><a href="#The-README-in-src-VORONOI" class="headerlink" title="The README in src/VORONOI"></a>The README in src/VORONOI</h3><p>The VORONOI package adds a compute voronoi/atom command which calculates a Voronoi tesselation of the system.</p>
+<p>It uses the Voro++ library, available at <a href="http://math.lbl.gov/voro++/" target="_blank" rel="noopener">http://math.lbl.gov/voro++/</a> to compute the tesselation locally on each processor.  Voro++ was developed by Chris H. Rycroft while at UC Berkeley / Lawrence Berkeley Laboratory.</p>
+<p>That library can be downloaded and built in lib/voronoi or elsewhere on your system, which must be done before bulding LAMMPS with this package.  Details of the download, build, and install process for Voro++ are given in the lib/voronoi/README file, and scripts are provided to help automate the process.  Also see the LAMMPS manual for general information on building LAMMPS with external libraries. The settings in the Makefile.lammps file in lib/voronoi must be correct for LAMMPS to build correctly with this package installed.</p>
+<p>Once you have successfully built LAMMPS with this package and Voro++, you can test it using an input file from the examples dir:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./lmp_serial &lt; lammps/examples/voronoi/in.voronoi | grep <span class="string">'^TEST_'</span></span><br><span class="line">./lmp_serial &lt; ./voronoi/in.voronoi</span><br></pre></td></tr></table></figure>
+
+<p>The output should conclude with ‘TEST_DONE’ and every line should  report an error of 0%. </p>
+<p>== Credits and license ==</p>
+<p>This compute was written by Daniel Schwen (<a href="mailto:daniel@schwen.de" target="_blank" rel="noopener">daniel@schwen.de</a>) and is licensed under the GPLv2 license.</p>
+<p>Please contribute changes back to the community.</p>
+<h3 id="The-README-in-lib-voronoi"><a href="#The-README-in-lib-voronoi" class="headerlink" title="The README in lib/voronoi"></a>The README in lib/voronoi</h3><p>This directory contains links to the Voro++ library which is required to use the VORONOI package and its compute voronoi/atom command in a LAMMPS input script.</p>
+<p>The Voro++ library is available at <a href="http://math.lbl.gov/voro++" target="_blank" rel="noopener">http://math.lbl.gov/voro++</a> and was developed by Chris H. Rycroft while at UC Berkeley / Lawrence Berkeley Laboratory.</p>
+<p>You can type “make lib-voronoi” from the src directory to see help on how to download and build this library via make commands, or you can do the same thing by typing “python Install.py” from within this directory, or you can do it manually by following the instructions below.</p>
+<hr>
+<p>Instructions:</p>
+<ol>
+<li><p>Download Voro++ at <a href="http://math.lbl.gov/voro++/download" target="_blank" rel="noopener">http://math.lbl.gov/voro++/download</a><br>either as a tarball or via SVN, and unpack the<br>tarball either in this /lib/voronoi directory<br>or somewhere else on your system.</p>
+</li>
+<li><p>Compile Voro++ from within its home directory<br>% make</p>
+</li>
+<li><p>There is no need to install Voro++ if you only wish<br>to use it from LAMMPS.  You can install it if you<br>wish to use it stand-alone or from other codes:<br>a) install under the default /usr/local<br>   % sudo make install<br>b) install under a user-writeable location by first</p>
+<pre><code>changing the PREFIX variable in the config.mk file, then</code></pre><p>   % make install</p>
+</li>
+<li><p>Create two soft links in this dir (lib/voronoi)<br>to the Voro++ src directory is.  E.g if you built Voro++ in this dir:<br>  % ln -s voro++-0.4.6/src includelink<br>  % ln -s voro++-0.4.6/src liblink<br>These links could instead be set to the include and lib<br>directories created by a Voro++ install, e.g.<br>  % ln -s /usr/local/include includelink<br>  % ln -s /usr/local/lib liblink</p>
+</li>
+</ol>
+<hr>
+<p>When these steps are complete you can build LAMMPS with the VORONOI package installed:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> lammps/src</span><br><span class="line">make yes-voronoi</span><br><span class="line">make g++ (or whatever target you wish)</span><br></pre></td></tr></table></figure>
+
+<p>Note that if you download and unpack a new LAMMPS tarball, the “includelink” and “liblink” files will be lost and you will need to re-create them (step 4).  If you built Voro++ in this directory (as opposed to somewhere else on your system) and did not install it somewhere else, you will also need to repeat steps 1,2,3.</p>
+<p>The Makefile.lammps file in this directory is there for compatibility with the way other libraries under the lib dir are linked with by LAMMPS.  However, Voro++ requires no auxiliary files or settings, so its variables are blank.</p>
+<h2 id="治bug者"><a href="#治bug者" class="headerlink" title="治bug者"></a>治bug者</h2><p>出错原因有二<br>1.没有加载模块。执行<code>module add mpi/mpich/3.2.1 intel/2018.0 gcc/6.4.0</code>后，无法并行编译的问题解决。<br>2.没有安装python</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">mpicxx -g -O3   -DLAMMPS_GZIP -DLAMMPS_MEMALIGN=64 -I../../lib/voronoi/includelink -DLMP_PYTHON  -DMPICH_SKIP_MPICXX -DOMPI_SKIP_MPICXX=1      -c ../fix_python_invoke.cpp</span><br><span class="line">../fix_python_invoke.cpp:18:20: fatal error: Python.h: No such file or directory</span><br><span class="line"> <span class="comment">#include &lt;Python.h&gt;</span></span><br><span class="line">                    ^</span><br><span class="line">compilation terminated.</span><br><span class="line">make[1]: *** [fix_python_invoke.o] Error 1</span><br><span class="line">make[1]: Leaving directory `/nfs-share/home/1701110088/apps/lammps/src/Obj_mpi<span class="string">'</span></span><br><span class="line"><span class="string">make: *** [mpi] Error 2</span></span><br></pre></td></tr></table></figure>
+
+<p>由于lammps只能使用python2,所以通过<code>module anacode/2.5.2</code>加载python模块。</p>
+<p>然后<code>make mpi</code>，结果又出现了下面bug:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">/usr/bin/ld: cannot find -lpython2.7</span><br><span class="line">collect2: error: ld returned 1 <span class="built_in">exit</span> status</span><br><span class="line">make[1]: *** [../lmp_mpi] Error 1</span><br><span class="line">make[1]: Leaving directory `/nfs-share/home/1701110088/apps/lammps/src/Obj_mpi<span class="string">'</span></span><br><span class="line"><span class="string">make: *** [mpi] Error 2</span></span><br></pre></td></tr></table></figure>
+
+<p>第二天，才发现，是PYTHON包的原因，在src中卸载该包，再次编译，成功！！！</p>
+<p>原因回顾：并不因为VORONOI包的原因，而是PYTHON包的原因。我感觉即使是加载了ANACODA，也没有调用成功python。需要联系超算管理员给权限安装python。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/12/19/LAMMPS_compute voronoi/" rel="next" title="LAMMPS | compute voronoi/atom">
+                  <i class="fa fa-chevron-left"></i> LAMMPS | compute voronoi/atom
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/12/21/LAMMPS_Creat NC/" rel="prev" title="LAMMPS | Create a Polycrystal">
+                  LAMMPS | Create a Polycrystal <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Full-Instructions"><span class="nav-number">2.</span> <span class="nav-text">Full Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-README-in-src-VORONOI"><span class="nav-number">2.1.</span> <span class="nav-text">The README in src/VORONOI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-README-in-lib-voronoi"><span class="nav-number">2.2.</span> <span class="nav-text">The README in lib/voronoi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#治bug者"><span class="nav-number">3.</span> <span class="nav-text">治bug者</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

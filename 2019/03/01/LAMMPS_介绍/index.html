@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="介绍LAMMPS">
+<meta name="keywords" content="LAMMPS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMMPS | Introduction">
+<meta property="og:url" content="http://yoursite.com/2019/03/01/LAMMPS_介绍/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="介绍LAMMPS">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-23T06:21:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LAMMPS | Introduction">
+<meta name="twitter:description" content="介绍LAMMPS">
+  <link rel="canonical" href="http://yoursite.com/2019/03/01/LAMMPS_介绍/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>LAMMPS | Introduction | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/LAMMPS_介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">LAMMPS | Introduction
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-03-01 13:44:13" itemprop="dateCreated datePublished" datetime="2019-03-01T13:44:13+08:00">2019-03-01</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:40" itemprop="dateModified" datetime="2019-05-23T14:21:40+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">介绍LAMMPS</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="什么是LAMMPS"><a href="#什么是LAMMPS" class="headerlink" title="什么是LAMMPS?"></a>什么是LAMMPS?</h2><p>LAMMPS是一个经典的分子动力学代码，他可以模拟液体中的粒子，固体和气体的系综。他可以采用不同的力场和边界条件来模拟全原子，聚合物，生物，金属，粒状和粗料化体系。LAMMPS可以计算的体系小至几个粒子，大到上百万甚至是上亿个粒子。</p>
+<p>LAMMPS可以在单个处理器的台式机和笔记本本上运行且有较高的计算效率，但是它是专门为并行计算机设计的。他可以在任何一个安装了C++编译器和MPI的平台上运算，这其中当然包括分布式和共享式并行机和Beowulf型的集群机。</p>
+<p>LAMMPS是一可以修改和扩展的计算程序，比如，可以加上一些新的力场，原子模型，边界条件和诊断功能等。</p>
+<p>通常意义上来讲，LAMMPS是根据不同的边界条件和初始条件对通过短程和长程力相互作用的分子，原子和宏观粒子集合对它们的牛顿运动方程进行积分。高效率计算的LAMMPS通过采用相邻清单来跟踪他们邻近的粒子。这些清单是根据粒子间的短程互斥力的大小进行优化过的，目的是防止局部粒子密度过高。在并行机上，LAMMPS采用的是空间分解技术来分配模拟的区域，把整个模拟空间分成较小的三维小空间，其中每一个小空间可以分配在一个处理器上。各个处理器之间相互通信并且存储每一个小空间边界上的”ghost”原子的信息。LAMMPS(并行情况)在模拟3维矩形盒子并且具有近均一密度的体系时效率最高。<br><br><br></p>
+<h2 id="LAMMPS的功能"><a href="#LAMMPS的功能" class="headerlink" title="LAMMPS的功能"></a>LAMMPS的功能</h2><h3 id="总体功能："><a href="#总体功能：" class="headerlink" title="总体功能："></a>总体功能：</h3><ul>
+<li>可以串行和并行计算</li>
+<li>分布式MPI策略</li>
+<li>模拟空间的分解并行机制</li>
+<li>开源</li>
+<li>高移植性C++语言编写</li>
+<li>MPI和单处理器串行FFT的可选性（自定义） </li>
+<li>可以方便的为之扩展上新特征和功能</li>
+<li>只需一个输入脚本就可运行</li>
+<li>有定义和使用变量和方程完备语法规则</li>
+<li>在运行过程中循环的控制都有严格的规则</li>
+<li>只要一个输入脚本试就可以同时实现一个或多个模拟任务</li>
+</ul>
+<h3 id="粒子和模拟的类型-atom-style命令-："><a href="#粒子和模拟的类型-atom-style命令-：" class="headerlink" title="粒子和模拟的类型(atom style命令)："></a>粒子和模拟的类型(atom style命令)：</h3><ul>
+<li>原子</li>
+<li>粗粒化粒子</li>
+<li>全原子聚合物，有机分子，蛋白质，DNA</li>
+<li>联合原子聚合物或有机分子</li>
+<li>金属</li>
+<li>粒子材料</li>
+<li>粗粒化介观模型</li>
+<li>延伸球形与椭圆形粒子</li>
+<li>点偶极粒子</li>
+<li>刚性粒子</li>
+<li>所有上面的杂化类型</li>
+</ul>
+<h3 id="力场："><a href="#力场：" class="headerlink" title="力场："></a>力场：</h3><p>（命令：pair style, bond style, angle style, dihedral style, improper style, kspace style）</p>
+<ul>
+<li>对相互作用势：L-J, Buckingham, Morse, Yukawa, soft, class2(COMPASS), tabulated.</li>
+<li>带点对相互作用势：Coulombic, point-dipole.</li>
+<li>多体作用势：EAM, Finnis/Sinclair EAM, modified EAM(MEAM), Stillinger-Weber, Tersoff, AIREBO, ReaxFF</li>
+<li>粗粒化作用势：DPD, GayBerne, Resquared, Colloidal, DLVO</li>
+<li>介观作用势：granular, Peridynamics</li>
+<li>键势能：harmonic, FENE, Morse, nonlinear, class2, quartic</li>
+<li>键角势能：harmonic, CHARMM, cosine, cosine/squared, class2(COMPASS)</li>
+<li>二面角势能：harmonic, CHARMM, multi-harmonic, helix, OPLS, class2(COMPASS)</li>
+<li>不合理势能：harmonic, CVFF, class2(COMPASS)</li>
+<li>聚合物势能：all-atom, united-atom, bead-spring, breakable</li>
+<li>水势能：TIP3P，TIP4P，SPC</li>
+<li>隐式溶剂势能：hydrodynamic lubrication, Debye</li>
+<li>长程库伦与分散：Ewald, PPPM, Ewald/N(针对长程L-J作用)</li>
+<li>可以有与普适化力场如CHARMM，AMBER，OPLS，GROMACS相兼容的力场</li>
+<li>可以采用GPU加速的成对类型</li>
+<li>杂化势能函数：multiple pair, bond, angle, dihedral, improper potentials(多对势能处于更高的优先级)</li>
+</ul>
+<h3 id="原子创建："><a href="#原子创建：" class="headerlink" title="原子创建："></a>原子创建：</h3><p>（命令：read_data, lattice, create-atoms, delete-atoms, displace-atoms, replicate）</p>
+<ul>
+<li>从文件中读入各个原子的坐标</li>
+<li>在一个或多个晶格中创建原子</li>
+<li>删除几何或逻辑原子基团</li>
+<li>复制已存在的原子多次</li>
+<li>替换原子</li>
+</ul>
+<h3 id="系综，约束条件，边界条件："><a href="#系综，约束条件，边界条件：" class="headerlink" title="系综，约束条件，边界条件："></a>系综，约束条件，边界条件：</h3><p>（命令：fix）</p>
+<ul>
+<li>二维和三维体系</li>
+<li>正角或非正角模拟空间</li>
+<li>常NVE，NVT，NPT，NPH积分器</li>
+<li>原子基团与几何区域可选择不同的温度控制器</li>
+<li>有Nose/Hoover和Berendsen压力控制器来控制体系的压力（任一维度上）</li>
+<li>模拟合子的变形（扭曲与剪切）</li>
+<li>简谐（unbrella）束缚力</li>
+<li>刚体约束</li>
+<li>摇摆键与键角约束</li>
+<li>各种边界环境</li>
+<li>非并行太分子动力学NEMD</li>
+<li>各种附加边界条件和约束</li>
+</ul>
+<h3 id="积分器："><a href="#积分器：" class="headerlink" title="积分器："></a>积分器：</h3><ul>
+<li>Velocity-verlet积分器</li>
+<li>Brown积分器</li>
+<li>rRESPA继承时间延化积分器</li>
+<li>刚体积分器</li>
+<li>共轭梯度或最速下降算法能量最小化器</li>
+</ul>
+<h3 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h3><p>（命令：dump, restart）</p>
+<ul>
+<li>热力学信息日志</li>
+<li>原子坐标，速度和其它原子量信息的文本dump文件</li>
+<li>二进制重启文件</li>
+<li>各原子量包括：能量，压力，中心对称参数，CAN等</li>
+<li>用户自定义系统宽度或各原子的计算信息</li>
+<li>每个原子的时间与空间平均</li>
+<li>系统宽量的时间平均</li>
+<li>原子图像，XYZ，XTC，DCD，CFG格式</li>
+</ul>
+<h3 id="数据的前处理与后处理："><a href="#数据的前处理与后处理：" class="headerlink" title="数据的前处理与后处理："></a>数据的前处理与后处理：</h3><p>包里提供了一系列的前处理与后处理工具. 另外，可以使用独立发行的工具组pizza.py, 它可以进行LAMMPS模拟的设置，分析，作图和可视化工作。</p>
+<h3 id="特别功能："><a href="#特别功能：" class="headerlink" title="特别功能："></a>特别功能：</h3><ul>
+<li>实时的可视化与交互式MD模拟</li>
+<li>与有限元方法结合进行原子-连续体模拟</li>
+<li>在POEMS库中提供了刚体积分工具</li>
+<li>并行退火</li>
+<li>并行复制动力学</li>
+<li>对低密度液体直接使用MC模拟</li>
+<li>Peridynamic介观建模</li>
+<li>目标型与无目标型分子动力学</li>
+<li>双温度电子模型</li>
+</ul>
+<h3 id="LAMMPS不具备的功能："><a href="#LAMMPS不具备的功能：" class="headerlink" title="LAMMPS不具备的功能："></a>LAMMPS不具备的功能：</h3><p>由于LAMMPS是对牛顿运动方程积分的工具，所以很多必要的数据前处理与后处理功能是LAMMPS核心不具备的。其原因为：</p>
+<ul>
+<li>保证LAMMPS的小巧性</li>
+<li>前处理与后处理不能进行并行运算, 况且这些功能可以由其它工具来完成</li>
+<li>原代码开发的局限性</li>
+</ul>
+<p>特别地，LAMMPS不能：</p>
+<ul>
+<li>通过图形用户界面来工作</li>
+<li>创建分子体系</li>
+<li>自动的加上力场系数</li>
+<li>为MD模拟提供智能化的数据分析</li>
+<li>MD的可视化</li>
+<li>为输出数据作图</li>
+</ul>
+<p>我们需要为LAMMPS输入一系列的原子类型，原子坐标，分子拓朴信息和所有原子与键的力场参数。LAMMPS不会自动的为我们创建分子体系与力场参数。<br>对与原子体系，LAMMPS提供了creat-atoms命令来为固态晶格加上原子。可以能过pair coeff,bond coeff, angle coeff等命来加上小数目的力场参数。对于分子体系或更复杂的模拟体系，我们通常会用其它工具来创建或者是转换LAMMPS输出文件来做到这些事情。有的还会写一些自已的代码来完成这项任务。<br>对于一个复杂的分子体系（如，蛋白质），我们需要为之提供上面个拓朴信息与力场参数。所以我们建议用CHARMM或AMBER或其它的分子建模器来完成这些任务，并把之输到一个文件中去。然后，改变其格式以达到LAMMPS所允许的输入格式。<br>同样，LAMMPS的输出文件是一种简单的文本格式，我们也可以通过其它的工具来换专这些格式。</p>
+<p>我们可以用以下几个软件来完成高质量的可视工作：</p>
+<ul>
+<li>VMD</li>
+<li>AtomEye</li>
+<li>Pymol</li>
+<li>Raster3d</li>
+<li>RasMol</li>
+</ul>
+<p>最后要说一下的是，以下这些也是自由分子动力学包，它们大多数是并行的，可能也适合来完成你的研究工作，当然也可以与LAMMPS联合起来使用以完成模拟工作。</p>
+<ul>
+<li>CHARMM</li>
+<li>AMBER</li>
+<li>NAMD</li>
+<li>NWCHEM</li>
+<li>DL_POLY</li>
+<li>Tinker</li>
+</ul>
+<p>其中CHARMM，AMBER，NAMD，NWCHEM，Tinker是专们用于模拟生物分子的。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/LAMMPS/" rel="tag"># LAMMPS</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/02/21/Simulation_AMS-Error/" rel="next" title="Simulation_AMS-Error">
+                  <i class="fa fa-chevron-left"></i> Simulation_AMS-Error
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/03/01/LAMMPS_安装/" rel="prev" title="LAMMPS_安装">
+                  LAMMPS_安装 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是LAMMPS"><span class="nav-number">1.</span> <span class="nav-text">什么是LAMMPS?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LAMMPS的功能"><span class="nav-number">2.</span> <span class="nav-text">LAMMPS的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体功能："><span class="nav-number">2.1.</span> <span class="nav-text">总体功能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#粒子和模拟的类型-atom-style命令-："><span class="nav-number">2.2.</span> <span class="nav-text">粒子和模拟的类型(atom style命令)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#力场："><span class="nav-number">2.3.</span> <span class="nav-text">力场：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原子创建："><span class="nav-number">2.4.</span> <span class="nav-text">原子创建：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系综，约束条件，边界条件："><span class="nav-number">2.5.</span> <span class="nav-text">系综，约束条件，边界条件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#积分器："><span class="nav-number">2.6.</span> <span class="nav-text">积分器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出："><span class="nav-number">2.7.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据的前处理与后处理："><span class="nav-number">2.8.</span> <span class="nav-text">数据的前处理与后处理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特别功能："><span class="nav-number">2.9.</span> <span class="nav-text">特别功能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAMMPS不具备的功能："><span class="nav-number">2.10.</span> <span class="nav-text">LAMMPS不具备的功能：</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

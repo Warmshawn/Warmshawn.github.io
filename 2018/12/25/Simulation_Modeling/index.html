@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Segoe:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic|Segoe UI:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="建模软件集合">
+<meta name="keywords" content="Modeling">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Modeling">
+<meta property="og:url" content="http://yoursite.com/2018/12/25/Simulation_Modeling/index.html">
+<meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
+<meta property="og:description" content="建模软件集合">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-23T06:21:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Modeling">
+<meta name="twitter:description" content="建模软件集合">
+  <link rel="canonical" href="http://yoursite.com/2018/12/25/Simulation_Modeling/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Modeling | The Wandering Cat's Mind Palace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Wandering Cat's Mind Palace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Hello</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/Simulation_Modeling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="The Wandering Cat">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Wandering Cat's Mind Palace">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Modeling
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-25 17:08:18" itemprop="dateCreated datePublished" datetime="2018-12-25T17:08:18+08:00">2018-12-25</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-23 14:21:42" itemprop="dateModified" datetime="2019-05-23T14:21:42+08:00">2019-05-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech-O/" itemprop="url" rel="index"><span itemprop="name">Tech - O</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">建模软件集合</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="GB"><a href="#GB" class="headerlink" title="GB"></a>GB</h2><ol>
+<li><a href="https://www.tf.uni-kiel.de/matwis/amat/def_en/index.html" target="_blank" rel="noopener">Defects in Crystals</a><br> 一个网页，介绍缺陷，提供富文本方式下载。</li>
+</ol>
+<ol>
+<li><a href="https://code.google.com/archive/p/mtex/wikis/FeatureList.wiki#Crystal_Geometry" target="_blank" rel="noopener">METX</a><br> MTEX is a MATLAB toolbox that allows to solve a wide range of problems in quantitative texture analysis.</li>
+</ol>
+<ol>
+<li><a href="https://staff.aist.go.jp/h.ogawa/GBstudio/indexE.html" target="_blank" rel="noopener">Grain Boundary Studio</a><br> 日本人做的一个构建晶体的小软件。回溯其主网站，可以看到一些有趣的东西。</li>
+</ol>
+<ol>
+<li><p><a href="https://code.google.com/archive/p/gosam/wikis/graingen.wiki" target="_blank" rel="noopener">graingen.py</a><br> generates crystalline grains.</p>
+</li>
+<li><p><a href="http://atomsk.univ-lille1.fr/" target="_blank" rel="noopener">atomsk</a><br> 一个模型构建软件。</p>
+</li>
+<li><p><a href="http://rupert.eng.uci.edu/modeling.html" target="_blank" rel="noopener">Grain Tracking Algorithm (GTA)</a><br> The GTA enables the quantitative characterization of grain size, grain orientation, and sample texture while also tracking these features as a function of time during simulations of dynamic behavior.  This data can be presented in ways that are commonplace within the experimental community, such as pole figures, inverse pole figures, and orientation maps, in order to further connect computational and experimental research. If you find this tool useful for your research, please cite our GTA paper:</p>
+<p> Tracking Microstructure of Crystalline Materials: A Post-Processing Algorithm for Atomistic Simulations, Panzarino JF, Rupert TJ. JOM, (2014) 66:417.</p>
+<p> Nanoscale Mechanics &amp; Materials Laboratory, Univ. of California, USA.</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="https://sourceforge.net/projects/neper/" target="_blank" rel="noopener">Neper</a><br> Neper is a software package for polycrystal generation and meshing. It can deal with 2D and 3D polycrystals with very large numbers of grains. Its main features are:</p>
+<ul>
+<li><p>Generation of polycrystals from (experimental) morphological properties;</p>
+</li>
+<li><p>Generation of multiscale microstructures;</p>
+</li>
+<li><p>Generation of periodic or semi-periodic microstructures;</p>
+</li>
+<li><p>Meshing into good-quality elements;</p>
+</li>
+<li><p>Meshing with cohesive elements at interfaces;</p>
+</li>
+<li><p>Visualization and analysis of the tessellations and meshes.</p>
+<p>Neper is built around three modules: generation, meshing and visualization. All the input data are prescribed non-interactively, using command lines and / or ASCII files. Neper can be compiled and run on any Unix-like system.</p>
+</li>
+<li><p>Features</p>
+<ul>
+<li>3D Voronoi tessellation</li>
+<li>Meshing</li>
+</ul>
+</li>
+<li><p>Linux</p>
+</li>
+<li><p>已下载到<code>D:\InstallPackage\PC\Software for Materials\Lammps插件</code></p>
+</li>
+</ul>
+</li>
+<li><p><a href="https://www.researchgate.net/deref/http%3A%2F%2Fli.mit.edu%2FArchive%2FGraphics%2FA%2Futils.html%23voronoirize" target="_blank" rel="noopener">Atomeye</a><br> 这个也是可以构建晶粒、多晶的。<br> 李巨(Li Ju)老师的<a href="http://li.mit.edu/A/" target="_blank" rel="noopener">主页</a>  </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+
+
+
+</li>
+</ol>
+<h2 id="Dislocation"><a href="#Dislocation" class="headerlink" title="Dislocation"></a>Dislocation</h2><ol>
+<li><p><a href="http://paradis.stanford.edu/site/home" target="_blank" rel="noopener">ParaDiS</a>  </p>
+<p> ParaDiS is a free large scale dislocation dynamics simulation code to study the fundamental mechanisms of plasticity. It was originally developed at the Lawrence Livermore National Laboratory. It is written in C (with a little C++) and uses the MPI library for communication between processors. It runs routinely on 100-1000 processors and scalability on 132,000 processors of BlueGene/L has been demonstrated.</p>
+<p> This site contains the information about how to use the code and the procedure on how to obtain a free copy of ParaDiS.</p>
+<p> 过几天再来登陆尝试</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="http://zig.onera.fr/mm_home_page/" target="_blank" rel="noopener">microMegas</a>  </p>
+<p> ‘mM’ is an open source program for DD (Dislocation Dynamics) simulations originally developed at the ‘Laboratoire d’Etude des Microstructures’, CNRS-ONERA, France. This site is provided for the convenience of mM users and developers. mM is a free software under the terms of the GNU General Public License as published by the Free Software Foundation. In order to ensure continuing availability of source codes and documentation most programs and documents on this site are subject to copyright. Appropriate copyrights and licenses appear with the relevant sources and documents. Such copyrights do not prevent you from using the simulation codes, copying and modifying them, but prevents the creation of “closed source” versions out of the open source versions.</p>
+<p> When a scientific tool exists as a software, access to source code is an important element in achieving full understanding of how that tool works. As our field evolves and improved versions of the softwares are required, access to sources allows adapting the tools quickly and efficiently.</p>
+<p> If you are a software developer and wish to incorporate what you find here into a new code, or duplicate pieces and bits for using them in another context, the situation becomes more complex. Please read the copyrights and notices carefully; you will find that they are “infectious”. Whatever you make from our Open Source code must itself be offered as an Open Source code. In addition, in order to allow users to understand what has changed and to ensure orderly development, you have to describe all modifications you made.</p>
+<p> There is still a lot to be done before this site is fully functional. Many links and features need to be added. With your help, with your comments, suggestions and corrections, and with contributions of new Open Source mM code and documentation, this site will hopefully evolve into an increasingly useful tool for our community.</p>
+<p> —— B. Devincre</p>
+<p> · Platforms: Unix-like<br> · 已下载</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="http://www.dierk-raabe.com/" target="_blank" rel="noopener">Prof. Dierk Raabe</a>  </p>
+<p> This is Prof. Dierk Raabe’s personal website introducting his research interests. And you find more on his <a href="http://www.mpie.de/microstructure-physics-and-alloy-design" target="_blank" rel="noopener">department website</a> at the <a href="http://www.mpie.de/2281/en" target="_blank" rel="noopener">Max-Planck Institut für Eisenforschung</a>.</p>
+<p> 很值得学习，里卖有很多材料学、晶界、APT的内容。</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="http://www.numodis.fr/tridis/" target="_blank" rel="noopener">TRIDIS</a><br> TRIDIS, i.e. the edge-screw 3D Discrete Dislocation Dynamics (3D4) code developed at <a href="http://simap.grenoble-inp.fr/home/" target="_blank" rel="noopener">SIMaP</a>.  </p>
+<p> 没找到该软件的下载链接，估计得问他们要才行，然后挂名。</p>
+<p> 回溯其网址，也很有东西。</p>
+<p> 这里提供了该软件相关的论文，包括博士论文，很值得查看。该软件的发布者, 法国材料科学实验室，其研究内容也很有意思。</p>
+</li>
+</ol>
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><ol>
+<li><a href="http://asa.ovito.org/" target="_blank" rel="noopener">Atomic structure analysis algorithms</a><br> 原子结构分析算法，由ovito的作者提供</li>
+</ol>
+<ol>
+<li><a href="http://www.chemtube3d.com/index.html" target="_blank" rel="noopener">ChemTube3D</a><br> 一个交互式网站，可查看材料结构</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Modeling/" rel="tag"># Modeling</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/12/25/Simulation_GB/" rel="next" title="GB">
+                  <i class="fa fa-chevron-left"></i> GB
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/12/26/Simulation_SoftwaresForMolecularDynamics/" rel="prev" title="Softwares for Molecular Dynamics">
+                  Softwares for Molecular Dynamics <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GB"><span class="nav-number">1.</span> <span class="nav-text">GB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dislocation"><span class="nav-number">2.</span> <span class="nav-text">Dislocation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others"><span class="nav-number">3.</span> <span class="nav-text">Others</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">The Wandering Cat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">The Wandering Cat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
