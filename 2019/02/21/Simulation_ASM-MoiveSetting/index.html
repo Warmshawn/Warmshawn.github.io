@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="如何减小＊.rxkf文件的大小如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下： ADFinput &amp;gt; Details &amp;gt; KF results file: 将默认的50改大即可。这里的含义是每隔多少步保存一次原子的坐标，因此该数字越小，保存的次数就越密集，＊.rxkf文件就越大，这样是可以看到中间过程中，每个原子的移动情况">
+  <meta name="description" content="如何减小＊.rxkf文件的大小 如何读取分子动力学模拟中某一帧的结构到ADFinput中">
 <meta name="keywords" content="rxkf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Simulation_ASM-MoiveSetting">
 <meta property="og:url" content="http://yoursite.com/2019/02/21/Simulation_ASM-MoiveSetting/index.html">
 <meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
-<meta property="og:description" content="如何减小＊.rxkf文件的大小如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下： ADFinput &amp;gt; Details &amp;gt; KF results file: 将默认的50改大即可。这里的含义是每隔多少步保存一次原子的坐标，因此该数字越小，保存的次数就越密集，＊.rxkf文件就越大，这样是可以看到中间过程中，每个原子的移动情况">
+<meta property="og:description" content="如何减小＊.rxkf文件的大小 如何读取分子动力学模拟中某一帧的结构到ADFinput中">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-23T06:21:43.000Z">
+<meta property="og:updated_time" content="2019-12-03T10:08:33.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Simulation_ASM-MoiveSetting">
-<meta name="twitter:description" content="如何减小＊.rxkf文件的大小如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下： ADFinput &amp;gt; Details &amp;gt; KF results file: 将默认的50改大即可。这里的含义是每隔多少步保存一次原子的坐标，因此该数字越小，保存的次数就越密集，＊.rxkf文件就越大，这样是可以看到中间过程中，每个原子的移动情况">
+<meta name="twitter:description" content="如何减小＊.rxkf文件的大小 如何读取分子动力学模拟中某一帧的结构到ADFinput中">
   <link rel="canonical" href="http://yoursite.com/2019/02/21/Simulation_ASM-MoiveSetting/">
 
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-23 14:21:43" itemprop="dateModified" datetime="2019-05-23T14:21:43+08:00">2019-05-23</time>
+                <time title="Modified: 2019-12-03 18:08:33" itemprop="dateModified" datetime="2019-12-03T18:08:33+08:00">2019-12-03</time>
               </span>
             
           
@@ -286,7 +286,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="如何减小＊-rxkf文件的大小"><a href="#如何减小＊-rxkf文件的大小" class="headerlink" title="如何减小＊.rxkf文件的大小"></a>如何减小<code>＊.rxkf</code>文件的大小</h2><p>如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下：</p>
+        <ul>
+<li>如何减小<code>＊.rxkf</code>文件的大小</li>
+<li>如何读取分子动力学模拟中某一帧的结构到ADFinput中<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="如何减小＊-rxkf文件的大小"><a href="#如何减小＊-rxkf文件的大小" class="headerlink" title="如何减小＊.rxkf文件的大小"></a>如何减小<code>＊.rxkf</code>文件的大小</h2><p>如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下：</p>
 <p>ADFinput &gt; Details &gt; KF results file:</p>
 <p>将默认的50改大即可。这里的含义是每隔多少步保存一次原子的坐标，因此该数字越小，保存的次数就越密集，<code>＊.rxkf</code>文件就越大，这样是可以看到中间过程中，每个原子的移动情况的。如果我们不关心这些移动的详情，只关心反应过程中物质种类的变化情况，那么这个值可以设置的很大，比如1ps（步长为0.25fs的话，就是4000步，这里填写4000即可）保存一次。 下面的： Energy, temperature and more也可以随之调整为相同的数字。</p>
 <h2 id="如何读取分子动力学模拟中某一帧的结构到ADFinput中"><a href="#如何读取分子动力学模拟中某一帧的结构到ADFinput中" class="headerlink" title="如何读取分子动力学模拟中某一帧的结构到ADFinput中"></a>如何读取分子动力学模拟中某一帧的结构到ADFinput中</h2><p>ReaxFF分子动力学模拟的动画，报错在<code>*.rxkf</code>文件中，在ADFinput（或者ADFjobs中，选中该任务）点击<code>SCM LOGO</code> &gt; <code>Movie</code>则从该文件读取动画。在任何一帧，点击左下角的暂停按钮，然后点击<code>File</code> &gt; <code>Update Geometry in Input</code>，即可将该帧更新到ADFinput里面。</p>

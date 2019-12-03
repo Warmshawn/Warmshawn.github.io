@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2eReaxFF模拟，需要将*.run文件中，icharg的值从默认的4改为7。 *.out文件提示:non-physically large charges produced by EEMReaxFF理论中，有一步是计算原子的电荷。用的是EEM方法。这个">
+  <meta name="description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2 *.out文件提示:non-physically large charges produced by EEM Reaction Event Detection不能分析基元反应">
 <meta name="keywords" content="AMS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Simulation_AMS-Error">
 <meta property="og:url" content="http://yoursite.com/2019/02/21/Simulation_AMS-Error/index.html">
 <meta property="og:site_name" content="The Wandering Cat&#39;s Mind Palace">
-<meta property="og:description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2eReaxFF模拟，需要将*.run文件中，icharg的值从默认的4改为7。 *.out文件提示:non-physically large charges produced by EEMReaxFF理论中，有一步是计算原子的电荷。用的是EEM方法。这个">
+<meta property="og:description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2 *.out文件提示:non-physically large charges produced by EEM Reaction Event Detection不能分析基元反应">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-23T06:21:44.000Z">
+<meta property="og:updated_time" content="2019-12-03T10:08:31.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Simulation_AMS-Error">
-<meta name="twitter:description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2eReaxFF模拟，需要将*.run文件中，icharg的值从默认的4改为7。 *.out文件提示:non-physically large charges produced by EEMReaxFF理论中，有一步是计算原子的电荷。用的是EEM方法。这个">
+<meta name="twitter:description" content="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2 *.out文件提示:non-physically large charges produced by EEM Reaction Event Detection不能分析基元反应">
   <link rel="canonical" href="http://yoursite.com/2019/02/21/Simulation_AMS-Error/">
 
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-23 14:21:44" itemprop="dateModified" datetime="2019-05-23T14:21:44+08:00">2019-05-23</time>
+                <time title="Modified: 2019-12-03 18:08:31" itemprop="dateModified" datetime="2019-12-03T18:08:31+08:00">2019-12-03</time>
               </span>
             
           
@@ -286,7 +286,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2"><a href="#stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2" class="headerlink" title="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2"></a>stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2</h2><p>eReaxFF模拟，需要将<code>*.run</code>文件中，icharg的值从默认的4改为7。</p>
+        <ul>
+<li>stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2</li>
+<li><code>*.out</code>文件提示:non-physically large charges produced by EEM</li>
+<li>Reaction Event Detection不能分析基元反应<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2"><a href="#stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2" class="headerlink" title="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2"></a>stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2</h2><p>eReaxFF模拟，需要将<code>*.run</code>文件中，icharg的值从默认的4改为7。</p>
 <h2 id="out文件提示-non-physically-large-charges-produced-by-EEM"><a href="#out文件提示-non-physically-large-charges-produced-by-EEM" class="headerlink" title="*.out文件提示:non-physically large charges produced by EEM"></a><code>*.out</code>文件提示:non-physically large charges produced by EEM</h2><p>ReaxFF理论中，有一步是计算原子的电荷。用的是EEM方法。这个报错信息，是指EEM产生的电荷得到了不符合物理的数值，例如特别大。这种问题的出现，控制性较弱，因此只能调整结构，或者改变力场，绕开这个结构点。</p>
 <p>如果加了外电场，很容易出现这个报错，尤其是当原子跨出盒子边界的时候（加一个人为定义的“墙壁”,可以避免这种情况的这个问题）。</p>
 <p>参考：<a href="http://www.fermitech.com.cn/wiki/doku.php?id=adf:ewall" target="_blank" rel="noopener">在ReaxFF中设置阻碍原子穿越的弹性墙壁</a></p>

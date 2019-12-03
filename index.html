@@ -1086,7 +1086,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-23 14:21:44" itemprop="dateModified" datetime="2019-05-23T14:21:44+08:00">2019-05-23</time>
+                <time title="Modified: 2019-12-03 18:08:31" itemprop="dateModified" datetime="2019-12-03T18:08:31+08:00">2019-12-03</time>
               </span>
             
           
@@ -1102,12 +1102,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2"><a href="#stderr-Unsupported-charge-equilibration-method-Only-7-is-valid-for-ACKS2" class="headerlink" title="stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2"></a>stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2</h2><p>eReaxFF模拟，需要将<code>*.run</code>文件中，icharg的值从默认的4改为7。</p>
-<h2 id="out文件提示-non-physically-large-charges-produced-by-EEM"><a href="#out文件提示-non-physically-large-charges-produced-by-EEM" class="headerlink" title="*.out文件提示:non-physically large charges produced by EEM"></a><code>*.out</code>文件提示:non-physically large charges produced by EEM</h2><p>ReaxFF理论中，有一步是计算原子的电荷。用的是EEM方法。这个报错信息，是指EEM产生的电荷得到了不符合物理的数值，例如特别大。这种问题的出现，控制性较弱，因此只能调整结构，或者改变力场，绕开这个结构点。</p>
-<p>如果加了外电场，很容易出现这个报错，尤其是当原子跨出盒子边界的时候（加一个人为定义的“墙壁”,可以避免这种情况的这个问题）。</p>
-<p>参考：<a href="http://www.fermitech.com.cn/wiki/doku.php?id=adf:ewall" target="_blank" rel="noopener">在ReaxFF中设置阻碍原子穿越的弹性墙壁</a></p>
-<h2 id="Reaction-Event-Detection不能分析基元反应"><a href="#Reaction-Event-Detection不能分析基元反应" class="headerlink" title="Reaction Event Detection不能分析基元反应"></a>Reaction Event Detection不能分析基元反应</h2><p>任务文件夹内有一个<code>任务名.results</code>文件夹，删除其中的任务名<code>.tatb</code>、<code>babelconvert.sh</code>。以及目录<code>reac.pic</code>、<code>scmtrayzer</code>，之后重新进行Reaction Event Detection分析。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+          <ul>
+<li>stderr:Unsupported charge equilibration method. Only 7 is valid for ACKS2</li>
+<li><code>*.out</code>文件提示:non-physically large charges produced by EEM</li>
+<li>Reaction Event Detection不能分析基元反应</li></ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/02/21/Simulation_AMS-Error/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1171,7 +1178,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-23 14:21:43" itemprop="dateModified" datetime="2019-05-23T14:21:43+08:00">2019-05-23</time>
+                <time title="Modified: 2019-12-03 18:08:33" itemprop="dateModified" datetime="2019-12-03T18:08:33+08:00">2019-12-03</time>
               </span>
             
           
@@ -1187,12 +1194,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="如何减小＊-rxkf文件的大小"><a href="#如何减小＊-rxkf文件的大小" class="headerlink" title="如何减小＊.rxkf文件的大小"></a>如何减小<code>＊.rxkf</code>文件的大小</h2><p>如果我们不关心反应的动画过程显示，而只是关心中间过程、最终结果的产物、中间产物的分子个数，那么我们可以调整如下：</p>
-<p>ADFinput &gt; Details &gt; KF results file:</p>
-<p>将默认的50改大即可。这里的含义是每隔多少步保存一次原子的坐标，因此该数字越小，保存的次数就越密集，<code>＊.rxkf</code>文件就越大，这样是可以看到中间过程中，每个原子的移动情况的。如果我们不关心这些移动的详情，只关心反应过程中物质种类的变化情况，那么这个值可以设置的很大，比如1ps（步长为0.25fs的话，就是4000步，这里填写4000即可）保存一次。 下面的： Energy, temperature and more也可以随之调整为相同的数字。</p>
-<h2 id="如何读取分子动力学模拟中某一帧的结构到ADFinput中"><a href="#如何读取分子动力学模拟中某一帧的结构到ADFinput中" class="headerlink" title="如何读取分子动力学模拟中某一帧的结构到ADFinput中"></a>如何读取分子动力学模拟中某一帧的结构到ADFinput中</h2><p>ReaxFF分子动力学模拟的动画，报错在<code>*.rxkf</code>文件中，在ADFinput（或者ADFjobs中，选中该任务）点击<code>SCM LOGO</code> &gt; <code>Movie</code>则从该文件读取动画。在任何一帧，点击左下角的暂停按钮，然后点击<code>File</code> &gt; <code>Update Geometry in Input</code>，即可将该帧更新到ADFinput里面。</p>
-<p>如果是能量最小化，则不会保存中间的结果，在能量最小化完成之后，界面会自动提醒，是不是要更新到最新的结构，选择<code>Yes</code>即可将优化好的结构更新到ADFinput中。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+          <ul>
+<li>如何减小<code>＊.rxkf</code>文件的大小</li>
+<li>如何读取分子动力学模拟中某一帧的结构到ADFinput中</li></ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/02/21/Simulation_ASM-MoiveSetting/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
