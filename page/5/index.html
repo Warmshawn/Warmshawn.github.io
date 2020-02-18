@@ -677,7 +677,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-23 14:21:38" itemprop="dateModified" datetime="2019-05-23T14:21:38+08:00">2019-05-23</time>
+                <time title="Modified: 2019-12-22 14:21:14" itemprop="dateModified" datetime="2019-12-22T14:21:14+08:00">2019-12-22</time>
               </span>
             
           
@@ -707,7 +707,7 @@
 
       
           <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>在未名超算，执行以下命令即可，其他超算平台类似。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module add gcc/6.4.0   mpi/mpich/3.2.1   intel/2018.0	<span class="comment">#添加模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src           <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make make lib-voronoi args=<span class="string">"-b"</span>                 <span class="comment">#安装voronoi库。此时切到lib/voronoi目录下，会看到两个动态链接，如下图所示。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src                   <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make ps                         <span class="comment">#查看当前已经安装的包</span></span><br><span class="line">make yes-VORONOI                <span class="comment">#添加VORONOI包</span></span><br><span class="line">make mpi                        <span class="comment">#编译生成可执行文件lmp_mpi</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module add gcc/7.2.0  intel/2017.1  mpich/3.2.1-intel-2017.1	<span class="comment">#添加模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src           <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make make lib-voronoi args=<span class="string">"-b"</span>                 <span class="comment">#安装voronoi库。此时切到lib/voronoi目录下，会看到两个动态链接，如下图所示。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lammps/src                   <span class="comment">#切换到lammps/src目录下</span></span><br><span class="line">make ps                         <span class="comment">#查看当前已经安装的包</span></span><br><span class="line">make yes-VORONOI                <span class="comment">#添加VORONOI包</span></span><br><span class="line">make mpi                        <span class="comment">#编译生成可执行文件lmp_mpi</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1352,7 +1352,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
